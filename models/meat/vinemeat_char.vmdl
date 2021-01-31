@@ -1,0 +1,356 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "MovementSettings"
+						movementsettings = 
+						{
+							name = ""
+							speeds = [  ]
+							runspeed = 170.0
+							walkspeed = 120.0
+							maxSpringTension = 100.0
+							springConstant = 10.0
+							useSmoothPaths = true
+							useMotionDamping = false
+							sharpStartAngle = 180.0
+							m_vTraceScale = [ 1.0, 1.0, 1.0 ]
+						}
+					},
+					{
+						_class = "LookAtChain"
+						name = "LookAt"
+						lookat_chain = 
+						{
+							name = ""
+							bones = 
+							[
+								{
+									name = "Head"
+									weight = 1.0
+								},
+								{
+									name = "Neck"
+									weight = 0.3
+								},
+							]
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "ao_proxy_capsule"
+						game_keys = 
+						{
+							bonename = "Root"
+							radius = 5.0
+							point0 = [ 0.0, 0.0, 12.3205 ]
+							point1 = [ 0.0, 0.0, -7.03461 ]
+						}
+					},
+					{
+						_class = "GenericGameData"
+						disabled = true
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Flesh.Small"
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsJointList"
+				children = 
+				[
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Head"
+						child_body = "Neck"
+						anchor_origin = [ -0.026516, -0.457003, -5.036593 ]
+						anchor_angles = [ 0.080352, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 40.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Root"
+						child_body = "Tail"
+						anchor_origin = [ 0.0, 0.0, 0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						name = "_copy1"
+						parent_body = "Neck"
+						child_body = "Root"
+						anchor_origin = [ -0.026529, -0.015262, -0.977145 ]
+						anchor_angles = [ 0.080352, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 40.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeSphere"
+						parent_bone = "Head"
+						surface_prop = "npc_blindzombie_body"
+						collision_prop = "default"
+						radius = 6.25
+						center = [ 0.0, 0.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Root"
+						surface_prop = "npc_blindzombie_body"
+						collision_prop = "default"
+						radius = 4.25
+						point0 = [ 0.0, 0.0, 1.023526 ]
+						point1 = [ 0.0, 0.0, 1.987426 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Tail"
+						surface_prop = "npc_blindzombie_body"
+						collision_prop = "default"
+						radius = 4.25
+						point0 = [ 0.0, 0.0, 4.621507 ]
+						point1 = [ 0.0, 0.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "mouth"
+						parent_bone = "Head"
+						surface_prop = "npc_blindzombie_body"
+						collision_prop = "default"
+						radius = 2.5
+						point0 = [ -1.283984, 4.574475, -2.392285 ]
+						point1 = [ 1.491622, 4.574474, -2.392284 ]
+					},
+					{
+						_class = "PhysicsShapeSphere"
+						name = "_copy"
+						parent_bone = "Neck"
+						surface_prop = "npc_blindzombie_body"
+						collision_prop = "default"
+						radius = 2.0
+						center = [ 0.0, 0.0, 0.0 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/meat/fbx/vinemeat_walkn2.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "materials/vinemeat.vmat"
+								to = "models/meat/materials/vinemeat_gore.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "eyes"
+						parent_bone = ""
+						relative_origin = [ 7.050731, 0.0, 23.084553 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "forward"
+						parent_bone = ""
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "mouth"
+						parent_bone = "Head"
+						relative_origin = [ -0.000178, 5.820632, -2.519447 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "pipe_attach"
+						parent_bone = "Head"
+						relative_origin = [ -2.87052, 7.607994, -2.519447 ]
+						relative_angles = [ 0.0, 51.085201, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "AnimFile"
+						name = "walkn"
+						children = 
+						[
+							{
+								_class = "ExtractMotion"
+								extract_tx = true
+								extract_ty = true
+								extract_tz = false
+								extract_rz = false
+								linear = false
+								quadratic = false
+								root_bone_name = "Head"
+								motion_type = "Uniform"
+							},
+						]
+						activity_name = ""
+						activity_weight = 1
+						weight_list_name = ""
+						fade_in_time = 0.2
+						fade_out_time = 0.2
+						looping = true
+						delta = false
+						worldSpace = false
+						hidden = false
+						anim_markup_ordered = false
+						disable_compression = false
+						source_filename = "models/meat/fbx/vinemeat_walkn2.fbx"
+						start_frame = -1
+						end_frame = -1
+						framerate = -1.0
+						reverse = false
+					},
+				]
+				default_root_bone_name = ""
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "HitboxSet"
+						name = "default"
+						children = 
+						[
+							{
+								_class = "Hitbox"
+								name = "Tail"
+								parent_bone = "Tail"
+								hitbox_mins = [ -4.12737, -3.430222, -3.719592 ]
+								hitbox_maxs = [ 4.055431, 3.52176, 10.425802 ]
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								name = "Root"
+								parent_bone = "Root"
+								hitbox_mins = [ -4.026749, -3.222966, -10.382621 ]
+								hitbox_maxs = [ 3.932093, 2.860877, 6.967816 ]
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								name = "Head"
+								parent_bone = "Head"
+								hitbox_mins = [ -5.016682, -5.465865, -5.69776 ]
+								hitbox_maxs = [ 4.606619, 5.16011, 4.934858 ]
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+							{
+								_class = "Hitbox"
+								name = "Neck"
+								parent_bone = "Neck"
+								hitbox_mins = [ -4.957074, -3.453407, -5.078896 ]
+								hitbox_maxs = [ 5.060285, 3.022461, 0.847061 ]
+								surface_property = ""
+								translation_only = false
+								group_id = 0
+							},
+						]
+					},
+				]
+			},
+		]
+		model_archetype = "generic_actor_model"
+		primary_associated_entity = "generic_actor"
+		anim_graph_name = "animgraphs/vinemeat.vanmgrph"
+	}
+}

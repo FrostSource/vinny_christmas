@@ -1,0 +1,107 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\vinny_house\\dmx\\felled_tree.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Wooden.Huge"
+							allowstatic = true
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "8"
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "materials/models/props_foliage/urban_tree01_trunk_nomotion.vmat"
+								to = "materials/models/props_foliage/urban_tree01_trunk_nomotion.vmat"
+							},
+							{
+								from = "materials/models/props_foliage/urban_tree01_trunk.vmat"
+								to = "materials/models/props_foliage/urban_tree01_trunk_nomotion.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = ""
+						surface_prop = "world.wood_solid"
+						collision_prop = "default"
+						radius = 3.5
+						point0 = [ -1.006507, 0.0, -16.272236 ]
+						point1 = [ 4.56813, 0.964204, 43.795223 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "_copy"
+						parent_bone = ""
+						surface_prop = "world.wood_solid"
+						collision_prop = "default"
+						radius = 3.0
+						point0 = [ 3.621946, -2.809713, 82.80072 ]
+						point1 = [ 4.56813, 0.964204, 43.795223 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

@@ -1,0 +1,107 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "_16957_car_seat_v1wire_115115115.vmat"
+								to = "internationalstage/models/key_arena_360_atnt_fbx/tpn_darkconcrete.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.mattress"
+						collision_prop = "default"
+						origin = [ 16.425062, 0.985986, 39.199711 ]
+						angles = [ 21.4863, 0.0, 0.0 ]
+						dimensions = [ 13.321732, 22.140341, 64.05426 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.mattress"
+						collision_prop = "default"
+						origin = [ -5.737703, -0.581371, 7.085677 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 38.542572, 41.205338, 13.348954 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.mattress"
+						collision_prop = "default"
+						origin = [ 15.634021, 15.804112, 47.455505 ]
+						angles = [ -83.265152, 157.57515, -170.759262 ]
+						dimensions = [ 41.521557, 10.618568, 27.61356 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.mattress"
+						collision_prop = "default"
+						origin = [ 15.079686, -15.391372, 47.039108 ]
+						angles = [ -86.849258, -144.586288, 155.992859 ]
+						dimensions = [ 41.928772, 10.618568, 27.61356 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.mattress"
+						collision_prop = "default"
+						origin = [ -7.030799, -16.614029, 14.173694 ]
+						angles = [ -21.545265, 0.0, 0.0 ]
+						dimensions = [ 38.371529, 8.055056, 13.512662 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.mattress"
+						collision_prop = "default"
+						origin = [ -7.030799, 18.621231, 14.173694 ]
+						angles = [ -21.545265, 0.0, 0.0 ]
+						dimensions = [ 38.371529, 8.055056, 13.512662 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/car_seat/fbx/car_seat_fixeduv.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "static_prop_model"
+		primary_associated_entity = "prop_static"
+		anim_graph_name = ""
+	}
+}

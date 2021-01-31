@@ -1,0 +1,276 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\vinny_house\\dmx\\snark_hull.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = ""
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -0.758927, -3.54199, 2.94516 ]
+							angles_left = [ -90.0, 172.839005, 0.0 ]
+							origin_right = [ -0.758927, 3.54199, 2.94516 ]
+							angles_right = [ -90.0, -172.839, 0.0 ]
+							max_distance = 6.0
+							finger_thumb = 0.314
+							finger_pinky = 0.32
+							finger_ring = 0.238
+							finger_middle = 0.232
+							finger_index = 0.301
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = true
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -0.758927, 0.620493, 8.03207 ]
+							angles_left = [ 35.019001, 89.999992, 82.838982 ]
+							origin_right = [ -0.758927, -0.620493, 8.03207 ]
+							angles_right = [ 35.019, -90.0, -82.839 ]
+							max_distance = 6.0
+							finger_thumb = 0.144
+							finger_pinky = 0.301
+							finger_ring = 0.22
+							finger_middle = 0.283
+							finger_index = 0.364
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = true
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ 0.206261, -0.674002, 8.03207 ]
+							angles_left = [ 35.018993, -100.532997, 82.839005 ]
+							origin_right = [ 0.206261, 0.674002, 8.03207 ]
+							angles_right = [ 35.019, 100.533, -82.839 ]
+							max_distance = 6.0
+							finger_thumb = 0.125
+							finger_pinky = 0.484
+							finger_ring = 0.345
+							finger_middle = 0.27
+							finger_index = 0.27
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "handpose_data"
+						game_keys = 
+						{
+							handpose_bone = ""
+							handpose_model = "models/props/max/handposes/handpose_grabpole.vmdl"
+							allow_procedural_handpose = false
+							global_pose_template = false
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeSphere"
+						name = "body"
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						radius = 3.206064
+						center = [ -0.656016, 0.0, 4.606085 ]
+					},
+					{
+						_class = "PhysicsShapeSphere"
+						name = "head"
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						radius = 1.680656
+						center = [ 2.984721, 0.0, 4.295896 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "foot_front_r"
+						disabled = true
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						origin = [ 2.15837, -3.460965, 0.982494 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.352158, 0.426808, 1.770163 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "foot_front_l"
+						disabled = true
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						origin = [ 2.15837, 3.509079, 0.982494 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.352158, 0.426808, 1.770163 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "foot_back_r"
+						disabled = true
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						origin = [ -2.47403, -4.139233, 1.049282 ]
+						angles = [ 10.197175, -2.751084, -15.185755 ]
+						dimensions = [ 0.422424, 0.426808, 2.153692 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "foot_back_l"
+						disabled = true
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						origin = [ -2.500751, 4.074184, 1.049282 ]
+						angles = [ 10.197175, -111.604149, -15.185755 ]
+						dimensions = [ 0.422424, 0.426808, 2.153692 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "foot_front_r_copy"
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						radius = 0.3
+						point0 = [ 2.123648, -3.479013, 0.365673 ]
+						point1 = [ 2.0, -2.755804, 3.007805 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "foot_front_l_copy"
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						radius = 0.3
+						point0 = [ 2.123648, 3.5476, 0.365673 ]
+						point1 = [ 2.0, 2.585796, 3.007805 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "foot_back_r_copy_copy"
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						radius = 0.3
+						point0 = [ -2.533222, -4.336376, 0.365673 ]
+						point1 = [ -1.801564, -2.9754, 3.007805 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "foot_back_l_copy_copy"
+						parent_bone = ""
+						surface_prop = "prop.flesh_alien"
+						collision_prop = "default"
+						radius = 0.3
+						point0 = [ -2.416271, 4.365806, 0.365673 ]
+						point1 = [ -1.889512, 3.077434, 3.007805 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

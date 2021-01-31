@@ -1,0 +1,141 @@
+-----Models-----
+
+Christmas cookie:
+	gagui
+	https://www.turbosquid.com/3d-models/max-xmas-tree-cookie/785694
+	https://blog.turbosquid.com/turbosquid-3d-model-license/
+Pickle rick:
+	hellfa
+	https://sketchfab.com/3d-models/retopo-rick-f673ab6508064e438f96b70502646949
+	https://creativecommons.org/licenses/by/4.0/
+	(Best free gherkin thing I could find. Had to do some basic editing to remove the face)
+Christmas tree:
+	IDALGAME
+	https://sketchfab.com/3d-models/christmas-tree-and-gifts-37ca2a8adec84b7f8da143c4e02262a9
+	https://sketchfab.com/licenses
+Picolas Cage:
+	koendg
+	https://sketchfab.com/3d-models/picolas-cage-341ca9a08d1d419d8a69e186abacce5a
+	https://creativecommons.org/licenses/by-nc/4.0/
+Christmas gifts:
+	Maria Cranberry
+	https://www.turbosquid.com/3d-models/3d-presents-1360474
+	https://blog.turbosquid.com/turbosquid-3d-model-license
+Flashlight:
+	maxbugor
+	https://www.cgtrader.com/3d-models/industrial/tool/flashlight-35da6afb-a6f7-4cae-a311-6854f47dad09
+	https://www.cgtrader.com/pages/terms-and-conditions#general-terms-of-licensing
+Meat:
+	Mr.ChairMan (re-rigged/adapted)
+	https://sketchfab.com/3d-models/meat-53da7371b29c420796e1b1dde2a14a8b
+	https://creativecommons.org/licenses/by/4.0/
+Pep Secret:
+	Peent
+	https://sketchfab.com/3d-models/pep-secret-713f36b6533b4c3abbbd57d272175fd9
+	https://creativecommons.org/licenses/by/4.0/
+Car seat:
+	printable_models
+	https://free3d.com/3d-model/car-seat-v1--749396.html
+Vinesauce Animal Crossing:
+	Ryan Honey
+	https://sketchfab.com/3d-models/vinesauce-animal-crossing-4a9afafb826f4bf3a85e528da2a3c46a
+	https://creativecommons.org/licenses/by/4.0/
+Grimoire book:
+	Senor Gato
+	https://sketchfab.com/3d-models/grimoire-1abdb2765f904809a27e07cc9a472c24
+	https://creativecommons.org/licenses/by/4.0/
+Christmas Hat:
+	shedmon
+	https://sketchfab.com/3d-models/christmas-hat-b44d66b16ba543c9825af6f95bd3d678
+	https://creativecommons.org/licenses/by/4.0/
+Generic pizza:
+	TDG Soft Srilanka
+	https://free3d.com/3d-model/dominos-pizza-80809.html
+Reverse bear trap:
+	Yme L.
+	https://3dwarehouse.sketchup.com/model/9e028473e4bea7f6c2920de4c5efc2ee/SAW-1-Reverse-Bear-Trap
+	(No license given)
+Cardboard boxes:
+	yucelyilmaz
+	https://www.turbosquid.com/3d-models/cardboard-box-obj-free/940229
+	https://blog.turbosquid.com/turbosquid-3d-model-license/
+
+Snow textures:
+	https://3dtextures.me/2018/02/26/snow-001/
+	https://freepbr.com/materials/snow-packed-12/
+Treeline textures:
+	GOV3DStudio
+	https://www.gov3dstudio.com/horizontes-arboles-tipo-bosque-gratis/
+
+-----Audio-----
+
+Lightning:
+	2887679652
+	https://freesound.org/people/2887679652/sounds/135594/
+	https://creativecommons.org/licenses/by/3.0/
+Holy choir:
+	Breviceps
+	https://freesound.org/people/Breviceps/sounds/444491/
+	https://creativecommons.org/publicdomain/zero/1.0/
+Phone hangup:
+	dkcu
+	https://freesound.org/people/dkcu/sounds/498824/
+	https://creativecommons.org/publicdomain/zero/1.0/
+Saw TV edited together using:
+	ERH
+	https://freesound.org/people/ERH/sounds/30950/
+	https://creativecommons.org/licenses/by/3.0/
+	-----
+	pfranzen
+	https://freesound.org/people/pfranzen/sounds/328171/
+	https://creativecommons.org/licenses/by/3.0/
+Wood chop:
+	felix.blume
+	https://freesound.org/people/felix.blume/sounds/378879/
+	https://creativecommons.org/publicdomain/zero/1.0/
+Stone grind:
+	FreqMan
+	https://freesound.org/people/FreqMan/sounds/25846/
+	https://creativecommons.org/licenses/by/3.0/
+Tree fall:
+	fkurz (edited by me)
+	https://freesound.org/people/fkurz/sounds/169127/
+	https://creativecommons.org/publicdomain/zero/1.0/
+Phone ring:
+	Hockinfinger
+	https://freesound.org/people/Hockinfinger/sounds/274436/
+	https://creativecommons.org/publicdomain/zero/1.0/
+Meat eat:
+	InspectorJ
+	https://freesound.org/people/InspectorJ/sounds/412068/
+	https://creativecommons.org/licenses/by/3.0/
+Scribbling:
+	InspectorJ
+	https://freesound.org/people/InspectorJ/sounds/398271/
+	https://creativecommons.org/licenses/by/3.0/
+Pop rocket:
+	j1987
+	https://freesound.org/people/j1987/sounds/140726/
+	https://creativecommons.org/publicdomain/zero/1.0/
+Digging:
+	MorneDelport
+	https://freesound.org/people/MorneDelport/sounds/326407/
+	https://creativecommons.org/licenses/by-nc/3.0/
+Clown laugh:
+	Nanakisan
+	https://freesound.org/people/Nanakisan/sounds/253534/
+	https://creativecommons.org/licenses/by/3.0/
+Light echo:
+	ramiro1007 (edited by me)
+	https://freesound.org/people/ramiro1007/sounds/408230/
+	https://creativecommons.org/licenses/by-nc/3.0/
+Evil laugh:
+	The Baron
+	https://freesound.org/people/The%20Baron/sounds/98382/
+	https://creativecommons.org/licenses/by/3.0/
+Pachinko music:
+	Yubatake
+	https://opengameart.org/content/roll-up
+	https://creativecommons.org/licenses/by/3.0/
+
+

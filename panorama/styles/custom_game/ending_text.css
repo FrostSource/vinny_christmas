@@ -1,0 +1,152 @@
+.TextContainer
+{
+	width: 100%;
+	height: 100%;
+
+	margin: 0px;
+	border: 0px;
+
+	font-family: Raju;
+	font-size: 180px;
+	font-weight: semi-bold;
+
+    color: #666159;
+
+	border-style: solid;
+	border-color: blue;
+	border-width: 0px;
+}
+
+.Section
+{
+	width: 100%;
+	height: 100%;
+
+	margin: 0px;
+	border: 0px;
+	
+	flow-children: down;
+}
+
+.TextLine
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+
+	opacity: 1;
+	
+	border: 0px solid red;
+}
+
+.TextBox
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+	text-align: center;
+	
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 1s;
+}
+
+.TextBox Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+	text-align: center;
+}
+
+.TextBox Label
+{
+/*
+	text-align: center;
+	flow-children: right;
+*/	
+	/* HAS PIXEL TEARING BUG */
+	/* blur: gaussian(10); */
+	/* text-shadow: #ff000088 0px 0px 64px 64px; */
+}
+
+.TextBox Label.emphasis
+{
+	color: #000;
+}
+
+.ShowTitle #EndingTitle,
+{
+	opacity: 1;
+}
+.ShowAuthor #EndingAuthor,
+{
+	opacity: 1;
+}
+.ShowAKA #EndingAKA,
+{
+	opacity: 1;
+}
+.HideSection1 #EndingTitle,
+.HideSection1 #EndingAuthor,
+.HideSection1 #EndingAKA,
+{
+	opacity: 0;
+	transition-property: opacity; 
+	transition-duration: 2s;
+}
+
+.ShowNarration #Narration,
+{
+	opacity: 1;
+}
+.HideSection2 #Narration,
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 2s;
+}
+
+.ShowMadeIn #MadeIn,
+{
+	opacity: 1;
+}
+.ShowHadToLearn #HadToLearn,
+{
+	opacity: 1;
+}
+.ShowProjectRelease #ProjectRelease,
+{
+	opacity: 1;
+}
+.HideSection3 #MadeIn,
+.HideSection3 #HadToLearn,
+.HideSection3 #ProjectRelease,
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 2s;
+}
+
+.ShowEnjoyCredits #EnjoyCredits,
+{
+	opacity: 1;
+}
+.HideSection4 #EnjoyCredits,
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 2s;
+}
+
+.ShowThankYou #ThankYou,
+{
+	opacity: 1;
+}
+.HideSection5 #ThankYou,
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 2s;
+}
+

@@ -1,0 +1,739 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Plastic.Medium"
+							allowstatic = true
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "cylinder.vmat"
+								to = "materials/jean/dark_cables.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsJointList"
+				children = 
+				[
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone"
+						child_body = "Bone_001"
+						anchor_origin = [ -0.0, 9.999995, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_001"
+						child_body = "Bone_002"
+						anchor_origin = [ -0.0, 9.999997, -0.0 ]
+						anchor_angles = [ 0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_002"
+						child_body = "Bone_003"
+						anchor_origin = [ -0.000001, 10.000002, -0.0 ]
+						anchor_angles = [ 0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_003"
+						child_body = "Bone_004"
+						anchor_origin = [ -0.000001, 9.99999, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_004"
+						child_body = "Bone_005"
+						anchor_origin = [ -0.000001, 10.000004, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_005"
+						child_body = "Bone_006"
+						anchor_origin = [ -0.000001, 10.000004, -0.0 ]
+						anchor_angles = [ 0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_006"
+						child_body = "Bone_007"
+						anchor_origin = [ 0.0, 9.999985, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_007"
+						child_body = "Bone_008"
+						anchor_origin = [ -0.0, 10.000008, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_008"
+						child_body = "Bone_009"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_009"
+						child_body = "Bone_010"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ -0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_010"
+						child_body = "Bone_011"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_011"
+						child_body = "Bone_012"
+						anchor_origin = [ -0.000001, 9.999992, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_012"
+						child_body = "Bone_013"
+						anchor_origin = [ -0.000001, 9.999962, -0.0 ]
+						anchor_angles = [ 0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_013"
+						child_body = "Bone_014"
+						anchor_origin = [ -0.000001, 10.000015, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_014"
+						child_body = "Bone_015"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_015"
+						child_body = "Bone_016"
+						anchor_origin = [ -0.000001, 10.000015, -0.0 ]
+						anchor_angles = [ 0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_016"
+						child_body = "Bone_017"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ -0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_017"
+						child_body = "Bone_018"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_018"
+						child_body = "Bone_019"
+						anchor_origin = [ 0.0, 9.999985, -0.0 ]
+						anchor_angles = [ -0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_019"
+						child_body = "Bone_020"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ -0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_020"
+						child_body = "Bone_021"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_021"
+						child_body = "Bone_022"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_022"
+						child_body = "Bone_023"
+						anchor_origin = [ -0.0, 10.0, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_023"
+						child_body = "Bone_024"
+						anchor_origin = [ 0.0, 10.0, -0.0 ]
+						anchor_angles = [ -0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_024"
+						child_body = "Bone_025"
+						anchor_origin = [ -0.0, 9.999985, -0.0 ]
+						anchor_angles = [ -0.0, 90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_025"
+						child_body = "Bone_026"
+						anchor_origin = [ 0.0, 9.999939, -0.0 ]
+						anchor_angles = [ 0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+					{
+						_class = "PhysicsJointConical"
+						parent_body = "Bone_026"
+						child_body = "Bone_026_end"
+						anchor_origin = [ 0.00002, 10.000122, -0.0 ]
+						anchor_angles = [ -0.0, -90.0, -90.0 ]
+						collision_enabled = false
+						friction = 0.1
+						enable_swing_limit = true
+						swing_limit = 30.0
+						swing_offset_angle = [ 0.0, 0.0, 0.0 ]
+						enable_twist_limit = true
+						min_twist_angle = -15.0
+						max_twist_angle = 15.0
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_001"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_002"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_003"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_004"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_005"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_006"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_007"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_008"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_009"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_010"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_011"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_012"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_013"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_014"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_015"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_016"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_017"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_018"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_019"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_020"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_021"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_022"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_023"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_024"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_025"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_026"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = "Bone_026_end"
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ 0.0, 0.0, 0.0 ]
+						point1 = [ 0.0, 10.0, 0.0 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/ragdoll_rope/ragdoll_rope.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "jointed_physics_model"
+		primary_associated_entity = "prop_ragdoll"
+		anim_graph_name = ""
+	}
+}

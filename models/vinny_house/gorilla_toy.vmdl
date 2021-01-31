@@ -1,0 +1,103 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\vinny_house\\dmx\\gorilla_toy.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Plastic.Medium"
+							allowstatic = true
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.plastic"
+						collision_prop = "default"
+						origin = [ 0.036078, 0.214909, 4.905096 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.353555, 3.386496, 9.878134 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.plastic"
+						collision_prop = "default"
+						origin = [ -2.559746, 0.307201, 7.72455 ]
+						angles = [ -11.735765, 0.0, 0.0 ]
+						dimensions = [ 2.534844, 1.218604, 1.222804 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.plastic"
+						collision_prop = "default"
+						origin = [ 2.403307, 0.307201, 7.72455 ]
+						angles = [ -11.735764, -179.885742, 0.0 ]
+						dimensions = [ 2.534844, 1.218604, 1.222804 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.plastic"
+						collision_prop = "default"
+						origin = [ -3.754502, -0.632146, 8.681856 ]
+						angles = [ 45.438534, 99.208817, 92.66407 ]
+						dimensions = [ 3.498908, 1.218604, 1.222804 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "world.plastic"
+						collision_prop = "default"
+						origin = [ 3.748107, -0.632146, 8.681856 ]
+						angles = [ 45.43853, 81.863785, 92.66407 ]
+						dimensions = [ 3.498908, 1.218604, 1.222804 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

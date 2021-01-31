@@ -1,0 +1,109 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/subject_card.vcss_c" />
+    <include src="s2r://panorama/styles/language_shared.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="s2r://panorama/scripts/credits_text.vjs_c" />
+	</scripts>
+	<Panel class="MessageTitle">
+		<Panel class="SubjectText">
+			<Label id='line0' class="emphasis" text="Models" />
+		</Panel>
+		
+		<Panel class="SubjectText">
+			<Label id='line1' text="gagui" />
+			<Label id='line2' class="emphasis" text=" Christmas cookie" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line3' text="hellfa" />
+			<Label id='line4' class="emphasis" text=" Pickle Rick" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line5' text="IDALGAME" />
+			<Label id='line6' class="emphasis" text=" Christmas tree" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line7' text="koendg" />
+			<Label id='line8' class="emphasis" text=" Picolas Cage" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line9' text="Maria Cranberry" />
+			<Label id='line10' class="emphasis" text=" Christmas gifts" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line11' text="maxbugor" />
+			<Label id='line12' class="emphasis" text=" Flashlight" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line13' text="Mr.ChairMan" />
+			<Label id='line14' class="emphasis" text=" Meat" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line15' text="Peent" />
+			<Label id='line16' class="emphasis" text=" Pep Secret" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line17' text="printable_models" />
+			<Label id='line18' class="emphasis" text=" Jerma car seat" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line19' text="Ryan Honey" />
+			<Label id='line20' class="emphasis" text=" Vinesauce Animal Crossing" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line21' text="Senor Gato" />
+			<Label id='line22' class="emphasis" text=" Grimoire book" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line23' text="shedmon" />
+			<Label id='line24' class="emphasis" text=" Christmas hat" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line25' text="TDG Soft Srilanka" />
+			<Label id='line26' class="emphasis" text=" Generic pizza" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line27' text="Yme L." />
+			<Label id='line28' class="emphasis" text=" Reverse bear trap" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line29' text="yucelyilmaz" />
+			<Label id='line30' class="emphasis" text=" Cardboard boxes" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='blank' text="" />
+			<Label id='blank' class="emphasis" text="" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line31' text="freepbr.com" />
+			<Label id='line32' class="emphasis" text=" Snow texture" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line33' text="GOV3DStudio" />
+			<Label id='line34' class="emphasis" text=" Treeline textures" />
+		</Panel>
+	</Panel>
+</root>
+
+<!--
+gagui
+hellfa
+IDALGAME
+koendg
+Maria Cranberry
+Mr.ChairMan
+Peent
+Ryan Honey
+Senor Gato
+Yme L.
+yucelyilmaz
+
+3dtextures.me
+-->
+
+
+
+

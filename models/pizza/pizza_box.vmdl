@@ -1,0 +1,125 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Cardboard.Medium"
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "01 - default.vmat"
+								to = "models/pizza/materials/not_dominos_pizza.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.cardboard"
+						collision_prop = "default"
+						origin = [ 7.117279, -0.214265, 1.112077 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.117868, 15.975978, 2.132364 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.cardboard"
+						collision_prop = "default"
+						origin = [ -6.9163, -0.214265, 1.112077 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.117868, 15.975978, 2.132364 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.cardboard"
+						collision_prop = "default"
+						origin = [ 0.086819, 7.746777, 1.112077 ]
+						angles = [ 0.0, 90.0, 0.0 ]
+						dimensions = [ 0.117868, 14.119856, 2.132364 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.cardboard"
+						collision_prop = "default"
+						origin = [ 0.086819, -8.220516, 1.112077 ]
+						angles = [ 0.0, 90.0, 0.0 ]
+						dimensions = [ 0.117868, 14.119856, 2.132364 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.cardboard"
+						collision_prop = "default"
+						origin = [ 0.086819, -0.232155, 0.103366 ]
+						angles = [ 0.0, 90.0, 0.0 ]
+						dimensions = [ 16.094593, 14.119856, 0.213821 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/pizza/fbx/Pizza_separated.fbx"
+						import_scale = 10.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = 
+							[
+								"Pizza_3d_m_001",
+								"Pizza_3d_m",
+							]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

@@ -1,0 +1,234 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\meme_pictureframe\\dmx\\mesh\\meme_pictureframe_med_vert_sq.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "BreakPieceList"
+				children = 
+				[
+					{
+						_class = "BreakPieceExternal"
+						name = "frame_0"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 500.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props/interior_deco/interior_picture_medium_square_001a_break/frame_01.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						name = "piece1"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 500.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props/interior_deco/interior_picture_medium_square_001a_break/piece4.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						name = "piece2"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 500.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props/interior_deco/interior_picture_medium_square_001a_break/piece5.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						name = "piece3"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 200.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props/interior_deco/interior_picture_medium_square_001a_break/piece6.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						name = "back_4"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						collision_group = "default"
+						offset = [ 0.0, 0.0, 0.0 ]
+						fadetime = 500.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						model = "models/props/interior_deco/interior_picture_medium_square_001a_break/back_5.vmdl"
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = ""
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "ao_proxy_box"
+						game_keys = 
+						{
+							bonename = ""
+							dimensions = [ 2.30336, 36.1481, 32.2066 ]
+							offset_origin = [ 0.877945, -0.036714, 0.039317 ]
+							offset_angles = [ 0.0, 0.0, 0.0 ]
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = [  ]
+						use_global_default = false
+						global_default_material = ""
+					},
+					{
+						_class = "MaterialGroup"
+						name = "scottoelkers"
+						remaps = 
+						[
+							{
+								from = "materials/models/props/interior_deco/interior_pictures_001.vmat"
+								to = "models\\meme_pictureframe\\materials/scottoelkers.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "scoot"
+						remaps = 
+						[
+							{
+								from = "materials/models/props/interior_deco/interior_pictures_001.vmat"
+								to = "models\\meme_pictureframe\\materials/meme_scoot.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "bulkbogan"
+						remaps = 
+						[
+							{
+								from = "materials/models/props/interior_deco/interior_pictures_001.vmat"
+								to = "models\\meme_pictureframe\\materials/meme_bulkbogan.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "bee"
+						remaps = 
+						[
+							{
+								from = "materials/models/props/interior_deco/interior_pictures_001.vmat"
+								to = "models\\meme_pictureframe\\materials/meme_bee.vmat"
+							},
+						]
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.wood_pic_frame_med"
+						collision_prop = "default"
+						origin = [ 0.999321, -0.000454, 0.046612 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 2.03055, 36.089981, 32.04192 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.glass_pic_frame"
+						collision_prop = "default"
+						origin = [ 1.189071, 0.009923, 0.020026 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.512247, 28.0793, 24.081743 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

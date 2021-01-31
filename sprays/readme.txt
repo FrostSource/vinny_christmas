@@ -1,0 +1,1 @@
+These are no longer used. Ended up replacing foliage by hand for performance reasons.

@@ -1,0 +1,208 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+
+	"Phone.HangUpClick" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = 
+		[
+			"sounds/phone/hang_up_click_beep.vsnd",
+		]
+	}
+	"Phone.HangUpLoop" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1500.0
+		vsnd_files = 
+		[
+			"sounds/phone/hang_up_loop.vsnd",
+		]
+	}
+	"Phone.RingOnce" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1500.0
+		vsnd_files = 
+		[
+			"sounds/phone/ring_once.vsnd",
+		]
+	}
+	"Phone.RingLoop" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.7
+		volume_falloff_min = 5.0
+		volume_falloff_max = 800.0
+		vsnd_files = 
+		[
+			"sounds/phone/ring_loop.vsnd",
+		]
+	}
+	
+	"Phone.Quip.HL1Breathe" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/breathe1.vsnd"
+	}
+	"Phone.Quip.GmanBissing" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.6
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/gman_bissing.vsnd"
+	}
+	"Phone.Quip.HatsuneMiku" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/hatsunemiku.vsnd"
+	}
+	"Phone.Quip.JermaPunchedCar" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/jerma_punchedacar.vsnd"
+	}
+	"Phone.Quip.JermaRealiseUgly" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/jerma_realiseugly.vsnd"
+	}
+	"Phone.Quip.JermaScream" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/jerma_scream.vsnd"
+	}
+	"Phone.Quip.LimmyVinny" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/limmyvinny.vsnd"
+	}
+	"Phone.Quip.MmmMonkey" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/mmmmonkey.vsnd"
+	}
+	"Phone.Quip.MusicIndustryCode" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/music_industry_code2.vsnd"
+	}
+	"Phone.Quip.AssIsHeavy" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = 
+		[
+			"sounds/phone/quips/my_ass_is_heavy.vsnd",
+		]
+	}
+	"Phone.Quip.AssIsHeavy!" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/my_ass_is_heavy!.vsnd"
+	}
+	"Phone.Quip.UfoPorno" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/ufoporno.vsnd"
+	}
+	"Phone.Quip.FartMeme" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/fart_meme.vsnd"
+	}
+	"Phone.Quip.MarioHaha" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.1
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/mariohaha.vsnd"
+	}
+	"Phone.Quip.TommyJoker" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.6
+		volume_falloff_min = 0.0
+		volume_falloff_max = 90.0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = "sounds/phone/quips/tommy_joker.vsnd"
+	}
+	
+	
+}

@@ -1,0 +1,95 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	AmbientVinnyHouse.ExteriorLp = 
+	{
+		type = "hlvr_start_multi_quad"
+		soundevent_01 = "AmbientVinnyHouse.ExteriorLp_L"
+		soundevent_02 = "AmbientVinnyHouse.ExteriorLp_R"
+		soundevent_03 = "AmbientVinnyHouse.ExteriorLp_LS"
+		soundevent_04 = "AmbientVinnyHouse.ExteriorLp_RS"
+		rand_delay_min = 0.000000
+		rand_delay_max = 0.000000
+	}
+	AmbientVinnyHouse.ExteriorLp_L = 
+	{
+		base = "AmbientBase.OpenAirSkylightLp_L"
+		//vsnd_file_01 = "sounds/ambient/city/amb_tenement_open_air_quad_lp_01_l.vsnd"
+		vsnd_file_01 = "sounds/ambient/city/amb_proc_plant_ext_lp_01_l.vsnd"
+		vsnd_vol_01 = "0.73"
+		vsnd_vol_02 = "0.21"
+		vsnd_vol_03 = "0.32"
+		vsnd_vol_04 = "0.6"
+		volume = 0.900000
+	}
+	AmbientVinnyHouse.ExteriorLp_R = 
+	{
+		base = "AmbientVinnyHouse.ExteriorLp_L"
+		//vsnd_file_01 = "sounds/ambient/city/amb_tenement_open_air_quad_lp_01_r.vsnd"
+		vsnd_file_01 = "sounds/ambient/city/amb_proc_plant_ext_lp_01_r.vsnd"
+		rotation_angle = 315.000000
+	}
+	AmbientVinnyHouse.ExteriorLp_LS = 
+	{
+		base = "AmbientVinnyHouse.ExteriorLp_L"
+		//vsnd_file_01 = "sounds/ambient/city/amb_tenement_open_air_quad_lp_01_ls.vsnd"
+		vsnd_file_01 = "sounds/ambient/city/amb_proc_plant_ext_lp_01_ls.vsnd"
+		rotation_angle = 135.000000
+	}
+	AmbientVinnyHouse.ExteriorLp_RS = 
+	{
+		base = "AmbientVinnyHouse.ExteriorLp_L"
+		//vsnd_file_01 = "sounds/ambient/city/amb_tenement_open_air_quad_lp_01_rs.vsnd"
+		vsnd_file_01 = "sounds/ambient/city/amb_proc_plant_ext_lp_01_rs.vsnd"
+		rotation_angle = 225.000000
+	}
+	
+	// basement
+	
+	AmbientVinnyHouse.BasementLp01 = 
+	{
+		type = "hlvr_start_multi_quad"
+		soundevent_01 = "AmbientVinnyHouse.BasementLp01_L"
+		soundevent_02 = "AmbientVinnyHouse.BasementLp01_R"
+		soundevent_03 = "AmbientVinnyHouse.BasementLp01_LS"
+		soundevent_04 = "AmbientVinnyHouse.BasementLp01_RS"
+		rand_delay_min = -4.000000
+		rand_delay_max = 0.000000
+		global_volume_opvar_01 = "skylight_proximity_beacon"
+		remap_global_opvar_01_to_vol_min = 1.000000
+		remap_global_opvar_01_to_vol_max = 0.000000
+	}
+	AmbientVinnyHouse.BasementLp01_L = 
+	{
+		base = "AmbientBase.IntMainLp_L"
+		vsnd_file_01 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_01_l.vsnd"
+		vsnd_file_02 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_02_l.vsnd"
+		//vsnd_file_05 = ""
+		//vsnd_file_06 = ""
+		//vsnd_file_07 = ""
+		//vsnd_file_08 = ""
+		vsnd_vol_01 = "0.88"
+		vsnd_vol_02 = "0.15"
+		volume = 0.850000
+	}
+	AmbientVinnyHouse.BasementLp01_R = 
+	{
+		base = "AmbientVinnyHouse.BasementLp01_L"
+		vsnd_file_01 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_01_r.vsnd"
+		vsnd_file_02 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_02_r.vsnd"
+		rotation_angle = 315.000000
+	}
+	AmbientVinnyHouse.BasementLp01_LS = 
+	{
+		base = "AmbientVinnyHouse.BasementLp01_L"
+		vsnd_file_01 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_01_ls.vsnd"
+		vsnd_file_02 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_02_ls.vsnd"
+		rotation_angle = 135.000000
+	}
+	AmbientVinnyHouse.BasementLp01_RS = 
+	{
+		base = "AmbientVinnyHouse.BasementLp01_L"
+		vsnd_file_01 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_01_rs.vsnd"
+		vsnd_file_02 = "sounds/ambient/interior/amb_hotel_basement_quad_lp_02_rs.vsnd"
+		rotation_angle = 225.000000
+	}
+}

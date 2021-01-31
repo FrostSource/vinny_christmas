@@ -1,0 +1,111 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/subject_card.vcss_c" />
+    <include src="s2r://panorama/styles/language_shared.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="s2r://panorama/scripts/credits_text.vjs_c" />
+	</scripts>
+	<Panel class="MessageTitle">
+		<Panel class="SubjectText">
+			<Label id='line0' class="emphasis" text="Audio" />
+		</Panel>
+		
+		<Panel class="SubjectText">
+			<Label id='line1' text="2887679652" />
+			<Label id='line2' class="emphasis" text=" Lightning" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line3' text="Breviceps" />
+			<Label id='line4' class="emphasis" text=" Gnome holy choir" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line5' text="dkcu" />
+			<Label id='line6' class="emphasis" text=" Phone hangup" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line7' text="ERH" />
+			<Label id='line8' class="emphasis" text=" Saw TV (edited)" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line9' text="felix.blume" />
+			<Label id='line10' class="emphasis" text=" Wood chop" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line11' text="FreqMan" />
+			<Label id='line12' class="emphasis" text=" Stone grind" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line13' text="fkurz" />
+			<Label id='line14' class="emphasis" text=" Tree fall" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line15' text="Hockinfinger" />
+			<Label id='line16' class="emphasis" text=" Phone ring" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line17' text="InspectorJ" />
+			<Label id='line18' class="emphasis" text=" Eating 'munches'" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line19' text="InspectorJ" />
+			<Label id='line20' class="emphasis" text=" Scribbling" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line21' text="j1987" />
+			<Label id='line22' class="emphasis" text=" Pop rocket" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line23' text="MorneDelport" />
+			<Label id='line24' class="emphasis" text=" Digging" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line25' text="Nanakisan" />
+			<Label id='line26' class="emphasis" text=" Clown laugh" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line27' text="pfranzen" />
+			<Label id='line28' class="emphasis" text=" Saw TV (edited)" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line29' text="ramiro1007" />
+			<Label id='line30' class="emphasis" text=" Spotlight echo" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line31' text="The Baron" />
+			<Label id='line32' class="emphasis" text=" Evil laugh" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line33' text="Yubatake" />
+			<Label id='line34' class="emphasis" text=" Pachinko music" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='blank' text="" />
+			<Label id='blank' class="emphasis" text="" />
+		</Panel>
+		<Panel class="SubjectText">
+			<Label id='line35' class="emphasis" text="And of course Jerma for his beautiful voice" />
+		</Panel>
+	</Panel>
+</root>
+
+<!--
+2887679652
+Breviceps
+ERH
+felix.blume
+fkurz
+InspectorJ
+j1987
+Nanakisan
+pfranzen
+qubodup
+ramiro1007
+The Baron
+-->
+
+
+
+

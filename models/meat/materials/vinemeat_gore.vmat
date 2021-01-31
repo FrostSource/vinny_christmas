@@ -1,0 +1,63 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "vr_bloody_simple.vfx"
+
+	//---- Decals ----
+	F_SUPPORTS_DECALS 1
+
+	//---- Ambient Occlusion ----
+	TextureAmbientOcclusion "materials/default/default_ao.tga"
+
+	//---- Blood Material ----
+	g_bBloodUseUV2 "1"
+	g_flBloodMetalness "0.000"
+	g_flDecalSize "16.000"
+	g_flDecalTileFactor "1.000"
+	g_nDecalSlot "0"
+	g_nDecalSlots "2"
+	g_vBloodColor "[0.301961 0.000000 0.000000 0.000000]"
+	TextureBloodDecal "models/meat/materials/meat_gore_decal_blood.png"
+	TextureColorBlood "models/meat/materials/meat_blood_color.png"
+	TextureDecalIDMask "models/meat/materials/combine_grunt_vmat_g_tidmask_b6e34437.png"
+	TextureHeightDecal "materials/default/default_height.tga"
+	TextureNormalBlood "models/meat/materials/meat_blood_normal.png"
+	TextureRoughnessBlood "materials/default/default_rough.tga"
+
+	//---- Color ----
+	g_flModelTintAmount "1.000"
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	TextureColor "models/meat/materials/meat_color.png"
+
+	//---- Fade ----
+	g_flFadeExponent "1.000"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Lighting ----
+	g_flDirectionalLightmapMinZ "0.050"
+	g_flDirectionalLightmapStrength "1.000"
+
+	//---- Metalness ----
+	TextureMetalness "materials/default/default_metal.tga"
+
+	//---- Normal ----
+	TextureNormal "models/meat/materials/meat_normal.png"
+
+	//---- Roughness ----
+	TextureRoughness "materials/default/default_rough.tga"
+
+	//---- Texture Coordinates ----
+	g_nScaleTexCoordUByModelScaleAxis "0"
+	g_nScaleTexCoordVByModelScaleAxis "0"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	g_vTexCoordScrollSpeed "[0.000 0.000]"
+
+	SystemAttributes
+	{
+		PhysicsSurfaceProperties "prop.flesh_bloody"
+	}
+}

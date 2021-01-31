@@ -1,0 +1,155 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Wooden.Tiny"
+							allowstatic = true
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -3.97349, 4.74027, 0.0 ]
+							angles_left = [ 0.0, -34.203899, 0.0 ]
+							origin_right = [ -3.97349, -4.74027, 0.0 ]
+							angles_right = [ -0.0, 34.2039, 0.0 ]
+							max_distance = 5.0
+							finger_thumb = 0.471
+							finger_pinky = 0.54
+							finger_ring = 0.572
+							finger_middle = 0.553
+							finger_index = 0.635
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ -3.97349, 4.74027, 3.0 ]
+							extent_origin_min_left = [ -3.97349, 4.74027, -3.0 ]
+							extent_origin_right = [ -3.97349, -4.74027, 3.0 ]
+							extent_origin_min_right = [ -3.97349, -4.74027, -3.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -3.97349, -4.67284, 0.0 ]
+							angles_left = [ -0.0, 156.332001, 0.0 ]
+							origin_right = [ -3.97349, 4.67284, 0.0 ]
+							angles_right = [ 0.0, -156.332, 0.0 ]
+							max_distance = 5.0
+							finger_thumb = 0.471
+							finger_pinky = 0.54
+							finger_ring = 0.572
+							finger_middle = 0.553
+							finger_index = 0.635
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ -3.97349, -4.67284, 3.0 ]
+							extent_origin_min_left = [ -3.97349, -4.67284, -3.0 ]
+							extent_origin_right = [ -3.97349, 4.67284, 3.0 ]
+							extent_origin_min_right = [ -3.97349, 4.67284, -3.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "material #77.vmat"
+								to = "models/grimoire/materials/grimoire.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.book"
+						collision_prop = "default"
+						origin = [ -4.217746, -0.211855, -0.048912 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 2.394401, 6.72023, 8.961695 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/grimoire/fbx/Book_LP.FBX"
+						import_scale = 0.001
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

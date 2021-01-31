@@ -1,0 +1,52 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "vr_monitor.vfx"
+
+	//---- Animation ----
+	F_TEXTURE_ANIMATION 1
+
+	//---- Chromatic Abberation ----
+	g_flBlueShift "0.360"
+	g_flGreenShift "0.216"
+	g_flJitterSpeed "2.086"
+	g_flRedShift "0.360"
+	TextureJitterControl "materials/monitors/jitter_control.tga"
+
+	//---- Contrast ----
+	TextureContrastControl "materials/monitors/contrast_control.tga"
+
+	//---- Display ----
+	g_flFilmGrainStrength "0.669"
+	g_flTintScale "1.000"
+	g_vColorTint "[0.337255 0.352941 0.278431 1.000000]"
+	g_vScanlineTextureOffset "[0.000 0.000]"
+	ScanlineDistortion "materials/default/default_color.tga"
+	TextureColor "materials/monitors/4colors.tga"
+	TextureFilmGrain "materials/monitors/film_grain_control.tga"
+	TextureScanlines "materials/monitors/scanline_color.tga"
+	TextureVignette "materials/monitors/vignette_control.tga"
+
+	//---- Specular ----
+	g_flReflectionStrength "0.375"
+	g_fSpecularRoughness "0.125"
+	SpecularDirt "materials/monitors/crt_monitor_refl.tga"
+	SpecularDistortion "materials/monitors/crt_monitor_normal.tga"
+
+	//---- Texture Animation ----
+	g_flAnimationFrame "0.000"
+	g_flAnimationTimeOffset "0.150"
+	g_flAnimationTimePerFrame "5.000"
+	g_nNumAnimationCells "6"
+	g_vAnimationGrid "[6 3]"
+
+	//---- VSYNC ----
+	g_flVSYNCJumpScale "0.432"
+	VSyncControl "materials/monitors/vsync_control.tga"
+
+	SystemAttributes
+	{
+		PhysicsSurfaceProperties "prop.glass"
+	}
+}

@@ -1,0 +1,233 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Item.Small"
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "0"
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "ao_proxy_box"
+						game_keys = 
+						{
+							bonename = ""
+							dimensions = [ 1.44794, 3.09294, 4.36949 ]
+							offset_origin = [ -0.013844, -0.086724, 2.23459 ]
+							offset_angles = [ 0.0, 0.0, 0.0 ]
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = true
+							parent_bone = ""
+							origin_left = [ -0.81575, 3.09035, 0.0 ]
+							angles_left = [ 0.0, -16.4662, 0.0 ]
+							origin_right = [ -0.81575, -3.09035, 0.0 ]
+							angles_right = [ -0.0, 16.4662, 0.0 ]
+							max_distance = 3.0
+							finger_thumb = 1.0
+							finger_pinky = 0.559
+							finger_ring = 0.559
+							finger_middle = 0.738
+							finger_index = 0.833
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ -0.81575, 3.09035, 1.96088 ]
+							extent_origin_min_left = [ -0.81575, 3.09035, 0.0 ]
+							extent_origin_right = [ -0.81575, -3.09035, 1.96088 ]
+							extent_origin_min_right = [ -0.81575, -3.09035, 0.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = true
+							parent_bone = ""
+							origin_left = [ 0.848791, -3.24982, 1.03767 ]
+							angles_left = [ -0.0, 163.156998, 0.0 ]
+							origin_right = [ 0.848791, 3.24982, 1.03767 ]
+							angles_right = [ -0.0, -163.157, 0.0 ]
+							max_distance = 3.0
+							finger_thumb = 0.946
+							finger_pinky = 0.559
+							finger_ring = 0.559
+							finger_middle = 0.738
+							finger_index = 0.767
+							has_extent = true
+							show_extent_helper = false
+							extent_origin_left = [ 0.848791, -3.24982, 2.27205 ]
+							extent_origin_min_left = [ 0.848791, -3.24982, 0.5 ]
+							extent_origin_right = [ 0.848791, 3.24982, 2.27205 ]
+							extent_origin_min_right = [ 0.848791, 3.24982, 0.5 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "handpose_data"
+						game_keys = 
+						{
+							handpose_bone = ""
+							handpose_model = "models/props/max/handposes/handpose_grabpole.vmdl"
+							allow_procedural_handpose = false
+							global_pose_template = false
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "vinnyvillager5.vmat"
+								to = "models/vinesauce_animal_crossing/materials/vinny_prop.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeSphere"
+						name = "head"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						radius = 0.853633
+						center = [ 0.0, 0.0, 3.63965 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "larm"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						radius = 0.168751
+						point0 = [ 0.0, 1.767717, 2.54075 ]
+						point1 = [ 0.0, 0.517383, 2.540747 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "rarm"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						radius = 0.168751
+						point0 = [ 0.0, -1.78904, 2.55434 ]
+						point1 = [ 0.0, -0.572867, 2.554337 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						origin = [ 0.122944, -0.284337, 0.091572 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.667224, 0.398228, 0.181444 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "body"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						radius = 0.566528
+						point0 = [ 0.0, 0.0, 0.580043 ]
+						point1 = [ 0.0, 0.0, 2.48064 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						origin = [ 0.122944, 0.286891, 0.091572 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 0.667224, 0.398228, 0.181444 ]
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/vinesauce_animal_crossing/fbx/vinny_char.fbx"
+						import_scale = 10.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

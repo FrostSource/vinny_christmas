@@ -1,0 +1,57 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/ending_text.vcss_c" />
+    <include src="s2r://panorama/styles/language_shared.vcss_c" />
+	</styles>
+
+	<Panel class="TextContainer">
+	
+		<Panel class="TextLine" id="Section1">
+			<Panel class="TextBox" id="EndingTitle">
+				<Label class="emphasis" text="Vinny Almost Misses Christmas" />
+			</Panel>
+			<Panel class="TextBox" id="EndingAuthor">
+				<Label text="The map that missed Christmas" />
+			</Panel>
+			<Panel class="TextBox" id="EndingAKA">
+				<Label text="by Devin (FrostEP) Cháte" />
+			</Panel>
+		</Panel>
+		
+		<Panel class="TextLine" id="Section2">
+			<Panel class="TextBox" id="Narration">
+				<Label class="emphasis" text="Narration by Tim Raby" />
+				<Label text="" />
+			</Panel>
+		</Panel>
+		
+		<Panel class="TextLine" id="Section3">
+			<Panel class="TextBox" id="MadeIn">
+				<Label class="emphasis" text="Made with love and energy drinks" />
+			</Panel>
+			<Panel class="TextBox" id="HadToLearn">
+				<Label text="I hope you enjoyed my very first Half-Life map" />
+			</Panel>
+			<Panel class="TextBox" id="ProjectRelease">
+				<Label text="The entire project will be released\nAlong with the custom backpack system\nFor anyone to look through and use" />
+			</Panel>
+		</Panel>
+		
+		<Panel class="TextLine" id="Section4">
+			<Panel class="TextBox" id="EnjoyCredits">
+				<Label class="emphasis" text="Now enjoy the giant list of credits" />
+			</Panel>
+		</Panel>
+		
+		<Panel class="TextLine" id="Section5">
+			<Panel class="TextBox" id="ThankYou">
+				<Label class="emphasis" text="Merry Christmas" />
+				<Label text=" and thank you for all the content Vinny" />
+			</Panel>
+		</Panel>
+		
+	</Panel>
+</root>
+
+

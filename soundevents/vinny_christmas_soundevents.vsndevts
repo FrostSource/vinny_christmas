@@ -1,0 +1,1209 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+
+	"Addon.MeatGrowl" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 100.0
+		volume_falloff_max = 800.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/meat/meat-01.vsnd",
+			"sounds/meat/meat-02.vsnd",
+			"sounds/meat/meat-03.vsnd",
+			"sounds/meat/meat-04.vsnd",
+			"sounds/meat/meat-05.vsnd",
+			"sounds/meat/meat-06.vsnd",
+			"sounds/meat/meat-07.vsnd",
+		]
+	}
+	
+	"Addon.MeatGrowlSomber" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 100.0
+		volume_falloff_max = 800.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/meat/meat-01.vsnd",
+			"sounds/meat/meat-04.vsnd",
+		]
+	}
+	
+	"Addon.Munch" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 100.0
+		volume_falloff_max = 400.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/meat/munch_01.vsnd",
+			"sounds/meat/munch_02.vsnd"
+		]
+	}
+	
+	"Addon.GnomeVox" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.1
+		volume_falloff_min = 20.0
+		volume_falloff_max = 90.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 5
+		spread_max = 10
+		vsnd_files = 
+		[
+			"sounds/gnome/gnome_vox_1.vsnd",
+			"sounds/gnome/gnome_vox_2.vsnd",
+			"sounds/gnome/gnome_vox_3.vsnd",
+			"sounds/gnome/gnome_vox_4.vsnd",
+			"sounds/gnome/gnome_vox_5.vsnd",
+		]
+	}
+	
+	"Addon.TreeFall" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 200.0
+		volume_falloff_max = 1500.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/treechop/tree_fall.vsnd"
+		]
+	}
+	
+	"Addon.LightningStrike" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 500.0
+		volume_falloff_max = 3000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/scary/lightning_strike.vsnd"
+		]
+	}
+	
+	"Addon.ClownLaugh" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.5
+		volume_falloff_min = 20.0
+		volume_falloff_max = 700.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 5
+		spread_max = 10
+		vsnd_files = 
+		[
+			"sounds/scary/clown_laugh.vsnd"
+		]
+	}
+	
+	"Addon.EvilLaugh" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 20.0
+		volume_falloff_max = 500.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 5
+		spread_max = 20
+		vsnd_files = 
+		[
+			"sounds/scary/evil_laugh.vsnd"
+		]
+	}
+	
+	"Addon.WoodChop" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.6
+		volume_falloff_min = 50.0
+		volume_falloff_max = 1000.0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/treechop/wood_chop_03.vsnd",
+			"sounds/treechop/wood_chop_04.vsnd",
+			"sounds/treechop/wood_chop_05.vsnd",
+			"sounds/treechop/wood_chop_07.vsnd",
+			"sounds/treechop/wood_chop_08.vsnd"
+		]
+	}
+	
+	"Addon.ScientistVox" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 1.0
+		volume_falloff_max = 150.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 0
+		vsnd_files = 
+		[
+			"sounds/scientist_toy/scientist_vox_1.vsnd",
+			"sounds/scientist_toy/scientist_vox_2.vsnd",
+			"sounds/scientist_toy/scientist_vox_3.vsnd",
+			"sounds/scientist_toy/scientist_vox_4.vsnd",
+			"sounds/scientist_toy/scientist_vox_5.vsnd",
+			"sounds/scientist_toy/scientist_vox_6.vsnd",
+			"sounds/scientist_toy/scientist_vox_7.vsnd",
+			"sounds/scientist_toy/scientist_vox_8.vsnd",
+			"sounds/scientist_toy/scientist_vox_9.vsnd",
+			"sounds/scientist_toy/scientist_vox_10.vsnd",
+			"sounds/scientist_toy/scientist_vox_11.vsnd",
+			"sounds/scientist_toy/scientist_vox_12.vsnd",
+			"sounds/scientist_toy/scientist_vox_13.vsnd",
+			"sounds/scientist_toy/scientist_vox_14.vsnd",
+			"sounds/scientist_toy/scientist_vox_15.vsnd",
+			"sounds/scientist_toy/scientist_vox_16.vsnd",
+			"sounds/scientist_toy/scientist_vox_17.vsnd",
+			"sounds/scientist_toy/scientist_vox_18.vsnd",
+			"sounds/scientist_toy/scientist_vox_19.vsnd",
+		]
+	}
+	
+	"Addon.ChristmasSpecial" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 20.0
+		volume_falloff_max = 230.0
+		volume_fade_out = 4
+		volume_fade_in = 1
+		spread_min = 30
+		spread_max = 80
+		vsnd_files = 
+		[
+			"sounds/tv/christmas_special.vsnd",
+		]
+	}
+	
+	"Addon.LightOnEcho" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 5
+		volume_falloff_min = 100.0
+		volume_falloff_max = 2700.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/scary/light_on_echo.vsnd",
+		]
+	}
+	
+	"Addon.PlayerCaptured" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 70.0
+		volume_falloff_max = 2700.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/misc/player_captured.vsnd",
+		]
+	}
+	
+	"Addon.TvTurnOn" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.4
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/tv/tv_turn_on.vsnd",
+		]
+	}
+	
+	"Addon.TvTurnOff" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/tv/tv_turn_off.vsnd",
+		]
+	}
+	
+	"Addon.TvHumLoop" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.1
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0.5
+		volume_fade_in = 0.5
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/tv/tv_hum_loop.vsnd",
+		]
+	}
+	
+	"Addon.Rocket" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 70.0
+		volume_falloff_max = 2500.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/misc/rocket.vsnd",
+		]
+	}
+	
+	"Addon.HolyChoir" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 70.0
+		volume_falloff_max = 2000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 30
+		spread_max = 150
+		vsnd_files = 
+		[
+			"sounds/misc/holy_choir.vsnd",
+		]
+	}
+	
+	Addon.RatSqueal = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 3000.0
+		vsnd_files = 
+		[
+			"sounds/scary/rat_screech.vsnd",
+			//"sounds/world/critters/rats/rat_die_01.vsnd",
+			//"sounds/world/critters/rats/rat_die_02.vsnd",
+			//"sounds/world/critters/rats/rat_die_03.vsnd",
+			//"sounds/world/critters/rats/rat_die_04.vsnd",
+			//"sounds/world/critters/rats/rat_die_04.vsnd",
+		]
+	}
+	
+	Addon.Snark.Deploy = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1500.0
+		vsnd_files = 
+		[
+			"sounds/snark/sqk_deploy1.vsnd",
+		]
+	}
+	Addon.Snark.Hunt = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1500.0
+		vsnd_files = 
+		[
+			"sounds/snark/sqk_hunt1.vsnd",
+			"sounds/snark/sqk_hunt2.vsnd",
+			"sounds/snark/sqk_hunt3.vsnd",
+		]
+	}
+	Addon.Snark.Blast = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 100.0
+		volume_falloff_max = 1500.0
+		vsnd_files = 
+		[
+			"sounds/snark/sqk_blast1.vsnd",
+		]
+	}
+	
+	Addon.WallGrindLp = 
+	{
+		type = "hlvr_default_3d"
+		volume = 5
+		volume_falloff_min = 0.0
+		volume_falloff_max = 300.0
+		volume_fade_in = 2
+		//spread_min = 0
+		//spread_max = 3
+		vsnd_files = "sounds/scary/stone_grind_lp_loud.vsnd"
+		
+	}
+	Addon.MultiTest = 
+	{
+		type = "hlvr_start_multi_aabb"
+		soundevent_01 = "Addon.WallGrindLp"
+		use_01 = 1.000000
+	}
+	
+	Addon.DirtDig = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.3
+		volume_falloff_min = 5.0
+		volume_falloff_max = 100.0
+		vsnd_files = 
+		[
+			"sounds/dig/dig01.vsnd",
+			"sounds/dig/dig02.vsnd",
+			"sounds/dig/dig03.vsnd",
+			"sounds/dig/dig04.vsnd",
+		]
+	}
+	
+	"Addon.ChristmasToyDie" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 1.0
+		volume_falloff_max = 150.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 5
+		spread_max = 10
+		vsnd_files = 
+		[
+			"sounds/misc/christmas_toy_die.vsnd",
+		]
+	}
+	
+	Addon.Screee = 
+	{
+		type = "hlvr_default_3d"
+		volume = 4
+		volume_falloff_min = 10.0
+		volume_falloff_max = 450.0
+		volume_fade_out = 0.5
+		volume_fade_in = 1
+		vsnd_files = 
+		[
+			"sounds/scary/screee.vsnd",
+		]
+	}
+	Addon.ScreeeEnd = 
+	{
+		type = "hlvr_default_3d"
+		volume = 3.5
+		volume_falloff_min = 15.0
+		volume_falloff_max = 500.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		vsnd_files = 
+		[
+			"sounds/scary/screee_end.vsnd",
+		]
+	}
+	
+	Addon.NedryAhAhAh = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 40.0
+		volume_falloff_max = 200.0
+		vsnd_files = 
+		[
+			"sounds/misc/nedry_ahahah.vsnd",
+		]
+	}
+	
+	Addon.ReviverRunLoop = 
+	{
+		type = "hlvr_rand_parent"
+		random_soundevent_01_name = "Headcrab_Reviver.Step_Run_Manual_Parent"
+		random_soundevent_01_timer_min = 0.100000
+		random_soundevent_01_timer_max = 0.140000
+	}
+	
+	Addon.Music.RollUp = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 40.0
+		volume_falloff_max = 500.0
+		vsnd_files = 
+		[
+			"sounds/music/RollUp.vsnd",
+		]
+	}
+	Addon.Music.RollUpWindDown = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 40.0
+		volume_falloff_max = 500.0
+		vsnd_files = 
+		[
+			"sounds/music/RollUpWindDown.vsnd",
+		]
+	}
+	
+	"Addon.Music.MorningMagic" =
+	{
+		type = "hlvr_music_2d"
+		use_combat_music_convar = 1
+		volume_fade_in = 1
+		volume_fade_out = 1
+		volume = 0.4
+		track = "main"
+		priority = 2
+		vsnd_files = "sounds/music/morning_magic.vsnd"
+	}
+	"Addon.Music.DeckTheHalls" =
+	{
+		type = "hlvr_music_2d"
+		use_combat_music_convar = 1
+		volume_fade_in = 5
+		volume_fade_out = 5
+		volume = 0.2
+		track = "main"
+		priority = 2
+		vsnd_files = "sounds/music/deck_the_halls.vsnd"
+	}
+	
+	Addon.Null =
+	{
+		type = "hlvr_default_3d"
+		vsnd_files = "sounds/misc/silence.vsnd"
+	}
+	
+	// death sounds
+	// PlayerVO_DeathWithRus
+	vo.05_99003 = { base = "Addon.Null" }
+	vo.05_99004 = { base = "Addon.Null" }
+	vo.05_99005 = { base = "Addon.Null" }
+	vo.05_99006 = { base = "Addon.Null" }
+	// PlayerVO_Death
+	vo.01_20000 = { base = "Addon.Null" }
+	vo.01_12754 = { base = "Addon.Null" }
+	vo.01_12755 = { base = "Addon.Null" }
+	vo.01_12756 = { base = "Addon.Null" }
+	vo.01_12769 = { base = "Addon.Null" }
+	vo.01_12770 = { base = "Addon.Null" }
+	vo.01_12771 = { base = "Addon.Null" }
+	vo.01_12774 = { base = "Addon.Null" }
+	vo.05_02045 = { base = "Addon.Null" }
+	// PlayerVO_Pain
+	vo.01_00001 = { base = "Addon.Null" }
+	vo.01_00002 = { base = "Addon.Null" }
+	vo.01_00003 = { base = "Addon.Null" }
+	vo.01_00004 = { base = "Addon.Null" }
+	vo.01_00005 = { base = "Addon.Null" }
+	vo.01_00006 = { base = "Addon.Null" }
+	vo.01_00007 = { base = "Addon.Null" }
+	vo.01_00008 = { base = "Addon.Null" }
+	vo.01_00009 = { base = "Addon.Null" }
+	vo.01_00010 = { base = "Addon.Null" }
+	vo.01_00011 = { base = "Addon.Null" }
+	vo.01_00012 = { base = "Addon.Null" }
+	vo.01_00013 = { base = "Addon.Null" }
+	// Pistol NotInCombat
+	//PlayerAmmoThreeLeft
+	vo.01_70649 = { base = "Addon.Null" }
+	vo.01_70653 = { base = "Addon.Null" }
+	vo.01_70654 = { base = "Addon.Null" }
+	vo.01_70655 = { base = "Addon.Null" }
+	vo.01_70657 = { base = "Addon.Null" }
+	vo.01_71065 = { base = "Addon.Null" }
+	vo.01_71067 = { base = "Addon.Null" }
+	vo.01_71069 = { base = "Addon.Null" }
+	vo.01_20209 = { base = "Addon.Null" }
+	vo.01_20199 = { base = "Addon.Null" }
+	vo.01_71055 = { base = "Addon.Null" }
+	vo.01_71063 = { base = "Addon.Null" }
+	vo.01_71071 = { base = "Addon.Null" }
+	vo.01_20207 = { base = "Addon.Null" }
+	//PlayerAmmoLast
+	vo.01_20225 = { base = "Addon.Null" }
+	vo.01_70672 = { base = "Addon.Null" }
+	vo.01_70664 = { base = "Addon.Null" }
+	vo.01_70835 = { base = "Addon.Null" }
+	vo.01_70838 = { base = "Addon.Null" }
+	vo.01_20229 = { base = "Addon.Null" }
+	vo.01_70666 = { base = "Addon.Null" }
+	vo.01_70671 = { base = "Addon.Null" }
+	vo.01_70677 = { base = "Addon.Null" }
+	vo.01_70825 = { base = "Addon.Null" }
+	vo.01_70829 = { base = "Addon.Null" }
+	vo.01_70834 = { base = "Addon.Null" }
+	vo.01_70665 = { base = "Addon.Null" }
+	vo.01_70669 = { base = "Addon.Null" }
+	//PlayerAmmoEmpty
+	vo.01_20259 = { base = "Addon.Null" }
+	vo.01_20269 = { base = "Addon.Null" }
+	vo.01_20249 = { base = "Addon.Null" }
+	vo.01_20255 = { base = "Addon.Null" }
+	vo.01_20263 = { base = "Addon.Null" }
+	vo.01_20267 = { base = "Addon.Null" }
+	vo.01_70840 = { base = "Addon.Null" }
+	vo.01_70846 = { base = "Addon.Null" }
+	vo.01_70849 = { base = "Addon.Null" }
+	vo.01_70854 = { base = "Addon.Null" }
+	vo.01_20257 = { base = "Addon.Null" }
+	vo.01_20261 = { base = "Addon.Null" }
+	vo.01_70858 = { base = "Addon.Null" }
+	// Pistol InCombat
+	// PlayerAmmoThreeLeft
+	vo.01_20181 = { base = "Addon.Null" }
+	vo.01_20183 = { base = "Addon.Null" }
+	vo.01_20185 = { base = "Addon.Null" }
+	vo.01_20179 = { base = "Addon.Null" }
+	vo.01_20187 = { base = "Addon.Null" }
+	vo.01_20189 = { base = "Addon.Null" }
+	vo.01_20191 = { base = "Addon.Null" }
+	vo.01_20193 = { base = "Addon.Null" }
+	vo.01_20195 = { base = "Addon.Null" }
+	vo.01_20197 = { base = "Addon.Null" }
+	// PlayerAmmoLast
+	vo.01_70659 = { base = "Addon.Null" }
+	vo.01_20223 = { base = "Addon.Null" }
+	vo.01_20227 = { base = "Addon.Null" }
+	vo.01_70660 = { base = "Addon.Null" }
+	vo.01_70661 = { base = "Addon.Null" }
+	vo.01_70819 = { base = "Addon.Null" }
+	vo.01_70820 = { base = "Addon.Null" }
+	vo.01_70823 = { base = "Addon.Null" }
+	vo.01_70824 = { base = "Addon.Null" }
+	vo.01_70826 = { base = "Addon.Null" }
+	vo.01_70827 = { base = "Addon.Null" }
+	vo.01_70832 = { base = "Addon.Null" }
+	vo.01_70662 = { base = "Addon.Null" }
+	vo.01_70663 = { base = "Addon.Null" }
+	// PlayerAmmoEmpty
+	vo.01_20239 = { base = "Addon.Null" }
+	vo.01_20241 = { base = "Addon.Null" }
+	vo.01_20233 = { base = "Addon.Null" }
+	vo.01_20235 = { base = "Addon.Null" }
+	vo.01_20245 = { base = "Addon.Null" }
+	vo.01_20249 = { base = "Addon.Null" }
+	vo.01_20251 = { base = "Addon.Null" }
+	vo.01_20231 = { base = "Addon.Null" }
+	vo.01_20247 = { base = "Addon.Null" }
+	
+	//combine mentioning alyx
+	vo.combine.grunt.announceattack_alyx_05 = {	base = "vo.combine.grunt.announceattack_05" }
+	vo.combine.grunt.announceattack_alyx_06 = {	base = "vo.combine.grunt.announceattack_06" }
+	vo.combine.grunt.announceattack_alyx_07 = {	base = "vo.combine.grunt.announceattack_07" }
+	vo.combine.grunt.announceattack_alyx_08 = {	base = "vo.combine.grunt.announceattack_08" }
+	vo.combine.grunt.announceattack_alyx_09 = {	base = "vo.combine.grunt.announceattack_09" }
+	vo.combine.grunt.announceattack_alyx_11 = {	base = "vo.combine.grunt.announceattack_11" }
+	vo.combine.grunt.announcekill_player_03 = {	base = "vo.combine.grunt.announcekill_03" }
+	vo.combine.grunt.announcekill_player_04 = {	base = "vo.combine.grunt.announcekill_04" }
+	vo.combine.grunt.announcekill_player_05 = {	base = "vo.combine.grunt.announcekill_05" }
+	vo.combine.grunt.announcekill_player_06 = {	base = "vo.combine.grunt.announcekill_06" }
+	vo.combine.grunt.announcekill_player_09 = {	base = "vo.combine.grunt.announcekill_09" }
+	
+	Addon.Vortigese09 = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.5
+		volume_falloff_min = 300.0
+		volume_falloff_max = 1000.0
+		vsnd_files = 
+		[
+			"sounds/misc/Vortigese09.vsnd",
+		]
+	}
+	Addon.Scribble = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.6
+		volume_falloff_min = 10.0
+		volume_falloff_max = 100.0
+		vsnd_files = 
+		[
+			"sounds/misc/scribble_01.vsnd",
+			"sounds/misc/scribble_02.vsnd",
+			"sounds/misc/scribble_03.vsnd",
+			"sounds/misc/scribble_04.vsnd",
+		]
+	}
+	Addon.Speen = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.3
+		volume_falloff_min = 10.0
+		volume_falloff_max = 800.0
+		vsnd_files = 
+		[
+			"sounds/misc/speen.vsnd",
+		]
+	}
+	Addon.HoHoHo_04 = 
+	{
+		type = "hlvr_default_3d"
+		volume = 3.2
+		volume_falloff_min = 10.0
+		volume_falloff_max = 800.0
+		vsnd_files = 
+		[
+			"sounds/misc/hohoho_04.vsnd",
+		]
+	}
+	Addon.HoHoHo_Ominous = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 50.0
+		volume_falloff_max = 2000.0
+		vsnd_files = 
+		[
+			"sounds/misc/hohoho_ominous.vsnd",
+		]
+	}
+	Addon.MerryChristmasSanta = 
+	{
+		type = "hlvr_default_3d"
+		volume = 4
+		volume_falloff_min = 50.0
+		volume_falloff_max = 2000.0
+		vsnd_files = 
+		[
+			"sounds/misc/merry_christmas_01.vsnd",
+		]
+	}
+	Addon.MilkPour = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 0.0
+		volume_falloff_max = 200.0
+		vsnd_files = 
+		[
+			"sounds/misc/milk_pour.vsnd",
+		]
+	}
+	Addon.CarEngine = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 600
+		volume_falloff_max = 1300
+		vsnd_files = 
+		[
+			"sounds/test/sa_test_engine.vsnd",
+		]
+	}
+	
+	Addon.FleshBurn =
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		volume_falloff_min = 70
+		volume_falloff_max = 200
+		vsnd_files = 
+		[
+			"sounds/player/pl_burnpain1.vsnd",
+			"sounds/player/pl_burnpain2.vsnd",
+			"sounds/player/pl_burnpain3.vsnd",
+		]
+	}
+	
+	//overwritten
+	AmbientCreature.FliesBuzzingPositionalChild = 
+	{
+		base = "AmbientCreature.FliesBuzzingChild"
+		volume = 0.500000
+		volume_falloff_min = 10.000000
+		volume_falloff_max = 64.000000
+		random_pos_center_select = 1.000000
+		unconstrained_target = 1.000000
+		rand_radius_min = 1.000000
+		rand_radius_max = 24.000000
+		max_audible_distance = 100
+		enable_debug_radius = 0.000000
+		debug_radius_max = 50
+	}
+	
+	
+	
+	
+	"Addon.Music.Saw_Music_1" =
+	{
+		type = "hlvr_music_2d"
+		use_combat_music_convar = 1
+		volume_fade_in = 4
+		volume_fade_out = 0.5
+		volume = 0.55
+		track = "main"
+		priority = 1
+		vsnd_files = "sounds/jerma_saw/saw_music_1.vsnd"
+	}
+	"Addon.Music.Saw_Music_2" =
+	{
+		type = "hlvr_music_2d"
+		use_combat_music_convar = 1
+		volume_fade_in = 0.2
+		volume_fade_out = 4
+		volume = 0.55
+		track = "main"
+		priority = 1
+		vsnd_files = "sounds/jerma_saw/saw_music_2.vsnd"
+	}
+	"Addon.Music.Meat_Dead" =
+	{
+		type = "hlvr_music_2d"
+		volume_fade_in = 0
+		volume_fade_out = 4
+		volume = 1.5
+		track = "main"
+		priority = 1
+		vsnd_files = "sounds/jerma_saw/meat_dead.vsnd"
+	}
+	"Addon.JermaSaw_CandyCrush" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_candy_crush.vsnd"
+	}
+	"Addon.JermaSaw_DeliveryOfSharp" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_delivery_of_sharp.vsnd"
+	}
+	
+	"Addon.JermaSaw_DeliveryOfSharp_Reverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_delivery_of_sharp_reverb.vsnd"
+	}
+	"Addon.JermaSaw_DontDoThat" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_dont_do_that.vsnd"
+	}
+	"Addon.JermaSaw_DontNeedToSee" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_dont_need_to_see.vsnd"
+	}
+	"Addon.JermaSaw_FailedAttempts" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.4
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_failed_attempts.vsnd"
+	}
+	"Addon.JermaSaw_FriendTiedUp" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_friend_tied_up.vsnd"
+	}
+	"Addon.JermaSaw_GetOutOfRoom" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_get_out_of_room.vsnd"
+	}
+	"Addon.JermaSaw_Giberish" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_giberish.vsnd"
+	}
+	"Addon.JermaSaw_Giberish_Reverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_giberish_reverb.vsnd"
+	}
+	"Addon.JermaSaw_GlowInDark" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_glow_in_dark.vsnd"
+	}
+	"Addon.JermaSaw_GlowInDarkReverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_glow_in_dark_reverb.vsnd"
+	}
+	"Addon.JermaSaw_GoodAtMakingGames" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_good_at_making_games.vsnd"
+	}
+	"Addon.JermaSaw_GoodAtMakingGames_Reverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_good_at_making_games_reverb.vsnd"
+	}
+	"Addon.JermaSaw_GunShootGuy" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_gun_shoot_guy.vsnd"
+	}
+	"Addon.JermaSaw_ItsMeSaw" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_its_me_saw.vsnd"
+	}
+	"Addon.JermaSaw_LetMeStopYou" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_let_me_stop_you.vsnd"
+	}
+	"Addon.JermaSaw_MacularDegeneration" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_macular_degeneration.vsnd"
+	}
+	"Addon.JermaSaw_MadeYourChoice" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_made_your_choice.vsnd"
+	}
+	"Addon.JermaSaw_MadeYourChoiceReverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_made_your_choice_reverb.vsnd"
+	}
+	"Addon.JermaSaw_No" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_no.vsnd"
+	}
+	"Addon.JermaSaw_PhotoOfMe" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_photo_of_me.vsnd"
+	}
+	"Addon.JermaSaw_Snowman" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_snowman.vsnd"
+	}
+	"Addon.JermaSaw_Sudoku" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_sudoku.vsnd"
+	}
+	"Addon.JermaSaw_ThisGuysMad" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_this_guys_mad.vsnd"
+	}
+	"Addon.JermaSaw_TooManySweets" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_too_many_sweets.vsnd"
+	}
+	"Addon.JermaSaw_TooManySweets_Reverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_too_many_sweets_reverb.vsnd"
+	}
+	"Addon.JermaSaw_UsePairOfHands" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_use_pair_of_hands.vsnd"
+	}
+	"Addon.JermaSaw_UsePairOfHands_Reverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_use_pair_of_hands_reverb.vsnd"
+	}
+	"Addon.JermaSaw_Yes" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_yes.vsnd"
+	}
+	"Addon.JermaSaw_WelcomeMurder" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 7.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_welcomemurder.vsnd"
+	}
+	"Addon.JermaSaw_WelcomeMurder_Reverb" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_welcomemurder_reverb.vsnd"
+	}
+	"Addon.JermaSaw_ReallyDisgusting" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2
+		volume_falloff_min = 70.0
+		volume_falloff_max = 1000.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		spread_min = 0
+		spread_max = 45
+		vsnd_files = "sounds/jerma_saw/jerma_saw_reallydisgusting.vsnd"
+	}
+	
+	
+
+}

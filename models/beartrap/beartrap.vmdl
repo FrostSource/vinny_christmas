@@ -1,0 +1,446 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 0.425
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+					{
+						_class = "ModelModifier_Translate"
+						translation = [ 0.0, 0.0, -4.0 ]
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Metal.Medium"
+							allowstatic = true
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ 4.05554, 6.3614, -1.48448 ]
+							angles_left = [ -50.8026, -138.007, 101.842 ]
+							origin_right = [ 4.05554, -6.3614, -1.48448 ]
+							angles_right = [ -50.802601, 138.007004, -101.842003 ]
+							max_distance = 3.0
+							finger_thumb = 0.622
+							finger_pinky = 0.732
+							finger_ring = 0.843
+							finger_middle = 0.767
+							finger_index = 0.813
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, 0.0, 2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, -0.0, 2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "cylinder_idle"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -0.540558, 0.492889, 6.48285 ]
+							angles_left = [ 29.6756, 0.000002, 83.4696 ]
+							origin_right = [ -0.540558, -0.492889, 6.48285 ]
+							angles_right = [ 29.675602, -0.000004, -83.469597 ]
+							max_distance = 3.0
+							finger_thumb = 1.0
+							finger_pinky = 0.877
+							finger_ring = 0.825
+							finger_middle = 0.819
+							finger_index = 0.837
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, 0.0, 2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, -0.0, 2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "__metal_aluminum_anodized_1.vmat"
+								to = "models/beartrap/materials/__metal_aluminum_anodized_1.vmat"
+							},
+							{
+								from = "gold5.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "material_7.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "metal_aluminum_anodized.vmat"
+								to = "models/beartrap/materials/metal_aluminum_anodized.vmat"
+							},
+							{
+								from = "material_0.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "material.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "__silver_.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "color_009.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "color_c04.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "edge_color000255.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "edge_color201191118255.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "edge_color30196255.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+							{
+								from = "edge_color848484255.vmat"
+								to = "models/beartrap/materials/material_7.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -2.011226, -14.133785, 0.171713 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 9.566637, 3.990741, 10.787125 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 5.342856, -10.966616, 0.041211 ]
+						angles = [ -0.0, 26.896338, 0.0 ]
+						dimensions = [ 6.38547, 1.912489, 4.437873 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy_copy"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 10.150985, -7.66189, 0.063182 ]
+						angles = [ -0.0, 48.172993, 0.0 ]
+						dimensions = [ 6.38547, 1.912489, 5.674082 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy_copy_copy"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 12.558677, -2.668794, -0.011754 ]
+						angles = [ -0.0, 74.539352, 0.0 ]
+						dimensions = [ 6.38547, 2.555445, 7.3226 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy_copy_copy_copy"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 12.438945, 3.158932, -0.011754 ]
+						angles = [ -0.0, 103.98661, 0.0 ]
+						dimensions = [ 6.38547, 2.555445, 7.3226 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy_copy_copy1"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 9.73174, 8.194373, 0.063182 ]
+						angles = [ -0.0, 129.713196, 0.0 ]
+						dimensions = [ 6.38547, 1.912489, 5.674082 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy_copy1"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 5.342857, 10.942856, 0.041211 ]
+						angles = [ -0.0, 162.349289, 0.0 ]
+						dimensions = [ 6.38547, 1.912489, 4.437873 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy1"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -1.776277, 13.793379, -0.223031 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 9.096739, 3.55485, 9.75661 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy1_copy"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -1.809988, 14.644765, 7.372967 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 4.28565, 1.852076, 5.257128 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -1.809988, 11.875471, 12.120122 ]
+						angles = [ -0.0, 0.0, 59.652222 ]
+						dimensions = [ 4.28565, 1.609701, 6.734883 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -3.767653, 12.540874, 3.484907 ]
+						angles = [ 0.0, -176.305496, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -6.936761, 11.74173, 3.484907 ]
+						angles = [ 0.0, -157.015289, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -9.823372, 10.109621, 3.484907 ]
+						angles = [ 0.0, -142.141449, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -12.18316, 7.732163, 3.484907 ]
+						angles = [ 0.0, -127.595131, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -13.769419, 4.956797, 3.484907 ]
+						angles = [ 0.0, -112.594795, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -14.650959, 1.757206, 3.484907 ]
+						angles = [ 0.0, -96.405457, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -14.651493, -1.51437, 3.484907 ]
+						angles = [ 0.0, -82.209435, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -13.791145, -4.69829, 3.484907 ]
+						angles = [ 0.0, -66.713585, 0.0 ]
+						dimensions = [ 3.11975, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -12.156147, -7.511994, 3.484907 ]
+						angles = [ 0.0, -52.378502, 0.0 ]
+						dimensions = [ 3.246483, 0.459246, 2.289432 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						name = "_copy2"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ -8.937416, -11.928008, 2.38684 ]
+						angles = [ 0.0, -52.378502, 0.0 ]
+						dimensions = [ 6.120465, 2.374448, 4.485566 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 2.0
+						point0 = [ -1.6661, -14.583973, 7.788218 ]
+						point1 = [ -1.486923, -8.063507, 15.878248 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "_copy3"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.5
+						point0 = [ -1.650515, 8.419687, 13.991679 ]
+						point1 = [ -1.683031, 1.771842, 17.850241 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "_copy3_copy"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						radius = 1.5
+						point0 = [ -1.650515, -0.110236, 17.91465 ]
+						point1 = [ -1.683031, -8.218262, 15.319571 ]
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "player_hat_hmd_pos"
+						parent_bone = ""
+						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/beartrap/fbx/beartrap.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}
