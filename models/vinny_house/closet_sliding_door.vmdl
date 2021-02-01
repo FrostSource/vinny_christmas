@@ -50,6 +50,76 @@
 							carry_type = "1"
 						}
 					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -2.81784, -0.019168, 24.0867 ]
+							angles_left = [ 40.9412, -104.23, 80.5655 ]
+							origin_right = [ -2.81784, 0.749046, 24.0867 ]
+							angles_right = [ 40.9412, 104.23, -80.5655 ]
+							max_distance = 5.0
+							finger_thumb = 1.0
+							finger_pinky = 0.779
+							finger_ring = 0.698
+							finger_middle = 0.654
+							finger_index = 0.698
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ -83.0077, -0.019168, 24.0867 ]
+							extent_origin_min_left = [ -2.81784, -0.019168, 24.0867 ]
+							extent_origin_right = [ -82.8524, 0.749046, 24.0867 ]
+							extent_origin_min_right = [ -2.81784, 0.749046, 24.0867 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -2.81784, 3.22477, 24.8997 ]
+							angles_left = [ -2.81784, 3.22477, 24.8997 ]
+							origin_right = [ -2.81784, 3.22477, 24.8997 ]
+							angles_right = [ -37.9926, -76.372, -98.4885 ]
+							max_distance = 3.0
+							finger_thumb = 1.0
+							finger_pinky = 1.0
+							finger_ring = 0.867
+							finger_middle = 0.817
+							finger_index = 0.861
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ -83.6006, 3.22477, 24.8997 ]
+							extent_origin_min_left = [ -2.81784, 3.22477, 24.8997 ]
+							extent_origin_right = [ -84.0606, 3.22477, 24.8997 ]
+							extent_origin_min_right = [ -2.81784, 3.22477, 24.8997 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
 				]
 			},
 			{
