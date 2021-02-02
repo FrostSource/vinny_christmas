@@ -33,6 +33,11 @@ local bRandomHintsEnabled = true
 -- 12 = Pachinko
 -- 13 = Credits
 -- 14 = Saw
+-- 15 = Cookie placement
+-- 16 = Milk placement
+-- 17 = Digging
+-- 18 = Attic tree placement
+-- 19 = Gift placement
 local Hint = {
 	{
 		'Explore the house',
@@ -89,6 +94,26 @@ local Hint = {
 	{
 		'(つ◉益◉)つ Don\'t leave me here!',
 		'(ง’̀-‘́)ง Put me back in your wrist pocket'
+	},
+	{
+		'Cookies need to be put next to the Christmas tree',
+		'You can\'t leave the cookies just anywhere'
+	},
+	{
+		'Don\'t make Santa drink out of the carton...',
+		'Put the milk in a glass'
+	},
+	{
+		'That shovel could be useful',
+		'Maybe someone was playing in that sandpit outside'
+	},
+	{
+		'The Christmas tree box can be set up near the fireplace',
+		'There is a good spot for the Christmas tree box in the living room'
+	},
+	{
+		'Gifts should be put next to the Christmas tree!',
+		'A Christmas tree isn\'t complete without gifts'
 	}
 }
 -- Hint layer is a list of numbers which correspond to each index in Hint

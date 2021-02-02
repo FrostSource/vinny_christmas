@@ -451,6 +451,20 @@
 		]
 	}
 	
+	Addon.SpoopySkeleton = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.15
+		volume_falloff_min = 15.0
+		volume_falloff_max = 150.0
+		volume_fade_out = 0
+		volume_fade_in = 0
+		vsnd_files = 
+		[
+			"sounds/scary/spoopy_skeleton.vsnd",
+		]
+	}
+	
 	Addon.NedryAhAhAh = 
 	{
 		type = "hlvr_default_3d"
@@ -752,6 +766,18 @@
 			"sounds/player/pl_burnpain1.vsnd",
 			"sounds/player/pl_burnpain2.vsnd",
 			"sounds/player/pl_burnpain3.vsnd",
+		]
+	}
+	
+	Addon.CatMeow = 
+	{
+		type = "hlvr_default_3d"
+		volume = 0.8
+		volume_falloff_min = 35.0
+		volume_falloff_max = 300.0
+		vsnd_files = 
+		[
+			"sounds/misc/cat_meow.vsnd",
 		]
 	}
 	
