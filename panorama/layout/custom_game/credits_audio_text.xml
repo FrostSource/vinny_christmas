@@ -27,7 +27,7 @@
 		</Panel>
 		<Panel class="SubjectText">
 			<Label id='line7' text="ERH" />
-			<Label id='line8' class="emphasis" text=" Saw TV (edited)" />
+			<Label id='line8' class="emphasis" text=" Saw TV" />
 		</Panel>
 		<Panel class="SubjectText">
 			<Label id='line9' text="felix.blume" />
@@ -67,7 +67,7 @@
 		</Panel>
 		<Panel class="SubjectText">
 			<Label id='line27' text="pfranzen" />
-			<Label id='line28' class="emphasis" text=" Saw TV (edited)" />
+			<Label id='line28' class="emphasis" text=" Saw TV" />
 		</Panel>
 		<Panel class="SubjectText">
 			<Label id='line29' text="ramiro1007" />

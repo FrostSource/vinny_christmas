@@ -199,7 +199,7 @@
 		volume = 1
 		volume_falloff_min = 20.0
 		volume_falloff_max = 230.0
-		volume_fade_out = 4
+		volume_fade_out = 1
 		volume_fade_in = 1
 		spread_min = 30
 		spread_max = 80
@@ -454,9 +454,9 @@
 	Addon.SpoopySkeleton = 
 	{
 		type = "hlvr_default_3d"
-		volume = 0.15
+		volume = 0.8
 		volume_falloff_min = 15.0
-		volume_falloff_max = 150.0
+		volume_falloff_max = 200.0
 		volume_fade_out = 0
 		volume_fade_in = 0
 		vsnd_files = 
@@ -490,7 +490,7 @@
 		type = "hlvr_default_3d"
 		volume = 1
 		volume_falloff_min = 40.0
-		volume_falloff_max = 500.0
+		volume_falloff_max = 450.0
 		vsnd_files = 
 		[
 			"sounds/music/RollUp.vsnd",
@@ -501,7 +501,7 @@
 		type = "hlvr_default_3d"
 		volume = 1
 		volume_falloff_min = 40.0
-		volume_falloff_max = 500.0
+		volume_falloff_max = 450.0
 		vsnd_files = 
 		[
 			"sounds/music/RollUpWindDown.vsnd",
@@ -781,6 +781,21 @@
 		]
 	}
 	
+	// Why does this wav get compiled with low pitch???
+	// upping the pitch here to get it back to the source pitch
+	Addon.TimerTickLoop = 
+	{
+		type = "hlvr_default_3d"
+		volume = 1.0
+		volume_falloff_min = 5.0
+		volume_falloff_max = 90.0
+		pitch = 3
+		vsnd_files = 
+		[
+			"sounds/misc/timer_tick_loop.vsnd",
+		]
+	}
+	
 	//overwritten
 	AmbientCreature.FliesBuzzingPositionalChild = 
 	{
@@ -796,6 +811,24 @@
 		enable_debug_radius = 0.000000
 		debug_radius_max = 50
 	}
+	
+	Addon.TvStatic =
+	{
+		type = "hlvr_default_3d"
+		volume = 1
+		pitch = 1.2
+		volume_falloff_min = 20.0
+		volume_falloff_max = 230.0
+		volume_fade_out = 1
+		volume_fade_in = 1
+		spread_min = 30
+		spread_max = 80
+		vsnd_files =
+		[
+			"sounds/props/alex_radio/radio_static_loop.vsnd",
+		]
+	}
+	
 	
 	
 	

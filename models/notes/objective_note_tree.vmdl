@@ -11,7 +11,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models\\notes\\dmx\\objective_note_tree.dmx"
+						filename = "models\\notes\\dmx\\objective_note_mesh.dmx"
 						import_scale = 1.0
 						import_filter = 
 						{
@@ -27,13 +27,7 @@
 				[
 					{
 						_class = "DefaultMaterialGroup"
-						remaps = 
-						[
-							{
-								from = "models/props/choreo_office/materials/office_computer_case.vmat"
-								to = "models/notes/materials/objective_notes.vmat"
-							},
-						]
+						remaps = [  ]
 						use_global_default = false
 						global_default_material = ""
 					},
@@ -43,8 +37,8 @@
 						remaps = 
 						[
 							{
-								from = "models/notes/materials/objective_notes.vmat"
-								to = "models/notes/materials/objective_notes_complete.vmat"
+								from = "models/notes/materials/objective_note_tree.vmat"
+								to = "models/notes/materials/objective_note_tree_complete.vmat"
 							},
 						]
 					},

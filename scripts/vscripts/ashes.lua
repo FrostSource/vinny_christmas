@@ -1,14 +1,19 @@
 
+Health = Health or 0
 
-
---function Activate()
+function Activate()
 	--print('ASHES SPAWNED')
 	--PrecacheEntityFromTable(classname, spawnKeys)
 	--PrecacheModel("models/rural/barn_hay_pile_01.vmdl",thisEntity)
---end
+	Health = thisEntity:GetHealth()
+end
 
 function SpawnAshes()
 	--print('Starting ashes spawn')
+
+	print('urn damage taken', Health - thisEntity:GetHealth())
+	if Health - thisEntity:GetHealth() < 80 then return nil end
+
 	local startVector = thisEntity:GetCenter()
 
 	local traceTable = {
@@ -39,4 +44,7 @@ function SpawnAshes()
 	else
 		print('Trace failed')
 	end
+
+	--DoEntFire('!self', 'FireUser1', '', 0, nil, nil)
+	DoEntFireByInstanceHandle(thisEntity, 'FireUser1', '', 0, nil, nil)
 end

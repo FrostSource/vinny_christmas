@@ -11,7 +11,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models\\notes\\dmx\\objective_note_gifts.dmx"
+						filename = "models\\notes\\dmx\\objective_note_mesh.dmx"
 						import_scale = 1.0
 						import_filter = 
 						{
@@ -30,8 +30,8 @@
 						remaps = 
 						[
 							{
-								from = "models/props/choreo_office/materials/office_computer_case.vmat"
-								to = "models/notes/materials/objective_notes.vmat"
+								from = "models/notes/materials/objective_note_tree.vmat"
+								to = "models/notes/materials/objective_note_gifts_5.vmat"
 							},
 						]
 						use_global_default = false
@@ -39,12 +39,67 @@
 					},
 					{
 						_class = "MaterialGroup"
+						name = "4"
+						remaps = 
+						[
+							{
+								from = "models/notes/materials/objective_note_gifts_5.vmat"
+								to = "models/notes/materials/objective_note_gifts_4.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "3"
+						remaps = 
+						[
+							{
+								from = "models/notes/materials/objective_note_gifts_5.vmat"
+								to = "models/notes/materials/objective_note_gifts_3.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "2"
+						remaps = 
+						[
+							{
+								from = "models/notes/materials/objective_note_gifts_5.vmat"
+								to = "models/notes/materials/objective_note_gifts_2.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "1"
+						remaps = 
+						[
+							{
+								from = "models/notes/materials/objective_note_gifts_5.vmat"
+								to = "models/notes/materials/objective_note_gifts_1.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "0"
+						remaps = 
+						[
+							{
+								from = "models/notes/materials/objective_note_gifts_5.vmat"
+								to = "models/notes/materials/objective_note_gifts_0.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
 						name = "complete"
 						remaps = 
 						[
 							{
-								from = "models/notes/materials/objective_notes.vmat"
-								to = "models/notes/materials/objective_notes_complete.vmat"
+								from = "models/notes/materials/objective_note_gifts_5.vmat"
+								to = "models/notes/materials/objective_note_gifts_complete.vmat"
 							},
 						]
 					},

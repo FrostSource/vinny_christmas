@@ -129,6 +129,7 @@ function GetHandIdFromType(_type)
     return _type
 end
 
+---! This function is no longer needed with the new backpack trigger implementation and should be removed.
 --- Fires a haptic pulse on a given hand for one frame. Pass nil as hand to reset.
 ---@param hand userdata
 ---@param strength integer | '0' | '1' | '2'
@@ -204,7 +205,7 @@ function DoBackpackRetrieval(data)
                 if RetrievalStack[i]:GetPrivateScriptScope():GetInBackpack() then
                     MoveItemToRetrievalHand(RetrievalStack[i], hand)
                     DisableRealBackpack()
-                    FireShortHaptic(hand, 1)
+                    FireShortHaptic(hand, 2)
                     ItemUpForRetrieval = RetrievalStack[i]
                     break
                 end

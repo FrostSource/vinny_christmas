@@ -1,0 +1,73 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\vinny_house\\dmx\\mesh\\tv_screen.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "materials/monitors/tv_christmas_special.vmat"
+								to = "materials/monitors/tv_christmas_special.vmat"
+							},
+							{
+								from = "models/breakable_props/materials/tv_tube.vmat"
+								to = "models/breakable_props/materials/tv_tube.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+					{
+						_class = "MaterialGroup"
+						name = "static"
+						remaps = 
+						[
+							{
+								from = "materials/monitors/tv_christmas_special.vmat"
+								to = "models/props/jozef_hideout/materials/monitor_hideout_train.vmat"
+							},
+						]
+					},
+					{
+						_class = "MaterialGroup"
+						name = "off"
+						remaps = 
+						[
+							{
+								from = "materials/monitors/tv_christmas_special.vmat"
+								to = "materials/choreo/refuge/monitor_off.vmat"
+							},
+						]
+					},
+				]
+			},
+		]
+		model_archetype = "animated_model"
+		primary_associated_entity = "prop_dynamic"
+		anim_graph_name = ""
+	}
+}
