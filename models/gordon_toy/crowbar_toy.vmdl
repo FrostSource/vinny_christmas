@@ -1,0 +1,146 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models\\gordon_toy\\dmx\\mesh\\crowbar_toy.dmx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = ""
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = true
+							parent_bone = ""
+							origin_left = [ -2.3856, 2.93511, 0.867838 ]
+							angles_left = [ 88.1726, 180.0, 180.0 ]
+							origin_right = [ -2.3856, -2.93511, 0.867838 ]
+							angles_right = [ 88.1726, 180.0, 180.0 ]
+							max_distance = 4.0
+							finger_thumb = 0.88
+							finger_pinky = 0.295
+							finger_ring = 0.396
+							finger_middle = 0.522
+							finger_index = 1.0
+							has_extent = true
+							show_extent_helper = true
+							extent_origin_left = [ 0.86442, 2.93511, 0.867838 ]
+							extent_origin_min_left = [ -2.3856, 2.93511, 0.867838 ]
+							extent_origin_right = [ -0.872637, -2.93511, 0.867838 ]
+							extent_origin_min_right = [ -2.3856, -2.93511, 0.867838 ]
+							has_rotation = true
+							rotation_axis0 = [ 10.0, 0.0, -0.42 ]
+							rotation_axis1 = [ -10.0, 0.0, -0.42 ]
+							rotation_min = 180.0
+							rotation_max = 180.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = true
+							parent_bone = ""
+							origin_left = [ 6.2202, -0.611762, 0.867838 ]
+							angles_left = [ 13.177798, 99.225502, 180.0 ]
+							origin_right = [ 6.2202, 0.611762, 0.867838 ]
+							angles_right = [ 13.1778, -99.2255, 180.0 ]
+							max_distance = 4.0
+							finger_thumb = 0.88
+							finger_pinky = 0.389
+							finger_ring = 0.345
+							finger_middle = 0.459
+							finger_index = 1.0
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						origin = [ 0.086996, 0.008589, -0.341416 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 6.292305, 0.214978, 0.317167 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "prop.plastic"
+						collision_prop = "default"
+						origin = [ 2.770202, 0.008589, 0.402106 ]
+						angles = [ -51.239838, 0.0, 0.0 ]
+						dimensions = [ 0.30689, 0.214978, 1.381775 ]
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}
