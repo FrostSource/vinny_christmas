@@ -100,8 +100,8 @@
 						_class = "Attachment"
 						name = "player_hat_hmd_pos"
 						parent_bone = ""
-						relative_origin = [ 5.066031, -3.290105, -12.095856 ]
-						relative_angles = [ 0.0, 0.0, 0.0 ]
+						relative_origin = [ 2.658199, -3.290105, -10.115625 ]
+						relative_angles = [ 0.0, 90.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
 					},

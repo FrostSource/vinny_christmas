@@ -106,7 +106,7 @@
 							angles_left = [ 46.235001, -59.3246, -66.810608 ]
 							origin_right = [ -2.08209, -5.0, 0.0 ]
 							angles_right = [ 46.235, 59.3246, 66.8106 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.905
 							finger_pinky = 1.0
 							finger_ring = 0.874
@@ -141,7 +141,7 @@
 							angles_left = [ -66.148903, -137.261993, 131.806015 ]
 							origin_right = [ -2.08209, -5.0, 0.284145 ]
 							angles_right = [ -66.1489, 137.262, -131.806 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 1.0
 							finger_pinky = 0.924
 							finger_ring = 0.88
@@ -176,7 +176,7 @@
 							angles_left = [ 46.235001, -59.3246, -66.810608 ]
 							origin_right = [ 1.6975, -5.0, 0.0 ]
 							angles_right = [ 46.235, 59.3246, 66.8106 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.905
 							finger_pinky = 0.918
 							finger_ring = 0.798
@@ -211,7 +211,7 @@
 							angles_left = [ -66.148903, -137.261993, 131.806015 ]
 							origin_right = [ 2.77743, -5.0, 0.284145 ]
 							angles_right = [ -66.1489, 137.262, -131.806 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.786
 							finger_pinky = 0.849
 							finger_ring = 0.773
@@ -246,7 +246,7 @@
 							angles_left = [ 46.235001, -59.3246, -66.810608 ]
 							origin_right = [ 6.26584, -5.0, 0.0 ]
 							angles_right = [ 46.235, 59.3246, 66.8106 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.842
 							finger_pinky = 1.0
 							finger_ring = 0.905
@@ -281,7 +281,7 @@
 							angles_left = [ -66.148903, -137.261993, 131.806015 ]
 							origin_right = [ 7.33691, -5.0, 0.291889 ]
 							angles_right = [ -66.1489, 137.262, -131.806 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 1.0
 							finger_pinky = 0.968
 							finger_ring = 0.842
@@ -316,7 +316,7 @@
 							angles_left = [ -66.148911, 129.363998, 131.805954 ]
 							origin_right = [ 8.94364, 0.412966, 0.291889 ]
 							angles_right = [ -66.1489, -129.364, -131.806 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.962
 							finger_pinky = 0.905
 							finger_ring = 0.786
@@ -351,7 +351,7 @@
 							angles_left = [ 66.1489, -129.364, -48.194 ]
 							origin_right = [ 8.94364, -0.412966, 1.33041 ]
 							angles_right = [ 66.148911, 129.363983, 48.193993 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.962
 							finger_pinky = 0.905
 							finger_ring = 0.786
@@ -386,7 +386,7 @@
 							angles_left = [ -66.1489, -50.636, 131.806 ]
 							origin_right = [ -5.21274, -0.412966, 0.291889 ]
 							angles_right = [ -66.148895, 50.635979, -131.805969 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.962
 							finger_pinky = 0.93
 							finger_ring = 0.823
@@ -421,7 +421,7 @@
 							angles_left = [ 66.1489, 50.636, -48.194 ]
 							origin_right = [ -5.21274, 0.412966, 1.25435 ]
 							angles_right = [ 66.148895, -50.635963, 48.194 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.962
 							finger_pinky = 0.93
 							finger_ring = 0.823
@@ -456,7 +456,7 @@
 							angles_left = [ -46.235, 59.3246, 113.189 ]
 							origin_right = [ -2.08209, 5.0, 1.49994 ]
 							angles_right = [ -46.235004, -59.324593, -113.188995 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.905
 							finger_pinky = 1.0
 							finger_ring = 0.874
@@ -491,7 +491,7 @@
 							angles_left = [ 66.1489, 137.262, -48.194 ]
 							origin_right = [ -2.08209, 5.0, 1.17255 ]
 							angles_right = [ 66.148903, -137.262009, 48.194008 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 1.0
 							finger_pinky = 0.924
 							finger_ring = 0.88
@@ -526,7 +526,7 @@
 							angles_left = [ -46.235, 59.3246, 113.189 ]
 							origin_right = [ 1.6975, 5.0, 1.35143 ]
 							angles_right = [ -46.235004, -59.324593, -113.188995 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.905
 							finger_pinky = 0.899
 							finger_ring = 0.767
@@ -561,7 +561,7 @@
 							angles_left = [ 66.1489, 137.262, -48.194 ]
 							origin_right = [ 2.77743, 5.0, 1.1346 ]
 							angles_right = [ 66.148903, -137.262009, 48.194008 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.786
 							finger_pinky = 0.899
 							finger_ring = 0.836
@@ -596,7 +596,7 @@
 							angles_left = [ -46.235, 59.3246, 113.189 ]
 							origin_right = [ 6.26584, 5.0, 1.8528 ]
 							angles_right = [ -46.235004, -59.324593, -113.188995 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 0.842
 							finger_pinky = 1.0
 							finger_ring = 0.905
@@ -631,7 +631,7 @@
 							angles_left = [ 66.1489, 137.262, -48.194 ]
 							origin_right = [ 7.33691, 5.0, 1.32308 ]
 							angles_right = [ 66.148903, -137.262009, 48.194008 ]
-							max_distance = 4.0
+							max_distance = 5.0
 							finger_thumb = 1.0
 							finger_pinky = 0.968
 							finger_ring = 0.842

@@ -59,6 +59,8 @@ local GrowlTimeMax = 25
 local GrowlDistance = 120
 local GrowlDistanceZ = 20
 local LastGrowlTime = 0.0
+local MeatMouthScoreDistance = 80
+MeatMouthScoreLastTime = MeatMouthScoreLastTime or 0
 GrowlEnabled = GrowlEnabled or false
 FollowPlayer = FollowPlayer or false
 
@@ -101,6 +103,18 @@ function Growl()
 	-- Does this play at origin? (feet)
 	--thisEntity:EmitSound("Addon.MeatGrowl")
 	StartSoundEventFromPosition("Addon.MeatGrowl", thisEntity:GetOrigin() + Vector(-0.000178, 5.82063, -2.51945))
+end
+
+function TestMouthScore()
+	local player = Entities:GetLocalPlayer()
+	local dist = VectorDistance(player:GetOrigin(), thisEntity:GetOrigin())
+
+	print('meat mouth score')
+	if dist >= MeatMouthScoreDistance and Time() - MeatMouthScoreLastTime > 5 then
+		print('meat mouth score done')
+		StartSoundEvent('Addon.MeatThrownFood', player)
+		MeatMouthScoreLastTime = Time()
+	end
 end
 
 --=============================

@@ -1,0 +1,175 @@
+"vinny_house_exterior"
+{
+	//"volume" "0.6"
+
+	//"playevent"
+	//{
+	//	"event"	"Ambient.WindSystem"
+	//}
+	"playevent"
+	{
+		"event"	"AmbientNature.C17Crows"
+		"volume"	"0.5"
+		"traveler"	"C17Crows"
+	}
+	"playevent"
+	{
+		"event"	"AmbientNature.TreeRustle"
+		"volume"	"0.7"
+		"traveler"	"TreeRustle"
+	}
+	//"playevent"
+	//{
+	//	"event"	"AmbientNature.ExteriorNatureLp"
+	//	"volume"	"0.8"
+	//	"traveler"	"ExteriorNatureLp"
+	//}
+	"playevent"
+	{
+		"event"	"AmbientCity.DogBarkDistant"
+		"volume"	"0.1"
+		"traveler"	"DogBarkDistant"
+	}
+
+	"playevent"
+	{
+		"event"	"AmbientVinnyHouse.ExteriorLp"
+		"volume"	"0.8"
+		"traveler" "ExteriorLp"
+	}
+	
+	//interior merged
+	"playevent"
+	{
+		"event"	"A1Intro.ClosetLp"
+		"volume"	"0.8"
+		"traveler"	"ClosetLp"
+	}
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.AlyxSanctuaryLp"
+		"volume"	"0.65"
+		"traveler"	"AlyxSanctuaryLp"
+	}
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.ElevatorIntLp"
+		"volume"	"0.65"
+		"traveler"	"ElevatorIntLp"
+	}
+}
+
+"vinny_house_basement"
+{
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.ElevatorIntLp"
+		"volume"	"0.6"
+		"traveler"	"ElevatorIntLp"
+	}
+	"playevent"
+	{
+		"event"	"AmbientTenement.SmallRoomLp01"
+		"volume"	"0.5"
+		"traveler"	"SmallRoomLp01"
+	}
+	"playevent"
+	{
+		"event"	"AmbientTenement.RatScurry"
+		"volume"	"0.2"
+		"traveler"	"RatScurry"
+	}
+
+	"playevent"
+	{
+		"event"	"AmbTrainStation.SmallRoomLp01"
+		"volume"	"0.4"
+		"traveler" "SmallRoomLp01"
+	}
+	
+	"playevent"
+	{
+		"event" "AmbTrainStation.WaterdripSingle"
+		"volume"	"0.2"
+		"traveler" "WaterdripSingle"
+	}	
+}
+
+"vinny_house_attic"
+{
+	"playevent"
+	{
+		"event"	"AmbientHotelRooftop.TextureQuad"
+		"volume"	"0.44"
+		"traveler"	"TextureQuad"
+	}
+	"playevent"
+	{
+		"event"	"AmbientHotelRooftop.HotelIntLp"
+		"volume"	"0.44"
+		"traveler"	"HotelIntLp"
+	}
+	//creep stuff
+	
+	"playevent"
+	{
+		"event"	"AmbientCreepy.SkullBreath"
+		"volume"	"0.4"
+		"position"	"random"
+		"traveler"	"SkullBreath"
+		"rand_radius_min" "150.0"
+		"rand_radius_max" "500.0"
+		"random_soundevent_01_timer_min"	"15"
+		"random_soundevent_01_timer_max"	"40"
+	}
+	"playevent"
+	{
+		"event"	"AmbientCreepy.WoodRattle"
+		"volume"	"0.4"
+		"position"	"random"
+		"traveler"	"WoodRattle"
+		"rand_radius_min" "150.0"
+		"rand_radius_max" "500.0"
+		"random_soundevent_01_timer_min"	"10"
+		"random_soundevent_01_timer_max"	"40"
+	}
+	"playevent"
+	{
+		"event"	"AmbientCreepy.Glass"
+		"volume"	"0.4"
+		"traveler"	"Glass"
+		"position"	"random"
+		"rand_radius_min" "150.0"
+		"rand_radius_max" "500.0"
+		"random_soundevent_01_timer_min"	"20"
+		"random_soundevent_01_timer_max"	"60"
+	}
+	"playevent"
+	{
+		"event"	"AmbientAbstract.Despair"
+		"traveler" "Despair"
+		"volume"	"0.3"
+		"random_soundevent_01_timer_min" 	"20.0"
+		"random_soundevent_01_timer_max"	"50.0"	
+		"use_initial_random_offset"	 "1.0"
+	}
+	"playevent"
+	{
+		"event"	"AmbProcPlant.WoodCreak"
+		"volume"	"0.06"	
+		"use_initial_random_offset"	 "1.0"
+	}
+	"playevent"
+	{
+		"event"	"AmbientA1Intro.SubtleWoodCreaking"
+		"volume"	"0.06"
+		"traveler"	"SubtleWoodCreaking"
+	}
+	"playevent"
+	{
+		"event"	"A3Tenements.WoodCreak"
+		"volume"	"0.06"
+		"traveler"	"WoodCreak"
+	}
+	
+}
