@@ -116,7 +116,7 @@ local HintAreas = {
 
 	{
 		'The fridge key is somewhere in the kitchen',
-		'I can tell you all the places it might be\nif you really don\'t want to look',
+		'I can tell you all the places the key might be\nif you really don\'t want to look',
 		'Under the sink',
 		'Third drawer down next to the sink',
 		'Third drawer down next to the fridge',
@@ -134,7 +134,7 @@ local HintAreas = {
 	{
 		'Milk is typically found in a fridge',
 		'Pour the milk into a glass',
-		'Put the milk by the fireplace'
+		'Put glass of milk by the fireplace'
 	},
 
 	{

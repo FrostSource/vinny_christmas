@@ -540,7 +540,7 @@
 		type = "hlvr_music_2d"
 		use_combat_music_convar = 1
 		volume_fade_in = 5
-		volume_fade_out = 5
+		volume_fade_out = 3.5
 		volume = 0.2
 		track = "main"
 		priority = 2

@@ -41,7 +41,7 @@ local flLastPathTime = 0.0
 local flMinPlayerDist = 40
 
 -- The farthest the entity should get to the player
-local flMaxPlayerDist = 90
+local flMaxPlayerDist = 100
 
 -- The maximum distance away from the navigation goal that a path can be considered successful
 local flNavGoalTolerance = 250
@@ -59,7 +59,7 @@ local GrowlTimeMax = 25
 local GrowlDistance = 120
 local GrowlDistanceZ = 20
 local LastGrowlTime = 0.0
-local MeatMouthScoreDistance = 80
+local MeatMouthScoreDistance = 70
 MeatMouthScoreLastTime = MeatMouthScoreLastTime or 0
 GrowlEnabled = GrowlEnabled or false
 FollowPlayer = FollowPlayer or false
