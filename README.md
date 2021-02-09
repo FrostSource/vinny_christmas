@@ -19,3 +19,4 @@ If you know of any way to solve these issues I would LOVE to know how.
 * Some areas have noticeable hitches when moving close such as: Jerma's bedroom doorway, Saw freezer by the button, objectives notice board.
 * Bunker room with hole has black props sometimes.
 * Initial light when player gets captured has buggy fog. Maybe narrowed it down to player being teleported instead of moving over time.
+* Firework rocket makes player drop everything. Is there a way to target a specific entity?

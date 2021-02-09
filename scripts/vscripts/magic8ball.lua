@@ -1,10 +1,8 @@
 
 local FORCE_THRESHOLD = 0.25
 
---local TIME_THRESHOLD = 100/1000
 -- All shaking must be in this time frame
 local SHAKE_TIMEOUT = 0.8
---local SHAKE_THROTTLE = 1000/1000
 local SHAKE_COUNT = 5
 -- Time between hints
 local TIME_BETWEEN_HINTS = 4.5
@@ -62,6 +60,9 @@ local HintReminders = {
 -- 23 = Don't be pussy
 -- 24 = Oven wait
 -- 25 = Bunker
+-- 26 = Christmas complete
+-- 27 = Front door
+-- 28 = Kitchen door
 local HintAreas = {
 	{
 		'I give nearby hints when shook!',
@@ -202,61 +203,41 @@ local HintAreas = {
 		'It\'s so dark here, maybe there\'s a light you can use',
 		'Looks like a way out next to the locker',
 		'The barrels need to be pushed out of the way'
-	}
+	},
+
+	{
+		'Everything is ready for Christmas tomorrow!',
+		'Time to sit back and relax'
+	},
+
+	{
+		'The code for the door must be kept somewhere in the house',
+		'The door code has been put where no one will stick their hands',
+		'Unclog the downstairs toilet to find the front door code'
+	},
+
+	{
+		'The door appears to be blocked by barrels',
+		'The door only opens outwards so the barrels need to be moved',
+		'You will need to get to the other side to move the barrels'
+	},
 }
 
+HintAreaIndexSave = HintAreaIndexSave or {}
 HintAreaStack = HintAreaStack or {}
 HintReminderStack = HintReminderStack or {}
 CurrentHintLine = CurrentHintLine or 1
-LastHintArea = LastHintArea or ''
+--LastHintArea = LastHintArea or ''
+HaltAtEnd = HaltAtEnd or false
 
 function Activate()
 	vLastPos = thisEntity:GetAbsOrigin()
-end
-
-
-function GetAreaHint()
-	-- Return if no area hints so reminder can be shown
-	if #HintAreaStack == 0 then return '' end
-
-	local area = HintAreas[HintAreaStack[#HintAreaStack]]
-
-	if LastHintArea ~= area[1] or CurrentHintLine >= #area then
-		CurrentHintLine = 0
-		LastHintArea = area[1]
+	-- Init index saving table (should save between loads using attributes?)
+	for i = 1, #HintAreas do
+		HintAreaIndexSave[i] = 0
 	end
-
-	-- Increment hint line and return hint text
-	CurrentHintLine = CurrentHintLine + 1
-	return area[CurrentHintLine]
 end
 
-function GetReminderHint()
-	-- Return if no area hints so fallback can be shown
-	if #HintReminderStack == 0 then return '' end
-
-	-- Re-shuffle and reset reminders if at end
-	if CurrentHintLine >= #HintReminderStack then
-		ShuffleReminderStack()
-		CurrentHintLine = 0
-	end
-
-	-- Increment hint line and return hint text
-	CurrentHintLine = CurrentHintLine + 1
-	return HintReminders[HintReminderStack[CurrentHintLine]]
-end
-
-function ShuffleReminderStack()
-	-- Just return if not enough reminders to shuffle
-	if #HintReminderStack < 2 then return false end
-
-	for i = #HintReminderStack, 2, -1 do
-		local j = RandomInt(1, i)
-		HintReminderStack[i], HintReminderStack[j] = HintReminderStack[j], HintReminderStack[i]
-	end
-
-	return true
-end
 
 --#region Areas
 
@@ -282,6 +263,31 @@ function HintAreaExistsInStack(index)
 	end
 	return false
 end
+
+function GetAreaHint()
+	-- Return blank if no area hints, so reminder can be shown
+	if #HintAreaStack == 0 then return '' end
+
+	local area = HintAreas[HintAreaStack[#HintAreaStack]]
+	local line = HintAreaIndexSave[HintAreaStack[#HintAreaStack]]
+
+	-- Increment hint line if not halting
+	if not HaltAtEnd or line < #area then
+		
+		-- Reset if at end of hints
+		if line >= #area then
+			line = 0
+		end
+
+		line = line + 1
+		HintAreaIndexSave[HintAreaStack[#HintAreaStack]] = line
+
+	end
+
+	return area[line]
+end
+
+--#endregion
 
 --#region Reminders
 
@@ -313,6 +319,46 @@ function HintReminderExistsInStack(index)
 	end
 	return false
 end
+
+function GetReminderHint()
+	-- Return if no area hints so fallback can be shown
+	if #HintReminderStack == 0 then return '' end
+
+	-- Re-shuffle and reset reminders if at end
+	if CurrentHintLine >= #HintReminderStack then
+		ShuffleReminderStack()
+		CurrentHintLine = 0
+	end
+
+	-- Increment hint line and return hint text
+	CurrentHintLine = CurrentHintLine + 1
+	return HintReminders[HintReminderStack[CurrentHintLine]]
+end
+
+function ShuffleReminderStack()
+	-- Just return if not enough reminders to shuffle
+	if #HintReminderStack < 2 then return false end
+
+	for i = #HintReminderStack, 2, -1 do
+		local j = RandomInt(1, i)
+		HintReminderStack[i], HintReminderStack[j] = HintReminderStack[j], HintReminderStack[i]
+	end
+
+	return true
+end
+
+--#endregion
+
+--#region Other
+
+function EnableHalt()
+	HaltAtEnd = true
+end
+function DisableHalt()
+	HaltAtEnd = false
+end
+
+--#endregion
 
 --#region Thinking
 
@@ -369,6 +415,8 @@ function ThinkFunc()
 	return 0
 end
 
+--#endregion
+
 --#region Displaying
 
 function ShowHint(text)
@@ -388,4 +436,4 @@ function ShowHint(text)
 	thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, '', TIME_BETWEEN_HINTS)
 end
 
-
+--#endregion

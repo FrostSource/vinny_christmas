@@ -233,7 +233,7 @@
 				m_lookatChainName = "LookAt"
 				m_attachmentName = "eyes"
 				m_flYawLimit = 90.0
-				m_flPitchLimit = 70.0
+				m_flPitchLimit = 90.0
 				m_bResetBase = true
 				m_bLockWhenWaning = true
 				m_bUseHysteresis = false

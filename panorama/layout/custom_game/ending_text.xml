@@ -34,7 +34,7 @@
 				<Label text="I hope you enjoyed my very first Half-Life map" />
 			</Panel>
 			<Panel class="TextBox" id="ProjectRelease">
-				<Label text="The entire project will be released\nAlong with the custom backpack system\nFor anyone to look through and use" />
+				<Label text="The project files are available for download\nAlong with the custom backpack system\nFor anyone to look through and use" />
 			</Panel>
 		</Panel>
 		
