@@ -28,7 +28,7 @@
 		
 		<Panel class="TextLine" id="Section3">
 			<Panel class="TextBox" id="MadeIn">
-				<Label class="emphasis" text="Made with love and energy drinks" />
+				<Label class="emphasis" text="Made with love" />
 			</Panel>
 			<Panel class="TextBox" id="HadToLearn">
 				<Label text="I hope you enjoyed my very first Half-Life map" />

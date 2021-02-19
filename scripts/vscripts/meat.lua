@@ -1,4 +1,7 @@
 
+-- This script is a customized version of Valve's template NPC script.
+-- Their comments left here for clarity sake.
+
 function Spawn() 
 	-- Registers a function to get called each time the entity updates, or "thinks"
 	--thisEntity:SetContextThink(nil, MainThinkFunc, 0)

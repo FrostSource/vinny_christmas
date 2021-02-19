@@ -6,6 +6,7 @@ local SHAKE_TIMEOUT = 0.8
 local SHAKE_COUNT = 5
 -- Time between hints
 local TIME_BETWEEN_HINTS = 4.5
+local TIME_BETWEEN_SHAKES = 2
 
 local fLastShake = 0
 local fLastForce = 0
@@ -63,6 +64,7 @@ local HintReminders = {
 -- 26 = Christmas complete
 -- 27 = Front door
 -- 28 = Kitchen door
+-- 29 = Feeding Meat
 local HintAreas = {
 	{
 		'I give nearby hints when shook!',
@@ -221,6 +223,11 @@ local HintAreas = {
 		'The door only opens outwards so the barrels need to be moved',
 		'You will need to get to the other side to move the barrels'
 	},
+
+	{
+		'Meat looks sad and hungry',
+		'Feed Meat a gherkin from the fridge',
+	}
 }
 
 HintAreaIndexSave = HintAreaIndexSave or {}
@@ -375,8 +382,8 @@ function ThinkFunc()
 	
 	local now = Time()
 	-- Time between hints
-	if (now - fLastShake) < TIME_BETWEEN_HINTS then
-		return TIME_BETWEEN_HINTS
+	if (now - fLastShake) < TIME_BETWEEN_SHAKES then
+		return 0.5
 	end
 	
 	if now - fLastForce > SHAKE_TIMEOUT then
@@ -430,10 +437,11 @@ function ShowHint(text)
 
 	local ent = SpawnEntityFromTableSynchronous('env_instructor_vr_hint', spawnKeys)
 	SendToConsole('sv_gameinstructor_disable 0')
+	thisEntity:StopThink('disable_hint')
 	DoEntFire('!self', 'FireUser1', '', 0.1, thisEntity, thisEntity)
 	DoEntFireByInstanceHandle(ent, 'ShowHint', '', 0.1, thisEntity, thisEntity)
 	DoEntFireByInstanceHandle(ent, 'Kill', '', TIME_BETWEEN_HINTS, thisEntity, thisEntity)
-	thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, '', TIME_BETWEEN_HINTS)
+	thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, 'disable_hint', TIME_BETWEEN_HINTS)
 end
 
 --#endregion
