@@ -9,7 +9,7 @@ If you want to compile and run this map for yourself there are two things you ne
 	* scripts/
 	* panorama/videos/
 
-2. Two models along with their textures are excluded due to their strict licenses. They will show up as giant errors in the map and will need to be replaced with any generic models that can fit in their place.
+2. Two models along with their textures are excluded due to their strict licenses. They will show up as giant errors or red meshes in the map and will need to be replaced with any generic models that can fit in their place.
 
 ## Things I could not fix
 
