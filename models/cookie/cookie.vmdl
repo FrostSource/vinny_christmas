@@ -230,6 +230,41 @@
 							conform_fingers = false
 							allow_flip = false
 							parent_bone = ""
+							origin_left = [ -0.90318, 0.281322, -1.76508 ]
+							angles_left = [ -1.46305, 0.0, -86.363625 ]
+							origin_right = [ -0.90318, -0.281322, -1.76508 ]
+							angles_right = [ -1.46305, 0.0, 86.3636 ]
+							max_distance = 3.0
+							finger_thumb = 0.825
+							finger_pinky = 0.666
+							finger_ring = 0.798
+							finger_middle = 0.872
+							finger_index = 0.885
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
 							origin_left = [ 1.63431, -1.49436, 6.85965 ]
 							angles_left = [ 1.41095, 179.602005, 74.243301 ]
 							origin_right = [ 1.63431, 1.49436, 6.85965 ]
@@ -243,6 +278,41 @@
 							has_extent = false
 							show_extent_helper = false
 							extent_origin_left = [ 0.0, 0.0, 2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -0.976539, 1.42957, 6.85965 ]
+							angles_left = [ 1.41095, 0.0, 74.243309 ]
+							origin_right = [ -0.976539, -1.42957, 6.85965 ]
+							angles_right = [ 1.41095, 0.0, -74.2433 ]
+							max_distance = 3.0
+							finger_thumb = 0.825
+							finger_pinky = 0.666
+							finger_ring = 0.798
+							finger_middle = 0.872
+							finger_index = 0.885
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
 							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
 							extent_origin_right = [ 0.0, 0.0, -2.0 ]
 							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]

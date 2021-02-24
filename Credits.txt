@@ -137,5 +137,9 @@ Pachinko music:
 	Yubatake
 	https://opengameart.org/content/roll-up
 	https://creativecommons.org/licenses/by/3.0/
+Heartbeat:
+	iut_Paris8
+	https://freesound.org/people/iut_Paris8/sounds/428619/
+	https://creativecommons.org/publicdomain/zero/1.0/
 
 

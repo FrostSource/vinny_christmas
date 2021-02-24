@@ -36,6 +36,41 @@
 							conform_fingers = false
 							allow_flip = false
 							parent_bone = ""
+							origin_left = [ -5.41004, -0.835033, -0.641753 ]
+							angles_left = [ 87.0542, 180.0, 0.000033 ]
+							origin_right = [ -5.41004, 0.835033, -0.641753 ]
+							angles_right = [ 87.054207, 180.0, -0.000033 ]
+							max_distance = 3.0
+							finger_thumb = 1.0
+							finger_pinky = 0.815
+							finger_ring = 0.798
+							finger_middle = 0.833
+							finger_index = 0.754
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, 0.0, 0.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, 0.0 ]
+							extent_origin_right = [ 0.0, -0.0, 0.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 0.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 10.0, 0.0, 0.0 ]
+							rotation_axis1 = [ -10.0, 0.0, 0.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "cylinder_idle"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
 							origin_left = [ 9.40053, -0.841423, 0.193435 ]
 							angles_left = [ 76.8117, 180.0, -0.000005 ]
 							origin_right = [ 9.40053, 0.841423, 0.193435 ]
@@ -145,41 +180,6 @@
 							angles_left = [ 83.0636, 180.0, 0.000035 ]
 							origin_right = [ -1.91222, 0.835033, -0.422514 ]
 							angles_right = [ 83.063606, 180.0, -0.000035 ]
-							max_distance = 3.0
-							finger_thumb = 1.0
-							finger_pinky = 0.815
-							finger_ring = 0.798
-							finger_middle = 0.833
-							finger_index = 0.754
-							has_extent = false
-							show_extent_helper = false
-							extent_origin_left = [ 0.0, 0.0, 0.0 ]
-							extent_origin_min_left = [ 0.0, 0.0, 0.0 ]
-							extent_origin_right = [ 0.0, -0.0, 0.0 ]
-							extent_origin_min_right = [ 0.0, 0.0, 0.0 ]
-							has_rotation = false
-							rotation_axis0 = [ 10.0, 0.0, 0.0 ]
-							rotation_axis1 = [ -10.0, 0.0, 0.0 ]
-							rotation_min = 0.0
-							rotation_max = 0.0
-							pivot_min = 0.0
-							pivot_max = 0.0
-						}
-					},
-					{
-						_class = "GenericGameData"
-						game_class = "hand_pose_pair"
-						game_keys = 
-						{
-							sequence = "cylinder_idle"
-							pose_special_type = "0"
-							conform_fingers = false
-							allow_flip = false
-							parent_bone = ""
-							origin_left = [ -5.41004, -0.835033, -0.641753 ]
-							angles_left = [ 87.0542, 180.0, 0.000033 ]
-							origin_right = [ -5.41004, 0.835033, -0.641753 ]
-							angles_right = [ 87.054207, 180.0, -0.000033 ]
 							max_distance = 3.0
 							finger_thumb = 1.0
 							finger_pinky = 0.815

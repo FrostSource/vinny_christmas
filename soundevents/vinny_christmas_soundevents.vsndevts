@@ -157,6 +157,19 @@
 		]
 	}
 	
+	"Addon.Heartbeat" = 
+	{
+		type = "hlvr_default_3d"
+		volume = 2.0
+		volume_falloff_min = 200.0
+		volume_falloff_max = 3000.0
+		vsnd_files = 
+		[
+			"sounds/scary/heartbeat_1.vsnd",
+			"sounds/scary/heartbeat_2.vsnd"
+		]
+	}
+	
 	"Addon.WoodChop" = 
 	{
 		type = "hlvr_default_3d"
@@ -464,6 +477,49 @@
 		vsnd_files = 
 		[
 			"sounds/scary/screee_end.vsnd",
+		]
+	}
+	Addon.Screee2 = 
+	{
+		type = "hlvr_default_3d"
+		volume = 4
+		volume_falloff_min = 200.0
+		volume_falloff_max = 3000.0
+		volume_fade_out = 0.5
+		volume_fade_in = 1
+		vsnd_files = 
+		[
+			"sounds/scary/screee.vsnd",
+		]
+	}
+	Addon.ScreeeHitch = 
+	{
+		type = "hlvr_default_3d"
+		volume = 3
+		volume_falloff_min = 200.0
+		volume_falloff_max = 3000.0
+		vsnd_files = 
+		[
+			"sounds/scary/screee.vsnd",
+		]
+	}
+	
+	Addon.HiggsBreath = 
+	{
+		type = "hlvr_default_3d"
+		volume = 3.3
+		volume_falloff_min = 50.0
+		volume_falloff_max = 700.0
+		volume_fade_in = 0.3
+		volume_fade_out = 0.3
+		vsnd_files = 
+		[
+			"sounds/scary/higgs_breath_1.vsnd",
+			"sounds/scary/higgs_breath_2.vsnd",
+			"sounds/scary/higgs_breath_3.vsnd",
+			"sounds/scary/higgs_breath_4.vsnd",
+			"sounds/scary/higgs_breath_5.vsnd",
+			"sounds/scary/higgs_breath_6.vsnd",
 		]
 	}
 	

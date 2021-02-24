@@ -11,14 +11,17 @@ end
 function SpawnAshes()
 	--print('Starting ashes spawn')
 
-	print('urn damage taken', Health - thisEntity:GetHealth())
-	if Health - thisEntity:GetHealth() < 80 then return nil end
+	--print('urn damage taken', Health - thisEntity:GetHealth())
+	if Health - thisEntity:GetHealth() < 20 then
+		Health = thisEntity:GetHealth()
+		return nil
+	end
 
 	local startVector = thisEntity:GetCenter()
 
 	local traceTable = {
 		startpos = startVector,
-		endpos = startVector - Vector(0, 0, 200),
+		endpos = startVector - Vector(0, 0, 255),
 		ignore = thisEntity,
 		mask = 0
 	}
@@ -31,7 +34,7 @@ function SpawnAshes()
 		
 		local classname = "prop_dynamic"
 		local spawnKeys = {
-			origin = traceTable.pos.x.." "..traceTable.pos.y.." "..traceTable.pos.z,
+			origin = traceTable.pos.x.." "..traceTable.pos.y.." "..(traceTable.pos.z - 0.4),
 			--scales = "0.4 0.4 0.4",
 			model = "models/vinny_house/ashes.vmdl",
 			solid = "0",

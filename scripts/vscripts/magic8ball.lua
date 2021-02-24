@@ -6,7 +6,7 @@ local SHAKE_TIMEOUT = 0.8
 local SHAKE_COUNT = 5
 -- Time between hints
 local TIME_BETWEEN_HINTS = 4.5
-local TIME_BETWEEN_SHAKES = 2
+local TIME_BETWEEN_SHAKES = 1.5
 
 local fLastShake = 0
 local fLastForce = 0
@@ -65,6 +65,7 @@ local HintReminders = {
 -- 27 = Front door
 -- 28 = Kitchen door
 -- 29 = Feeding Meat
+-- 30 = Higgs corridor
 local HintAreas = {
 	{
 		'I give nearby hints when shook!',
@@ -227,6 +228,11 @@ local HintAreas = {
 	{
 		'Meat looks sad and hungry',
 		'Feed Meat a gherkin from the fridge',
+	},
+
+	{
+		'Return it',
+		'He will return',
 	}
 }
 
@@ -373,9 +379,16 @@ function StartThinking()
 	thisEntity:StopThink('ThinkFunc')
 	thisEntity:SetThink(ThinkFunc, 'ThinkFunc', 0.1)
 	vLastPos = thisEntity:GetAbsOrigin()
+	SendToConsole('sv_gameinstructor_disable 0')
 end
 function StopThinking()
 	thisEntity:StopThink('ThinkFunc')
+	SendToConsole('sv_gameinstructor_disable 1')
+	
+	-- Kill all built up dynamic hints
+	-- (For some reason killing one hint makes the others end so we do it on drop)
+	--print('Killing hints:',#Entities:FindAllByName('magic8ball_dynamic_hint'))
+	DoEntFire('magic8ball_dynamic_hint', 'Kill', '', 0, nil, nil)
 end
 
 function ThinkFunc()
@@ -428,6 +441,7 @@ end
 
 function ShowHint(text)
 	local spawnKeys = {
+		targetname = 'magic8ball_dynamic_hint',
 		hint_caption = text,
 		hint_start_sound = 'Instructor.StartLesson',
 		hint_timeout = TIME_BETWEEN_HINTS..'',
@@ -436,12 +450,13 @@ function ShowHint(text)
 	}
 
 	local ent = SpawnEntityFromTableSynchronous('env_instructor_vr_hint', spawnKeys)
-	SendToConsole('sv_gameinstructor_disable 0')
-	thisEntity:StopThink('disable_hint')
+	--SendToConsole('sv_gameinstructor_disable 0')
+	--thisEntity:StopThink('disable_hint')
 	DoEntFire('!self', 'FireUser1', '', 0.1, thisEntity, thisEntity)
-	DoEntFireByInstanceHandle(ent, 'ShowHint', '', 0.1, thisEntity, thisEntity)
-	DoEntFireByInstanceHandle(ent, 'Kill', '', TIME_BETWEEN_HINTS, thisEntity, thisEntity)
-	thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, 'disable_hint', TIME_BETWEEN_HINTS)
+	DoEntFireByInstanceHandle(ent, 'ShowHint', '', 0, thisEntity, thisEntity)
+	--DoEntFireByInstanceHandle(ent, 'EndHint', '', TIME_BETWEEN_HINTS, thisEntity, thisEntity)
+	--DoEntFireByInstanceHandle(ent, 'Kill', '', TIME_BETWEEN_HINTS+2, thisEntity, thisEntity)
+	--thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, 'disable_hint', TIME_BETWEEN_HINTS)
 end
 
 --#endregion
