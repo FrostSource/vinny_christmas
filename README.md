@@ -11,6 +11,34 @@ If you want to compile and run this map for yourself there are two things you ne
 
 2. A few models along with their textures are excluded due to their strict licenses. They will show up as giant errors or red meshes in the map and will need to be replaced with any generic models that can fit in their place.
 
+## Using the Meat prefab in your own map
+
+The prefab is made using many custom files, all of which need to be copied over to your own content/game folder:
+* animgraphs/vinemeat.vanmgrph
+* maps/prefabs/meat.vmap
+* materials/meat
+* models/meat/
+* particles/munch.vpcf
+* scripts/vscripts/meat.lua *(this file needs to be in your game folder, not content)*
+* soundevents/meat_soundevents.vsndevts
+* sounds/meat/
+
+You should also add the sound event file to your resource manifest file so it looks similar to this:
+```
+{
+	resourceManifest = 
+	[
+		[ 
+			...
+			"soundevents/meat_soundevents.vsndevts",
+		],
+	]
+}
+```
+
+The files should compile automatically but if you find that's not the case you can open your Asset Browser, locate the `meat` files and `Right click > Full Recompile`.
+The prefab has many input/output set up with descriptions. If you have any trouble installing or using Meat feel free to contact me anywhere you can find me on Discord/Steam etc..
+
 ## Things I could not fix
 
 If you know of any way to solve these issues I would LOVE to know how.
