@@ -50,6 +50,7 @@
 				[
 					{
 						_class = "GenericGameData"
+						disabled = true
 						game_class = "ao_proxy_box"
 						game_keys = 
 						{
@@ -57,6 +58,25 @@
 							dimensions = [ 5.71042, 5.40227, 0.38224 ]
 							offset_origin = [ -0.012322, -0.032634, -0.113282 ]
 							offset_angles = [ 0.0, 0.0, 0.0 ]
+						}
+					},
+					{
+						_class = "GenericGameData"
+						disabled = true
+						game_class = "high_quality_shadows_region"
+						game_keys = 
+						{
+							bonename = ""
+							radius = 5.0
+							center = [ 0.0, 0.0, 0.0 ]
+							key_light_target0 = ""
+							key_light_target1 = ""
+							key_light_target2 = ""
+							key_light_target3 = ""
+							key_light_target4 = ""
+							key_light_target5 = ""
+							key_light_target6 = ""
+							key_light_target7 = ""
 						}
 					},
 				]

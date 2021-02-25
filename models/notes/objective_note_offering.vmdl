@@ -78,12 +78,13 @@
 				[
 					{
 						_class = "GenericGameData"
+						disabled = true
 						game_class = "ao_proxy_box"
 						game_keys = 
 						{
 							bonename = ""
-							dimensions = [ 5.32267, 5.48469, 0.364099 ]
-							offset_origin = [ -0.11579, 0.016317, -0.126303 ]
+							dimensions = [ 12.6434, 12.8832, 4.15139 ]
+							offset_origin = [ 0.13834, -0.009193, -0.002129 ]
 							offset_angles = [ 0.0, 0.0, 0.0 ]
 						}
 					},

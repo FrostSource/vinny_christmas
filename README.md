@@ -9,13 +9,13 @@ If you want to compile and run this map for yourself there are two things you ne
 	* scripts/
 	* panorama/videos/
 
-2. Two models along with their textures are excluded due to their strict licenses. They will show up as giant errors or red meshes in the map and will need to be replaced with any generic models that can fit in their place.
+2. A few models along with their textures are excluded due to their strict licenses. They will show up as giant errors or red meshes in the map and will need to be replaced with any generic models that can fit in their place.
 
 ## Things I could not fix
 
 If you know of any way to solve these issues I would LOVE to know how.
 
-* Objectives notes become blurry/low quality when away from them and won't pop back in until the player shoves their face into them.
+* ~Objectives notes become blurry/low quality when away from them and won't pop back in until the player shoves their face into them.~ **Fixed by tagging the materials with no LOD**
 * Some areas have noticeable hitches when moving close such as: Jerma's bedroom doorway, Saw freezer by the button, objectives notice board.
 * Bunker room with hole has black props sometimes. ~~**Moving the lights a bit fixed this for some reason**~~ Randomly black again?
 * ~~Initial light when player gets captured has buggy fog. Maybe narrowed it down to player being teleported instead of moving over time.~~ **Fixed by teleporting player twice**
