@@ -43,7 +43,7 @@ The prefab has many input/output set up with descriptions. If you have any troub
 
 If you know of any way to solve these issues I would LOVE to know how.
 
-* Some people are experiencing crashes after the saw section.
+* Some people are experiencing crashes throughout the game seemingly randomly.
 * Some areas have noticeable hitches when moving close such as: Jerma's bedroom doorway, Saw freezer by the button, objectives notice board.
 * Bunker room with hole has black props sometimes. ~~**Moving the lights a bit fixed this for some reason**~~ Randomly black again?
 * ~Objectives notes become blurry/low quality when away from them and won't pop back in until the player shoves their face into them.~ **Fixed by tagging the materials with no LOD**
