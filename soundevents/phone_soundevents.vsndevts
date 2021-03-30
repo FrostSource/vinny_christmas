@@ -1,7 +1,7 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 
-	"Phone.HangUpClick" = 
+	"phone.hang_up_click" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 2
@@ -14,7 +14,7 @@
 			"sounds/phone/hang_up_click_beep.vsnd",
 		]
 	}
-	"Phone.HangUpLoop" = 
+	"phone.hang_up_loop" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1
@@ -25,7 +25,7 @@
 			"sounds/phone/hang_up_loop.vsnd",
 		]
 	}
-	"Phone.RingOnce" = 
+	"phone.ring_once" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1
@@ -36,7 +36,7 @@
 			"sounds/phone/ring_once.vsnd",
 		]
 	}
-	"Phone.RingLoop" = 
+	"phone.ring_loop" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 0.7
@@ -48,7 +48,7 @@
 		]
 	}
 	
-	"Phone.Quip.HL1Breathe" = 
+	"phone.quip.hl1_breathe" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -58,7 +58,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/breathe1.vsnd"
 	}
-	"Phone.Quip.GmanBissing" = 
+	"phone.quip.gman_bissing" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 2.6
@@ -68,7 +68,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/gman_bissing.vsnd"
 	}
-	"Phone.Quip.HatsuneMiku" = 
+	"phone.quip.hatsune_miku" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -78,7 +78,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/hatsunemiku.vsnd"
 	}
-	"Phone.Quip.JermaPunchedCar" = 
+	"phone.quip.jerma_punched_car" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -88,7 +88,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/jerma_punchedacar.vsnd"
 	}
-	"Phone.Quip.JermaRealiseUgly" = 
+	"phone.quip.jerma_realise_ugly" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 2
@@ -98,7 +98,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/jerma_realiseugly.vsnd"
 	}
-	"Phone.Quip.JermaScream" = 
+	"phone.quip.jerma_scream" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -108,7 +108,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/jerma_scream.vsnd"
 	}
-	"Phone.Quip.LimmyVinny" = 
+	"phone.quip.limmy_vinny" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -118,7 +118,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/limmyvinny.vsnd"
 	}
-	"Phone.Quip.MmmMonkey" = 
+	"phone.quip.mmm_monkey" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 2
@@ -128,7 +128,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/mmmmonkey.vsnd"
 	}
-	"Phone.Quip.MusicIndustryCode" = 
+	"phone.quip.music_industry_code" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -138,7 +138,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/music_industry_code2.vsnd"
 	}
-	"Phone.Quip.AssIsHeavy" = 
+	"phone.quip.ass_is_heavy" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -153,7 +153,7 @@
 			"sounds/phone/quips/my_ass_is_heavy.vsnd",
 		]
 	}
-	"Phone.Quip.AssIsHeavy!" = 
+	"phone.quip.ass_is_heavy!" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -163,7 +163,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/my_ass_is_heavy!.vsnd"
 	}
-	"Phone.Quip.UfoPorno" = 
+	"phone.quip.ufo_porno" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -173,7 +173,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/ufoporno.vsnd"
 	}
-	"Phone.Quip.FartMeme" = 
+	"phone.quip.fart_meme" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5
@@ -183,7 +183,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/fart_meme.vsnd"
 	}
-	"Phone.Quip.MarioHaha" = 
+	"phone.quip.mario_haha" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.1
@@ -193,7 +193,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/mariohaha.vsnd"
 	}
-	"Phone.Quip.TommyJoker" = 
+	"phone.quip.tommy_joker" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.6
@@ -203,7 +203,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/tommy_joker.vsnd"
 	}
-	"Phone.Quip.FYouLuigi" = 
+	"phone.quip.f_you_luigi" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.4
@@ -213,7 +213,7 @@
 		spread_max = 0
 		vsnd_files = "sounds/phone/quips/fyouluigi.vsnd"
 	}
-	"Phone.Quip.Grapefruit" = 
+	"phone.quip.grape_fruit" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.5

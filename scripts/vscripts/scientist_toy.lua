@@ -13,6 +13,6 @@ function Speak()
     local len = (PortEnt:GetAbsOrigin() - thisEntity:GetAbsOrigin()):Length()
     print("Ring length", len)
     if len >= SpeakLength then
-        ToyEnt:EmitSound("Addon.ScientistVox")
+        ToyEnt:EmitSound("vinny.scientist_vox")
     end
 end
