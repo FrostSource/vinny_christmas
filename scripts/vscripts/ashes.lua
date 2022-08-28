@@ -12,7 +12,7 @@ function SpawnAshes()
 	--print('Starting ashes spawn')
 
 	--print('urn damage taken', Health - thisEntity:GetHealth())
-	if Health - thisEntity:GetHealth() < 24 then
+	if Health - thisEntity:GetHealth() < 20 then
 		Health = thisEntity:GetHealth()
 		return nil
 	end
