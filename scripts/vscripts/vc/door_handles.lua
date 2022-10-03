@@ -9,7 +9,6 @@ if self.Initiated then return end
 base.handles = {}
 
 function base:OnReady(loaded)
-	print("ONREADY",self:GetName())
 	local handlepos = self:GetAttachmentOrigin(self:ScriptLookupAttachment("handle"))
 	local handles = Entities:FindAllByClassnameWithin('prop_animinteractable', handlepos, 32)
 	for i,handle in ipairs(handles) do
