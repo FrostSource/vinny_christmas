@@ -1,11 +1,11 @@
 ---@diagnostic disable: lowercase-global
 
 function Speak(sound)
-    EmitSoundOn(sound, Entities:GetLocalPlayer())
+    EmitSoundOn(sound, Player)
 end
 
 vinny_slept_sound = function()
-    local player = Entities:GetLocalPlayer()
+    local player = Player
     EmitSoundOn("narrator.christmas_complete", player)
     EmitSoundOn("caption.narrator.christmas_complete_01", player)
     EmitSoundOn("caption.narrator.christmas_complete_02", player)

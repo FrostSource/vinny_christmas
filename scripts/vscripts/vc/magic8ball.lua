@@ -1,19 +1,5 @@
 
-local FORCE_THRESHOLD = 0.25
 
--- All shaking must be in this time frame
-local SHAKE_TIMEOUT = 0.8
-local SHAKE_COUNT = 5
--- Time between hints
-local TIME_BETWEEN_HINTS = 4.5
-local TIME_BETWEEN_SHAKES = 1.5
-
-local fLastShake = 0
-local fLastForce = 0
-local iShakeCount = 0
-local vLastDirectionVector = Vector(0,0,0)
-local fLastDirectionSign = 0
-local vLastPos = nil
 
 -- Hint reminders:
 -- 1 = Explore
@@ -25,6 +11,7 @@ local vLastPos = nil
 -- 7 = Santa crash
 -- 8 = Gift placement
 local HintReminders = {
+	'There are no hints for this area',
 	'There are still places you haven\'t explored',
 	'Santa needs cookies by the fireplace',
 	'Santa needs milk to wash down the cookies',
@@ -68,17 +55,20 @@ local HintReminders = {
 -- 30 = Higgs corridor
 local HintAreas = {
 	{
-		'I give nearby hints when shook!',
+		'I give hints about the area when shook! Shake again!',
+		'Each shake will give a more detailed hint.',
 		'Put me in your wrist pocket\nI help make the game VineProof™'
 	},
 
 	{
 		'There is a gift nearby...',
-		'Check the closet'
+		'Check the closet',
+		'Look at the top shelf of the bedroom closet'
 	},
 	{
 		'There is a gift nearby...',
-		'Check the cupboards'
+		'Check the cupboards',
+		'Check the cupboard next to the cat clock'
 	},
 	{
 		'There is a gift nearby...',
@@ -86,36 +76,43 @@ local HintAreas = {
 	},
 	{
 		'There is a gift nearby...',
-		'Does Meat have a secret under his room?'
+		'A horrid smell is rising into the air...',
+		'Does Meat have a secret under his room?',
+		'Move boxes and break the hidden boards'
 	},
 	{
 		'There is a gift nearby...',
-		'What\'s down that hole?'
+		'What\'s down that hole?',
+		'Use the wheel to raise the bucket'
 	},
 
 	{
 		'A useful tool could unclog the toilet',
 		'Vinny keeps a plunger in one of the bathrooms',
-		'It might take a few pumps'
+		'It might take a few plunges'
 	},
 
 	{
-		'Maybe you should climb the drain pipe nearby',
-		'Climb the pipe all the way to the top'
+		'How could you climb to the roof?',
+		'The drain pipes seem sturdy',
+		'There is a drain pipe near the front door',
+		'Climb all the way to the top'
 	},
 
 	{
 		'The tree needs an axe to be chopped down',
+		'Where would Vinny keep an axe?',
 		'Vinny keeps an axe in his shed',
 		'Maybe someone buried the handle nearby',
-		'A shovel would be needed to dig the dirt pit by the tree',
+		'A shovel could dig the dirt pit by the tree',
 		'The handle from the pit might open the shed door',
 		'The tree just needs to be hit in the right spots'
 	},
 
 	{
 		'Meat will need to clean the door handle',
-		'Meat should be brought down from his room'
+		'Meat should be brought down from his room',
+		'Bring Meat back here after feeding him'
 	},
 
 	{
@@ -181,12 +178,12 @@ local HintAreas = {
 		'A door needs to be blown open from behind',
 		'The switch needs to be installed in the power mains'
 	},
-	
+
 	{
 		'Sorry you can\'t skip the credits :)',
 		'You\'re a cool person for playing my game :)'
 	},
-	
+
 	{
 		'Something is holding these doors shut tight',
 		'You\'ll need to examine it from the other side',
@@ -227,6 +224,7 @@ local HintAreas = {
 
 	{
 		'Meat looks sad and hungry',
+		'What does Meat like to eat?',
 		'Feed Meat a gherkin from the fridge',
 	},
 
@@ -236,56 +234,76 @@ local HintAreas = {
 	}
 }
 
-HintAreaIndexSave = HintAreaIndexSave or {}
-HintAreaStack = HintAreaStack or {}
-HintReminderStack = HintReminderStack or {}
-CurrentHintLine = CurrentHintLine or 1
---LastHintArea = LastHintArea or ''
-HaltAtEnd = HaltAtEnd or false
+---@class HintBall : EntityClass
+local base, self = entity("HintBall")
+if self.Initiated then return end
 
-function Activate()
-	vLastPos = thisEntity:GetAbsOrigin()
+self.HintAreaIndexSave = {}
+self.HintAreaStack = {}
+self.HintReminderStack = {}
+self.CurrentHintLine = 1
+--LastHintArea = LastHintArea or ''
+self.HaltAtEnd = false
+
+local FORCE_THRESHOLD = 0.25
+
+-- All shaking must be in this time frame
+local SHAKE_TIMEOUT = 0.8
+local SHAKE_COUNT = 5
+-- Time between hints
+local TIME_BETWEEN_HINTS = 4.5
+local TIME_BETWEEN_SHAKES = 1.5
+
+local fLastShake = 0
+local fLastForce = 0
+local iShakeCount = 0
+local vLastDirectionVector = Vector(0,0,0)
+local fLastDirectionSign = 0
+-- local vLastPos = nil
+
+function self:OnReady(loaded)
+	-- vLastPos = thisEntity:GetAbsOrigin()
 	-- Init index saving table (should save between loads using attributes?)
 	for i = 1, #HintAreas do
-		HintAreaIndexSave[i] = 0
+		self.HintAreaIndexSave[i] = 0
 	end
 end
 
 
 --#region Areas
 
-function AddArea(index)
-	RemoveArea(index)
-		HintAreaStack[#HintAreaStack + 1] = index
+function self:AddArea(index)
+	self:RemoveArea(index)
+		self.HintAreaStack[#self.HintAreaStack + 1] = index
 end
 
-function RemoveArea(index)
-	for i=1, #HintAreaStack do
-		if HintAreaStack[i] == index then
-			table.remove(HintAreaStack, i)
+function self:RemoveArea(index)
+	for i=1, #self.HintAreaStack do
+		if self.HintAreaStack[i] == index then
+			table.remove(self.HintAreaStack, i)
 			break
 		end
 	end
 end
 
-function HintAreaExistsInStack(index)
-	for i=1, #HintAreaStack do
-		if HintAreaStack[i] == index then
+function self:HintAreaExistsInStack(index)
+	for i=1, #self.HintAreaStack do
+		if self.HintAreaStack[i] == index then
 			return true
 		end
 	end
 	return false
 end
 
-function GetAreaHint()
+function self:GetAreaHint()
 	-- Return blank if no area hints, so reminder can be shown
-	if #HintAreaStack == 0 then return '' end
+	if #self.HintAreaStack == 0 then return '' end
 
-	local area = HintAreas[HintAreaStack[#HintAreaStack]]
-	local line = HintAreaIndexSave[HintAreaStack[#HintAreaStack]]
+	local area = HintAreas[self.HintAreaStack[#self.HintAreaStack]]
+	local line = self.HintAreaIndexSave[self.HintAreaStack[#self.HintAreaStack]]
 
 	-- Increment hint line if not halting
-	if not HaltAtEnd or line < #area then
+	if not self.HaltAtEnd or line < #area then
 		
 		-- Reset if at end of hints
 		if line >= #area then
@@ -293,7 +311,7 @@ function GetAreaHint()
 		end
 
 		line = line + 1
-		HintAreaIndexSave[HintAreaStack[#HintAreaStack]] = line
+		self.HintAreaIndexSave[self.HintAreaStack[#self.HintAreaStack]] = line
 
 	end
 
@@ -304,57 +322,57 @@ end
 
 --#region Reminders
 
-function AddReminder(index)
-	if not HintReminderExistsInStack(index) then
-		HintReminderStack[#HintReminderStack + 1] = index
+function self:AddReminder(index)
+	if not self:HintReminderExistsInStack(index) then
+		self.HintReminderStack[#self.HintReminderStack + 1] = index
 	end
 end
 
-function RemoveReminder(index)
+function self:RemoveReminder(index)
 	local found = nil
-	for i=1, #HintReminderStack do
-		if HintReminderStack[i] == index then
+	for i=1, #self.HintReminderStack do
+		if self.HintReminderStack[i] == index then
 			found = i
 			break
 		end
 	end
 
 	if found ~= nil then
-		table.remove(HintReminderStack, found)
+		table.remove(self.HintReminderStack, found)
 	end
 end
 
-function HintReminderExistsInStack(index)
-	for i=1, #HintReminderStack do
-		if HintReminderStack[i] == index then
+function self:HintReminderExistsInStack(index)
+	for i=1, #self.HintReminderStack do
+		if self.HintReminderStack[i] == index then
 			return true
 		end
 	end
 	return false
 end
 
-function GetReminderHint()
+function self:GetReminderHint()
 	-- Return if no area hints so fallback can be shown
-	if #HintReminderStack == 0 then return '' end
+	if #self.HintReminderStack == 0 then return '' end
 
 	-- Re-shuffle and reset reminders if at end
-	if CurrentHintLine >= #HintReminderStack then
-		ShuffleReminderStack()
-		CurrentHintLine = 0
+	if self.CurrentHintLine >= #self.HintReminderStack then
+		self:ShuffleReminderStack()
+		self.CurrentHintLine = 0
 	end
 
 	-- Increment hint line and return hint text
-	CurrentHintLine = CurrentHintLine + 1
-	return HintReminders[HintReminderStack[CurrentHintLine]]
+	self.CurrentHintLine = self.CurrentHintLine + 1
+	return HintReminders[self.HintReminderStack[self.CurrentHintLine]]
 end
 
-function ShuffleReminderStack()
+function self:ShuffleReminderStack()
 	-- Just return if not enough reminders to shuffle
-	if #HintReminderStack < 2 then return false end
+	if #self.HintReminderStack < 2 then return false end
 
-	for i = #HintReminderStack, 2, -1 do
+	for i = #self.HintReminderStack, 2, -1 do
 		local j = RandomInt(1, i)
-		HintReminderStack[i], HintReminderStack[j] = HintReminderStack[j], HintReminderStack[i]
+		self.HintReminderStack[i], self.HintReminderStack[j] = self.HintReminderStack[j], self.HintReminderStack[i]
 	end
 
 	return true
@@ -364,74 +382,76 @@ end
 
 --#region Other
 
-function EnableHalt()
-	HaltAtEnd = true
+function self:EnableHalt()
+	self.HaltAtEnd = true
 end
-function DisableHalt()
-	HaltAtEnd = false
+function self:DisableHalt()
+	self.HaltAtEnd = false
 end
 
 --#endregion
 
 --#region Thinking
 
-function StartThinking()
-	thisEntity:StopThink('ThinkFunc')
-	thisEntity:SetThink(ThinkFunc, 'ThinkFunc', 0.1)
-	vLastPos = thisEntity:GetAbsOrigin()
+function self:StartThinking()
+	self:StopThink('ThinkFunc')
+	-- self:SetThink(self.ThinkFunc, 'ThinkFunc', 0.1, self)
+	self:ResumeThink()
+	vLastPos = self:GetAbsOrigin()
 	SendToConsole('sv_gameinstructor_disable 0')
 end
-function StopThinking()
-	thisEntity:StopThink('ThinkFunc')
+function self:StopThinking()
+	-- self:StopThink('ThinkFunc')
+	self:PauseThink()
 	SendToConsole('sv_gameinstructor_disable 1')
-	
+
 	-- Kill all built up dynamic hints
 	-- (For some reason killing one hint makes the others end so we do it on drop)
 	--print('Killing hints:',#Entities:FindAllByName('magic8ball_dynamic_hint'))
 	DoEntFire('magic8ball_dynamic_hint', 'Kill', '', 0, nil, nil)
 end
 
-function ThinkFunc()
-	
+function self:Think()
+
 	local now = Time()
 	-- Time between hints
 	if (now - fLastShake) < TIME_BETWEEN_SHAKES then
 		return 0.5
 	end
-	
+
 	if now - fLastForce > SHAKE_TIMEOUT then
 		iShakeCount = 0
 		fLastForce = now
 		return 0.1
 	end
-	
-	local vPos = thisEntity:GetAbsOrigin()
+
+	local vPos = self:GetAbsOrigin()
 	local diff = vPos - vLastPos
 	local forceVector = diff:Length()
 	local directionSign = vLastDirectionVector:Dot(diff)
 	if directionSign < 0 then directionSign = -1 else directionSign = 1 end
-	
+
 	if forceVector > FORCE_THRESHOLD and directionSign ~= fLastDirectionSign then
 		iShakeCount = iShakeCount + 1
 		if iShakeCount >= SHAKE_COUNT then
 			fLastShake = now
 			iShakeCount = 0
-			
-			local text = GetAreaHint()
+
+			local text = self:GetAreaHint()
 			if text == '' then
-				text = GetReminderHint()
+				text = self:GetReminderHint()
 			end
 			if text == '' then
 				text = 'No hints for this area'
 			end
 
-			ShowHint(text)
+			self:ShowHint(text)
 		end
 	end
 
 	fLastDirectionSign = directionSign
 	vLastDirectionVector = diff
-	vLastPos = vPos
+	-- vLastPos = vPos
 	return 0
 end
 
@@ -439,7 +459,7 @@ end
 
 --#region Displaying
 
-function ShowHint(text)
+function self:ShowHint(text)
 	local spawnKeys = {
 		targetname = 'magic8ball_dynamic_hint',
 		hint_caption = text,
@@ -452,8 +472,8 @@ function ShowHint(text)
 	local ent = SpawnEntityFromTableSynchronous('env_instructor_vr_hint', spawnKeys)
 	--SendToConsole('sv_gameinstructor_disable 0')
 	--thisEntity:StopThink('disable_hint')
-	DoEntFire('!self', 'FireUser1', '', 0.1, thisEntity, thisEntity)
-	DoEntFireByInstanceHandle(ent, 'ShowHint', '', 0, thisEntity, thisEntity)
+	DoEntFire('!self', 'FireUser1', '', 0.1, self, self)
+	DoEntFireByInstanceHandle(ent, 'ShowHint', '', 0, self, self)
 	--DoEntFireByInstanceHandle(ent, 'EndHint', '', TIME_BETWEEN_HINTS, thisEntity, thisEntity)
 	--DoEntFireByInstanceHandle(ent, 'Kill', '', TIME_BETWEEN_HINTS+2, thisEntity, thisEntity)
 	--thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, 'disable_hint', TIME_BETWEEN_HINTS)

@@ -2,29 +2,15 @@
 -- This script is a customized version of Valve's template NPC script.
 -- Their comments left here for clarity sake.
 
-function Spawn() 
-	-- Registers a function to get called each time the entity updates, or "thinks"
-	--thisEntity:SetContextThink(nil, MainThinkFunc, 0)
-end
+---@class Meat : EntityClass
+local base, self = entity("Meat")
+if self.Initiated then return end
 
-function Activate(activateType)
-	-- Register a function to receive callbacks from the AnimGraph of this entity
-	-- when Status Tags are emitted by the graph.  This must be called in Activate
-	-- because the AnimGraph has not been loaded yet when Spawn is called
-	thisEntity:RegisterAnimTagListener( AnimTagListener )
+base.FollowPlayer = false
+base.GrowlEnabled = false
+-- self.MeatThinking = false
 
-	if activateType == 2 then
-		print('Loading MEAT attributes')
-		if thisEntity:Attribute_GetIntValue('MeatFollowing', 0) == 1 then
-			EnableFollow()
-		end
-		if thisEntity:Attribute_GetIntValue('MeatGrowling', 0) == 1 then
-			EnableGrowl()
-		end
-		if thisEntity:Attribute_GetIntValue('MeatThinking', 0) == 1 then
-			StartThinking()
-		end
-	end
+function self:OnReady(loaded)
 end
 
 --=============================
@@ -63,110 +49,136 @@ local GrowlDistance = 120
 local GrowlDistanceZ = 20
 local LastGrowlTime = 0.0
 local MeatMouthScoreDistance = 70
-MeatMouthScoreLastTime = MeatMouthScoreLastTime or 0
-GrowlEnabled = GrowlEnabled or false
-FollowPlayer = FollowPlayer or false
+local MeatMouthScoreLastTime = 0
 
-function EnableGrowl()
+function base:EnableGrowl()
 	print('Meat: EnableGrowl')
-	GrowlEnabled = true
-	thisEntity:Attribute_SetIntValue('MeatGrowling', 1)
+	self.GrowlEnabled = true
+	self:Save()
 end
-function DisableGrowl()
+function base:DisableGrowl()
 	print('Meat: DisableGrowl')
-	GrowlEnabled = false
-	thisEntity:Attribute_SetIntValue('MeatGrowling', 0)
+	self.GrowlEnabled = false
+	self:Save()
 end
 
-function EnableFollow()
+function base:EnableFollow()
 	print('Meat: EnableFollow')
-	FollowPlayer = true
-	thisEntity:Attribute_SetIntValue('MeatFollowing', 1)
+	self.FollowPlayer = true
+	self:Save()
 end
-function DisableFollow()
+function base:DisableFollow()
 	print('Meat: DisableFollow')
-	FollowPlayer = false
-	thisEntity:NpcNavClearGoal()
-	thisEntity:Attribute_SetIntValue('MeatFollowing', 0)
+	self.FollowPlayer = false
+	self:NpcNavClearGoal()
+	self:Save()
 end
 
-function StartThinking()
+-- Only exists for the print
+function base:StartThinking()
 	print('Meat: StartThinking')
-	thisEntity:SetThink(MainThinkFunc, 'MainThinkFunc', 0)
-	thisEntity:Attribute_SetIntValue('MeatThinking', 1)
+	self:ResumeThink()
 end
-function StopThinking()
+-- Only exists for the print
+function base:StopThinking()
 	print('Meat: StopThinking')
-	thisEntity:StopThink('MainThinkFunc')
-	thisEntity:Attribute_SetIntValue('MeatFollowing', 0)
+	self:PauseThink()
 end
 
-function Growl()
+function base:Growl()
 	--print("Big meaty growl")
-	-- Does this play at origin? (feet)
-	--thisEntity:EmitSound("Addon.MeatGrowl")
-	StartSoundEventFromPosition("meat.growl", thisEntity:GetOrigin() + Vector(-0.000178, 5.82063, -2.51945))
+	StartSoundEventFromPosition("meat.growl", self:GetOrigin() + Vector(-0.000178, 5.82063, -2.51945))
 end
 
-function TestMouthScore()
-	local player = Entities:GetLocalPlayer()
-	local dist = VectorDistance(player:GetOrigin(), thisEntity:GetOrigin())
+function base:TestMouthScore()
+	local player = Player
+	local dist = VectorDistance(player:GetOrigin(), self:GetOrigin())
 
-	--print('meat mouth score')
+	-- print('meat mouth score')
 	if dist >= MeatMouthScoreDistance and Time() - MeatMouthScoreLastTime > 5 then
-		--print('meat mouth score done')
+		-- print('meat mouth score done')
 		StartSoundEvent('vinny.meat_thrown_food', player)
 		MeatMouthScoreLastTime = Time()
 	end
 end
 
 --=============================
+-- Create a path to a point that is flMinPlayerDist from the player
+-- Note: Always try to create a path to where you want to entity to stop, rather than cancelling the path
+-- when it gets close enough.  This allows the AnimGraph to anticipate the goal and choose to play a stopping
+-- animation if one is available
+--=============================
+---@param player CBasePlayer
+local function CreatePathToPlayer( player )
+	--print('Meat: Creating path to player')
+
+	-- Find the vector from this entity to the player
+	local vVecToPlayerNorm = ( player:GetAbsOrigin() - self:GetAbsOrigin() ):Normalized()
+
+	-- Then find the point along that vector that is flMinPlayerDist from the player
+	local vGoalPos = player:GetAbsOrigin() - ( vVecToPlayerNorm * flMinPlayerDist );
+
+	-- Create a path to that goal.  This will replace any existing path
+	-- The path gets sent to the AnimGraph, and its up to the graph to make the character
+	-- walk along the path
+	self:NpcForceGoPosition( vGoalPos, bShouldRun, flNavGoalTolerance )
+
+	flLastPathTime = Time()
+end
+
+--=============================
 -- Think function for the script, called roughly every 0.1 seconds.
 --=============================
-function MainThinkFunc() 
+function base:Think()
 
-	local localPlayer = Entities:GetLocalPlayer()
-	local flDistToPlayer = ( localPlayer:GetAbsOrigin() - thisEntity:GetAbsOrigin() ):Length()
-	local flZDiff = abs(localPlayer:GetAbsOrigin().z - thisEntity:GetAbsOrigin().z)
+	local player = Player
+	local dist_to_player = ( player:GetAbsOrigin() - self:GetAbsOrigin() ):Length()
+	local z_diff = abs(player:GetAbsOrigin().z - self:GetAbsOrigin().z)
 
-	if GrowlEnabled and flDistToPlayer < GrowlDistance and flZDiff < GrowlDistanceZ and Time() - LastGrowlTime > TimeBetweenGrowls then
-		Growl()
+	-- Meat will only growl if close enough and on same level as player
+	if self.GrowlEnabled
+	and dist_to_player < GrowlDistance
+	and z_diff < GrowlDistanceZ
+	and (Time() - LastGrowlTime) > TimeBetweenGrowls
+	then
+		-- print("Meat: Growl")
+		self:Growl()
 		LastGrowlTime = Time()
-		TimeBetweenGrowls = RandomFloat(GrowlTimeMin,GrowlTimeMax)
+		TimeBetweenGrowls = RandomFloat(GrowlTimeMin, GrowlTimeMax)
 	end
-	
-	if FollowPlayer then
 
-		if localPlayer ~= nil then
+	if self.FollowPlayer then
+
+		if player ~= nil then
 
 			-- Set the look target on the AnimGraph to be the position of the players eyes.  
-			thisEntity:SetGraphLookTarget( localPlayer:EyePosition() )
+			self:SetGraphLookTarget( player:EyePosition() )
 
 			-- If the entity is too close to the player and still has an active path, then
 			-- cancel the path to make it stop moving
-			--local flDistToPlayer = ( localPlayer:GetAbsOrigin() - thisEntity:GetAbsOrigin() ):Length()
+			--local flDistToPlayer = ( localPlayer:GetAbsOrigin() - self:GetAbsOrigin() ):Length()
 
-			if ( flDistToPlayer < flMinPlayerDist ) and ( thisEntity:NpcNavGoalActive() ) then
-					thisEntity:NpcNavClearGoal()
+			if ( dist_to_player < flMinPlayerDist ) and ( self:NpcNavGoalActive() ) then
+				self:NpcNavClearGoal()
 			end
 
 			-- If the entity is too far from the player...
-			if ( flDistToPlayer > flMaxPlayerDist ) then
-				
+			if ( dist_to_player > flMaxPlayerDist ) then
+
 				-- If the entity does not already have a path
-				if ( not thisEntity:NpcNavGoalActive() ) then
+				if ( not self:NpcNavGoalActive() ) then
 
 					-- Create a path that ends near the player
-					CreatePathToPlayer(localPlayer)
+					CreatePathToPlayer(player)
 				else
-					local vCurrentGoalPos = thisEntity:NpcNavGetGoalPosition()
-					local flDistPlayerToGoal = ( localPlayer:GetAbsOrigin() - vCurrentGoalPos ):Length()
+					local vCurrentGoalPos = self:NpcNavGetGoalPosition()
+					local flDistPlayerToGoal = ( player:GetAbsOrigin() - vCurrentGoalPos ):Length()
 					local flTimeSincePath = Time() - flLastPathTime
 
 					-- If the player has moved away from the path goal and we haven't changed the path recently
 					-- then calculate a new path
 					if ( flDistPlayerToGoal > flMinPlayerDist ) and ( flTimeSincePath > flRepathTime ) then
-						CreatePathToPlayer(localPlayer)
+						CreatePathToPlayer(player)
 					end
 				end
 			end
@@ -177,26 +189,3 @@ function MainThinkFunc()
 	return 0.1
 end
 
-
---=============================
--- Create a path to a point that is flMinPlayerDist from the player
--- Note: Always try to create a path to where you want to entity to stop, rather than cancelling the path
--- when it gets close enough.  This allows the AnimGraph to anticipate the goal and choose to play a stopping
--- animation if one is available
---=============================
-function CreatePathToPlayer( localPlayer )
-	--print('Meat: Creating path to player')
-
-	-- Find the vector from this entity to the player
-	local vVecToPlayerNorm = ( localPlayer:GetAbsOrigin() - thisEntity:GetAbsOrigin() ):Normalized()
-
-	-- Then find the point along that vector that is flMinPlayerDist from the player
-	local vGoalPos = localPlayer:GetAbsOrigin() - ( vVecToPlayerNorm * flMinPlayerDist );
-
-	-- Create a path to that goal.  This will replace any existing path
-	-- The path gets sent to the AnimGraph, and its up to the graph to make the character
-	-- walk along the path
-	thisEntity:NpcForceGoPosition( vGoalPos, bShouldRun, flNavGoalTolerance )
-
-	flLastPathTime = Time()
-end

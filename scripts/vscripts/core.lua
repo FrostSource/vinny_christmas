@@ -243,7 +243,7 @@ end
 local function save_entity_data(self)
     for key, value in pairs(self) do
         if not key:startswith("__") and type(value) ~= "function" then
-            print("Saving "..key, value)
+            -- print("Saving "..key, value)
             Storage.Save(self, key, value)
         end
     end
@@ -252,9 +252,9 @@ end
 local function load_entity_data(self)
     for key, value in pairs(self) do
         if not key:startswith("__") and type(value) ~= "function" then
-            print("Loading "..key, "default "..tostring(value))
+            -- print("Loading "..key, "default "..tostring(value))
             self[key] = Storage.Load(self, key, value)
-            print("Loaded "..key, self[key])
+            -- print("Loaded "..key, self[key])
         end
     end
 end
@@ -375,15 +375,36 @@ function entity(name, ...)
                 self:OnReady(activateType == 2)
             end
 
+            if self.IsThinking then
+                self:ResumeThink()
+            end
+
             self.Initiated = true
             self:Save()
 
+        end
+
+        function self:ResumeThink()
+            if type(self.Think) == "function" then
+                self:SetContextThink("__EntityThink", function() return self:Think() end, 0)
+                self.IsThinking = true
+                self:Save()
+            else
+                Warning("Entity does not have self:Think function defined!")
+            end
+        end
+
+        function self:PauseThink()
+            self:SetContextThink("__EntityThink", nil, 0)
+            self.IsThinking = false
+            self:Save()
         end
 
         -- Define function to save all entity data
         self.Save = save_entity_data
 
         self.Initiated = false
+        self.IsThinking = false
     end
 
     return base, self, super

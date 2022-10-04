@@ -351,9 +351,15 @@
 		volume_fade_in = 2
 		//spread_min = 0
 		//spread_max = 3
-		pitch = 0.7
+		//pitch_rand_min = 0.7
+		//pitch_rand_max = 1.0
 		vsnd_files = "sounds/scary/stone_grind_lp_loud.vsnd"
-		
+	}
+	
+	"vinny.wall_grind_lp_low" = 
+	{
+		base = "vinny.wall_grind_lp"
+		pitch = 0.7
 	}
 	
 	"vinny.dirt_dig" = 

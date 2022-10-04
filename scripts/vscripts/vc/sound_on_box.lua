@@ -1,49 +1,55 @@
 
 
-local ThinkDelay = 0.1
+---@class SoundOnBox : EntityClass
+local base, self = entity("SoundOnBox")
+if self.Initiated then return end
 
-function Spawn(spawnkeys)
-	SoundName = '*'..spawnkeys:GetValue('soundentity')
-	SourceName = '*'..spawnkeys:GetValue('sourceentity')
-	-- This is important for loaded save files
-	if SoundName ~= '*' then
-		thisEntity:SetContext('soundname', SoundName, 0) end
-	if SourceName ~= '*' then
-		thisEntity:SetContext('sourcename', SourceName, 0) end
-	
-	thisEntity:Attribute_SetIntValue('IsPlaying', 0)
-end
+---@type EntityHandle
+base.SoundEntity = nil
+---@type string
+self.Sound = ""
 
-function Activate()
-	-- This is important for loaded save files
-	if thisEntity:GetContext('soundname') ~= '' then
-		SoundName = thisEntity:GetContext('soundname')
-	end
-	if thisEntity:GetContext('sourcename') ~= '' then
-		SourceName = thisEntity:GetContext('sourcename')
-	end
-	
-	SoundEntity = Entities:FindByName(nil, SoundName)
-	SourceEntity = Entities:FindByName(nil, SourceName)
-	
-	if thisEntity:Attribute_GetIntValue('IsPlaying', 0) == 1 then
-		StartSound()
+---Called automatically on activate.
+---Any self values set here are automatically saved.
+---@param loaded boolean
+function base:OnReady(loaded)
+	if not loaded then
+		self.SoundEntity = SpawnEntityFromTableSynchronous("prop_dynamic_override",
+		{
+			model="models/props/zoo/tiger_toy.vmdl";
+			rendermode = "kRenderNone";
+			solid = "0";
+			disableshadows = "1";
+		})
 	end
 end
-
-function StartSound()
-	thisEntity:SetThink(UpdateAudio, 'UpdateAudio', ThinkDelay)
-	DoEntFireByInstanceHandle(SoundEntity, 'StartSound', '', 0, thisEntity, thisEntity)
-	thisEntity:Attribute_SetIntValue('IsPlaying', 1)
-end
-function StopSound()
-	thisEntity:StopThink('UpdateAudio')
-	DoEntFireByInstanceHandle(SoundEntity, 'StopSound', '', 0, thisEntity, thisEntity)
-	thisEntity:Attribute_SetIntValue('IsPlaying', 0)
+---Called automatically on spawn.
+---Any self values set here are automatically saved.
+---@param spawnkeys CScriptKeyValues
+function base:OnSpawn(spawnkeys)
+	self.Sound = spawnkeys:GetValue('sound')
+	print(self.Sound)
 end
 
-function UpdateAudio()
-	local pos = CalcClosestPointOnEntityOBB(SourceEntity, GetListenServerHost():EyePosition())
-	thisEntity:SetOrigin(pos)
-	return ThinkDelay
+--TODO: Consider saving sound state.
+
+function base:StartSound()
+	print("Playing", self.Sound)
+	self.SoundEntity:EmitSound(self.Sound)
+	self:ResumeThink()
+end
+function base:StopSound()
+	self.SoundEntity:StopSound(self.Sound)
+	self:PauseThink()
+end
+
+function base:Think()
+	local pos = CalcClosestPointOnEntityOBB(self, Player:EyePosition())
+	self.SoundEntity:SetOrigin(pos)
+	return 0
+end
+
+---@param context CScriptPrecacheContext
+function Precache(context)
+	PrecacheModel("models/props/zoo/tiger_toy.vmdl", context)
 end

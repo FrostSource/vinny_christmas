@@ -1,7 +1,16 @@
 
 --60,300
 
-local QuipDelay = 1
+---@class Phone : EntityClass
+local base, self = entity("Phone")
+if self.Initiated then return end
+
+
+function self:OnReady(loaded)
+end
+
+---Amount of time before the quip plays after phone is answered
+local QuipDelay = 0.7
 local RingDelay = 0
 local QuipLengthDefault = 2
 local QuipIsPlaying = false
@@ -10,77 +19,86 @@ local PhoneRecieverName = 'phone_reciever'
 local PhoneHangUpSoundName = 'phone_hangup_snd'
 local PhoneRingSoundName = 'phone_ringing_snd'
 
-function GetQuipLength(name)
+local function GetQuipLength(name)
 	return tonumber(name:match('_([%d%.]+)s$')) or QuipLengthDefault
 end
 
-function PickRandomQuip()
-	local quipEnts = Entities:FindAllByName('phone_quip*')
-	
-	if #quipEnts == 0 then return '' end
-	for i = #quipEnts, 2, -1 do
+function base:PickRandomQuip()
+	local quip_ents = Entities:FindAllByName('phone_quip*')
+
+	if #quip_ents == 0 then return '' end
+
+	-- Randomize quips
+	for i = #quip_ents, 2, -1 do
 		local j = RandomInt(1, i)
-		quipEnts[i], quipEnts[j] = quipEnts[j], quipEnts[i]
+		quip_ents[i], quip_ents[j] = quip_ents[j], quip_ents[i]
 	end
-	
-	for _,quip in pairs(quipEnts) do
-		if thisEntity:Attribute_GetIntValue(quip:GetName(), 0) == 0 then
+
+	print("quips to choose from", #quip_ents)
+
+	-- Pick first quip that hasn't been played
+	for _,quip in pairs(quip_ents) do
+		print("Trying to choose quip "..quip:GetName())
+		-- print("What is? ", self:LoadBoolean(quip:GetName(), true))
+		if self:LoadBoolean(quip:GetName(), true) then
+			print("Chose quip "..quip:GetName())
 			return quip:GetName()
 		end
 	end
 	return nil
 end
 
-function RandomCall()
-	local quip = PickRandomQuip()
+---Plays a random quip call.
+function base:RandomCall()
+	local quip = self:PickRandomQuip()
 	if quip == nil then
 		return
 	end
 	if quip == '' then
 		return
 	end
-	DoCall(quip)
+	self:DoCall(quip)
 end
 
 function EntityCall(name)
-	DoCall(name)
+	self:DoCall(name)
 end
 
-function DoCall(quip)
-	thisEntity:SetContext('NextQuip', quip, 0)
-	DoEntFire(PhoneRingSoundName, 'StartSound', '', RingDelay, thisEntity, thisEntity)
-	DoEntFire('!self', 'FireUser1', '', RingDelay, thisEntity, thisEntity)
+---Queues up a given `quip` and starts ringing.
+---@param quip string
+function base:DoCall(quip)
+	self:SaveString("NextQuip", quip)
+	DoEntFire(PhoneRingSoundName, "StartSound", "", RingDelay, self, self)
+	DoEntFire("!self", "FireUser1", "", RingDelay, self, self)
 end
 
-function PlayQuip()
-	local quip = thisEntity:GetContext('NextQuip')
-	if quip ==  nil or quip == '' then
-		return
-	end
-	
+function base:PlayQuip()
+	local quip_name = self:LoadString("NextQuip")
+	if quip_name ==  nil or quip_name == "" then return	end
+
 	if QuipIsPlaying then return end
-	
-	local length = GetQuipLength(quip)
-	DoEntFire(PhoneRingSoundName, 'StopSound', '', 0, thisEntity, thisEntity)
-	DoEntFire(quip, 'StartSound', '', QuipDelay, thisEntity, thisEntity)
-	DoEntFire('phone_end_call', 'Trigger', '', length+QuipDelay, thisEntity, thisEntity)
+
+	local length = GetQuipLength(quip_name)
+	DoEntFire(PhoneRingSoundName, "StopSound", "", 0, self, self)
+	DoEntFire(quip_name, "StartSound", "", QuipDelay, self, self)
+	DoEntFire("phone_end_call", "Trigger", "", length + QuipDelay, self, self)
 	QuipIsPlaying = true
-	thisEntity:Attribute_SetIntValue(quip, 1)
+	self:SaveBoolean(quip_name, false)
+	print("Disabling "..quip_name, self:LoadBoolean(quip_name, true))
 end
 
-function EndCall(data)
-	local quip = thisEntity:GetContext('NextQuip')
-	
-	if quip == nil or quip == '' then return end
-	
-	DoEntFire(PhoneRingSoundName, 'StopSound', '', 0, thisEntity, thisEntity)
-	DoEntFire(quip, 'StopSound', '', 0, thisEntity, thisEntity)
-	thisEntity:SetContext('NextQuip', '', 0)
+function base:EndCall(data)
+	local quip_name = self:LoadString("NextQuip")
+	if quip_name == nil or quip_name == "" then return end
+
+	DoEntFire(PhoneRingSoundName, "StopSound", "", 0, self, self)
+	DoEntFire(quip_name, "StopSound", "", 0, self, self)
+	self:SaveString("NextQuip", "")
 	QuipIsPlaying = false
 end
 
-function CancelCall()
-	EndCall()
+function base:CancelCall()
+	self:EndCall()
 end
 
 
