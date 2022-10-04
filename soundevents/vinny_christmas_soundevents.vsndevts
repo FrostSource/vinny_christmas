@@ -351,6 +351,7 @@
 		volume_fade_in = 2
 		//spread_min = 0
 		//spread_max = 3
+		pitch = 0.7
 		vsnd_files = "sounds/scary/stone_grind_lp_loud.vsnd"
 		
 	}
@@ -778,15 +779,12 @@
 		]
 	}
 	
-	// Why does this wav get compiled with low pitch???
-	// upping the pitch here to get it back to the source pitch
 	"vinny.timer_tick_loop" = 
 	{
 		type = "hlvr_default_3d"
 		volume = 1.0
 		volume_falloff_min = 5.0
 		volume_falloff_max = 90.0
-		pitch = 3
 		vsnd_files = 
 		[
 			"sounds/misc/timer_tick_loop.vsnd",
@@ -843,7 +841,6 @@
 	
 	
 	
-	
 	"vinny.music.saw_music_1" =
 	{
 		type = "hlvr_music_2d"
@@ -876,435 +873,262 @@
 		priority = 1
 		vsnd_files = "sounds/jerma_saw/meat_dead.vsnd"
 	}
-	"vinny.jerma_saw_candy_crush" = 
+
+	// Base event for all jerma vo
+	"vinny.jerma_vo" =
 	{
 		type = "hlvr_update_vo_default"
-        vsnd_duration = 25.810
 		volume = 1.0
 		volume_fade_out = 0
 		volume_fade_in = 0
 		spread_min = 0
 		spread_max = 45
+	}
+
+	"vinny.jerma_saw_candy_crush" = 
+	{
+		base = "vinny.jerma_vo"
+        vsnd_duration = 25.810
 		vsnd_files = "sounds/jerma_saw/jerma_saw_candy_crush.vsnd"
 	}
 	"vinny.jerma_saw_delivery_of_sharp" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 2.854
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_delivery_of_sharp.vsnd"
 	}
 	
 	"vinny.jerma_saw_delivery_of_sharp_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 3.466
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_delivery_of_sharp_reverb.vsnd"
 	}
 	"vinny.jerma_saw_dont_do_that" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 2.717
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_dont_do_that.vsnd"
 	}
 	"vinny.jerma_saw_dont_need_to_see" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 1.711
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_dont_need_to_see.vsnd"
 	}
 	"vinny.jerma_saw_failed_attempts" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 43.813
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_failed_attempts.vsnd"
 	}
 	"vinny.jerma_saw_failed_attempts_01" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 8.808
-		volume = 1.0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_failed_attempts_01.vsnd"
 	}
 	"vinny.jerma_saw_failed_attempts_02" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//4.253
         vsnd_duration = 3.253
-		volume = 1.0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_failed_attempts_02.vsnd"
 	}
 	"vinny.jerma_saw_failed_attempts_03" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//29.796
         vsnd_duration = 33.796
-		volume = 1.0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_failed_attempts_03.vsnd"
 	}
 	"vinny.jerma_saw_friend_tied_up" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//6.311
         vsnd_duration = 6.811
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_friend_tied_up.vsnd"
 	}
 	"vinny.jerma_saw_get_out_of_room" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//4.523
         vsnd_duration = 4.550
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_get_out_of_room.vsnd"
 	}
 	"vinny.jerma_saw_giberish" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 3.346
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_giberish.vsnd"
 	}
 	"vinny.jerma_saw_giberish_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 3.688
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_giberish_reverb.vsnd"
 	}
 	"vinny.jerma_saw_glow_in_dark" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//13.375
         vsnd_duration = 14.575
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_glow_in_dark.vsnd"
 	}
 	"vinny.jerma_saw_glow_in_dark_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//13.435
         vsnd_duration = 14.975
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_glow_in_dark_reverb.vsnd"
 	}
 	"vinny.jerma_saw_good_at_making_games" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//11.236
         vsnd_duration = 4.236
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_good_at_making_games.vsnd"
 	}
 	"vinny.jerma_saw_good_at_making_games_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//10.979
         vsnd_duration = 2.500
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_good_at_making_games_reverb.vsnd"
 	}
 	"vinny.jerma_saw_gun_shoot_guy" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//8.450
         vsnd_duration = 5.350
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_gun_shoot_guy.vsnd"
 	}
 	"vinny.jerma_saw_its_me_saw" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 2.820
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_its_me_saw.vsnd"
 	}
 	"vinny.jerma_saw_let_me_stop_you" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 1.827
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_let_me_stop_you.vsnd"
 	}
 	"vinny.jerma_saw_macular_degeneration" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//16.293
         vsnd_duration = 18.293
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_macular_degeneration.vsnd"
 	}
-	"vinny.jerma_saw_made_your_choice" = 
+	"vinny.jerma_saw_made_your_choice" =
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 1.318
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_made_your_choice.vsnd"
 	}
 	"vinny.jerma_saw_made_your_choice_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 2.477
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_made_your_choice_reverb.vsnd"
 	}
-	"vinny.jerma_saw_no" = 
+	"vinny.jerma_saw_no" =
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 0.479
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_no.vsnd"
 	}
 	"vinny.jerma_saw_photo_of_me" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//10.312
         vsnd_duration = 11.500
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_photo_of_me.vsnd"
 	}
 	"vinny.jerma_saw_snowman" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//40.788
         vsnd_duration = 51.788
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_snowman.vsnd"
 	}
 	"vinny.jerma_saw_snowman_01" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//23.116
         vsnd_duration = 26.116
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_snowman_01.vsnd"
 	}
 	"vinny.jerma_saw_snowman_02" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//16.963
         vsnd_duration = 19.963
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_snowman_02.vsnd"
 	}
 	"vinny.jerma_saw_sudoku" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
 		//10.021
         vsnd_duration = 12.200
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_sudoku.vsnd"
 	}
 	"vinny.jerma_saw_this_guys_mad" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 5.592
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_this_guys_mad.vsnd"
 	}
 	"vinny.jerma_saw_too_many_sweets" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 3.102
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_too_many_sweets.vsnd"
 	}
 	"vinny.jerma_saw_too_many_sweets_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 3.675
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_too_many_sweets_reverb.vsnd"
 	}
 	"vinny.jerma_saw_use_pair_of_hands" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 5.870
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_use_pair_of_hands.vsnd"
 	}
 	"vinny.jerma_saw_use_pair_of_hands_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 6.795
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_use_pair_of_hands_reverb.vsnd"
 	}
 	"vinny.jerma_saw_yes" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 0.625
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_yes.vsnd"
 	}
 	"vinny.jerma_saw_welcomemurder" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 2.122
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_welcomemurder.vsnd"
 	}
 	"vinny.jerma_saw_welcomemurder_reverb" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 2.422
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_welcomemurder_reverb.vsnd"
 	}
 	"vinny.jerma_saw_reallydisgusting" = 
 	{
-		type = "hlvr_update_vo_default"
+		base = "vinny.jerma_vo"
         vsnd_duration = 7.667
-		volume = 1.0
-		volume_fade_out = 0
-		volume_fade_in = 0
-		spread_min = 0
-		spread_max = 45
 		vsnd_files = "sounds/jerma_saw/jerma_saw_reallydisgusting.vsnd"
 	}
-	
-	
+
 
 }
