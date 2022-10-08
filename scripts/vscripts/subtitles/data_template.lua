@@ -1,0 +1,8 @@
+return
+{
+    mod = "";
+    languages =
+    {
+        english = {};
+    };
+}
