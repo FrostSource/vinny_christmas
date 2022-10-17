@@ -843,6 +843,13 @@
 			"sounds/misc/jerma_rats.vsnd",
 		]
 	}
+
+	"vinny.hint_popup" =
+	{
+		type = "hlvr_default_3d"
+		volume = 0.8
+		vsnd_files = "sounds/misc/hint_popup.vsnd"
+	}
 	
 	
 	

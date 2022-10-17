@@ -1,0 +1,28 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/base_styles.vcss_c" />
+        <include src="s2r://panorama/styles/language_shared.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/magic8ball.vcss_c" />
+	</styles>
+
+    <!-- <scripts> -->
+		<!-- <include src="s2r://panorama/scripts/custom_game/panorama_lua.vjs_c" /> -->
+		<!--Custom script should come after panorama_lua-->
+		<!-- <include src="s2r://panorama/scripts/custom_game/magic8ball.vjs_c" /> -->
+	<!-- </scripts> -->
+
+	<ClientUIDialogPanel class="RootPanel">
+        <HLVRWorldUITextPanel class="WorldUITextPanel" id="WorldUITextPanel">
+			<Panel class="MainPanel" id="MainPanel">
+        <!-- <Label class="OutsideLabel" id="Outside" text="" /> -->
+        <Panel class="Header">
+            <Label class="HeaderText" id="Vinny" text="VINNY" />
+            <Label class="HeaderText" text="HINT™" />
+        </Panel>
+        <!-- <Panel class="HeaderLine" /> -->
+        <Label class="TextLabel" id="TextLabel" text="{s:text_label}"/>
+        <!-- <Label class="OutsideLabel" id="Outside2" text="" /> -->
+			</Panel>
+		</HLVRWorldUITextPanel>
+	</ClientUIDialogPanel>
+</root>
