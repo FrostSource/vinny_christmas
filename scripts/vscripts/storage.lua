@@ -1,5 +1,5 @@
 --[[
-    v2.2.0
+    v2.2.2
     https://github.com/FrostSource/hla_extravaganza
 
     Helps with saving/loading values for persistency between game sessions.
@@ -383,6 +383,9 @@ else
         return true
     end
 
+    local _vector = Vector()
+    local _qangle = QAngle()
+
     ---Save a value.
     ---
     ---Uses type inference to save the value.
@@ -407,8 +410,8 @@ else
                 return Storage.SaveTable(handle, name, value)
             end
         -- better way to get userdata class?
-        elseif value.__index==Vector().__index then return Storage.SaveVector(handle, name, value)
-        elseif value.__index==QAngle().__index then return Storage.SaveQAngle(handle, name, value)
+        elseif value.__index==_vector.__index then return Storage.SaveVector(handle, name, value)
+        elseif value.__index==_qangle.__index then return Storage.SaveQAngle(handle, name, value)
         else
             Warn("Value ["..tostring(value)..","..type(value).."] is not supported. Please open at issue on the github.")
             return false
@@ -423,13 +426,13 @@ else
     ---@param handle EntityHandle # Entity to save on.
     ---@param name string # Name the string was saved as.
     ---@param default? string # Optional default value.
-    ---@return string
+    ---@return string?
     function Storage.LoadString(handle, name, default)
         handle = resolveHandle(handle)
         local t = handle:GetContext(name..separator.."type")
         if t == "string" then
             local value = handle:GetContext(name)
-            if value == nil then return default or "" end
+            if value == nil then return default end
             return value:sub(2)
         elseif t == "splitstring" then
             local splits = handle:GetContext(name..separator.."splits")
@@ -440,31 +443,31 @@ else
             return str
         end
         Warn("String " .. name .. " could not be loaded!")
-        return default or ""
+        return default
     end
 
     ---Load a number.
     ---@param handle EntityHandle # Entity to load from.
     ---@param name string # Name the number was saved as.
     ---@param default? number # Optional default value.
-    ---@return number
+    ---@return number?
     function Storage.LoadNumber(handle, name, default)
         handle = resolveHandle(handle)
         local t = handle:GetContext(name..separator.."type")
         local value = handle:GetContext(name)
         if not value or t ~= "number" then
             Warn("Number " .. name .. " could not be loaded! ("..type(value)..", "..tostring(value)..")")
-            return default or 0
+            return default
         end
         if type(value) == "number" then return value end
-        return default or 0
+        return default
     end
 
     ---Load a boolean value.
     ---@param handle EntityHandle # Entity to save on.
     ---@param name string # Name the boolean was saved as.
     ---@param default? boolean # Optional default value.
-    ---@return boolean|nil
+    ---@return boolean?
     function Storage.LoadBoolean(handle, name, default)
         handle = resolveHandle(handle)
         local t = handle:GetContext(name..separator.."type")
@@ -480,13 +483,13 @@ else
     ---@param handle EntityHandle # Entity to save on.
     ---@param name string # Name the Vector was saved as.
     ---@param default? Vector # Optional default value.
-    ---@return Vector
+    ---@return Vector?
     function Storage.LoadVector(handle, name, default)
         handle = resolveHandle(handle)
         local t = handle:GetContext(name..separator.."type")
         if t ~= "vector" then
             Warn("Vector " .. name .. " could not be loaded!")
-            return default or Vector()
+            return default
         end
         local x = handle:GetContext(name .. ".x") or 0
         local y = handle:GetContext(name .. ".y") or 0
@@ -499,13 +502,13 @@ else
     ---@param handle EntityHandle # Entity to save on.
     ---@param name string # Name the QAngle was saved as.
     ---@param default? QAngle # Optional default value.
-    ---@return QAngle
+    ---@return QAngle?
     function Storage.LoadQAngle(handle, name, default)
         handle = resolveHandle(handle)
         local t = handle:GetContext(name..separator.."type")
         if t ~= "qangle" then
             Warn("QAngle " .. name .. " could not be loaded!")
-            return default or QAngle()
+            return default
         end
         local x = handle:GetContext(name .. ".x") or 0
         local y = handle:GetContext(name .. ".y") or 0
@@ -515,10 +518,11 @@ else
     end
 
     ---Load a table.
+    ---@generic T
     ---@param handle EntityHandle
     ---@param name string
-    ---@param default? table<any,any>
-    ---@return table
+    ---@param default? T
+    ---@return table|T
     function Storage.LoadTable(handle, name, default)
         handle = resolveHandle(handle)
         local name_sep = name..separator
@@ -526,7 +530,7 @@ else
         local key_count = handle:GetContext(name_sep.."key_count")
         if t ~= "table" or not key_count  then
             Warn("Table " .. name .. " could not be loaded!")
-            return default or {}
+            return default
         end
         key_count = key_count - 1
 

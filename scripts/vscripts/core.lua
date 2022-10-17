@@ -415,6 +415,8 @@ end
 -- Includes
 -------------
 
+-- Base libraries
+
 ifrequire 'debug.core'
 ifrequire 'util.util'
 ifrequire 'util.enums'
@@ -438,3 +440,5 @@ end
 ifrequire 'storage'
 ifrequire 'input'
 ifrequire 'player'
+
+ifrequire 'wrist_pocket.core'
