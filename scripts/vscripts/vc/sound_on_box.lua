@@ -7,7 +7,7 @@ if self.Initiated then return end
 ---@type EntityHandle
 base.SoundEntity = nil
 ---@type string
-self.Sound = ""
+base.Sound = ""
 
 ---Called automatically on activate.
 ---Any self values set here are automatically saved.
