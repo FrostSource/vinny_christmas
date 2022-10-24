@@ -1,4 +1,3 @@
-/* styles for the player hud */
 
 .RootPanel {
     /* background-color: #00AA00AA; */
@@ -6,7 +5,6 @@
 
 .WorldUITextPanel {
 	width: 100%;
-    height: 100%;
 	height: fit-children;
     flow-children: down;
     vertical-align: bottom;
@@ -33,7 +31,7 @@
 }
 
 .MainPanel {
-    margin: 0px;
+    margin: 8px;
     flow-children: down;
     horizontal-align: center;
     background-color: rgba(0, 0, 0, 0.315);
@@ -41,6 +39,7 @@
     border: 6px solid rgba(61, 61, 61, 0.877);
 }
 
+/* There is no language server that seems to understand Valve's version of keyframes */
 @keyframes 'elastic-open' {
     0% { pre-transform-scale2d: 0; }
     20.90% { pre-transform-scale2d: 1.28; }
@@ -115,27 +114,5 @@
     margin: 10px;
     /* vertical-align: middle; */
 
-    /* width: 100%;
-    height: 100%; */
-    /* background-color: #404654;
-    border: 8px solid #f2a50d;
-    border-radius: 12px;
-
-    background-repeat: no-repeat;
-    background-size: 64px 64px; */
 }
 
-/* .LinePanel {
-    margin: 0px;
-    width: 100%;
-}
-
-.LineLabel {
-    width: 100%;
-    color: rgb(229, 229, 229);
-    font-size: 200px;
-    text-align: center;
-}
-
-#TextLabel {
-} */

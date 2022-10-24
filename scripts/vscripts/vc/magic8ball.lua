@@ -375,26 +375,9 @@ function base:ShowHint(text)
 	end
 	self:EmitSound("vinny.hint_popup")
 	self.TextPanel:EntFire("SetMessage", text)
-	self:SetContextThink("CloseHint", function()
-		self:CloseHint()
-	end, HINT_TIMEOUT)
-	-- local spawnKeys = {
-	-- 	targetname = 'magic8ball_dynamic_hint',
-	-- 	hint_caption = text,
-	-- 	hint_start_sound = 'Instructor.StartLesson',
-	-- 	hint_timeout = TIME_BETWEEN_HINTS..'',
-	-- 	hint_vr_height_offset = '0',
-	-- 	origin = self:GetAbsOrigin().x..' '..self:GetAbsOrigin().y..' '..self:GetAbsOrigin().z
-	-- }
-
-	-- local ent = SpawnEntityFromTableSynchronous('env_instructor_vr_hint', spawnKeys)
-	-- --SendToConsole('sv_gameinstructor_disable 0')
-	-- --thisEntity:StopThink('disable_hint')
-	-- DoEntFire('!self', 'FireUser1', '', 0.1, self, self)
-	-- DoEntFireByInstanceHandle(ent, 'ShowHint', '', 0, self, self)
-	-- --DoEntFireByInstanceHandle(ent, 'EndHint', '', TIME_BETWEEN_HINTS, thisEntity, thisEntity)
-	-- --DoEntFireByInstanceHandle(ent, 'Kill', '', TIME_BETWEEN_HINTS+2, thisEntity, thisEntity)
-	-- --thisEntity:SetThink(function() SendToConsole('sv_gameinstructor_disable 1') end, 'disable_hint', TIME_BETWEEN_HINTS)
+	-- self:SetContextThink("CloseHint", function()
+	-- 	self:CloseHint()
+	-- end, HINT_TIMEOUT)
 end
 
 Convars:RegisterCommand("vinny_debug_hint", function()
