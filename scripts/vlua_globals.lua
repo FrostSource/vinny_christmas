@@ -2,7 +2,7 @@
 ---@diagnostic disable: lowercase-global, deprecated, undefined-doc-name
 
 --[[
-    Version 2.0.3
+    Version 2.0.4
 
     This file helps intellisense in editors like Visual Studio Code by
     introducing definitions of all known VLua functions into the global scope.
@@ -46,35 +46,6 @@
 ---Combined entity handle type.
 ---@alias EntityHandle CBaseEntity|CEntityInstance|CBaseModelEntity|CBasePlayer|CHL2_Player|CBaseAnimating|CBaseFlex|CBaseCombatCharacter|CBodyComponent|CAI_BaseNPC|CBaseTrigger|CEnvEntityMaker|CInfoWorldLayer|CLogicRelay|CMarkupVolumeTagged|CEnvProjectedTexture|CPhysicsProp|CSceneEntity|CPointClientUIWorldPanel|CPointTemplate|CPointWorldText|CPropHMDAvatar|CPropVRHand
 
----Class that inherits all entity classes. Mostly used when creating entity classes.
----`EntityHandle` should still be used when handling and passing entity types.
----@class EntityClass : CBaseEntity,CEntityInstance,CBaseModelEntity,CBasePlayer,CHL2_Player,CBaseAnimating,CBaseFlex,CBaseCombatCharacter,CBodyComponent,CAI_BaseNPC,CBaseTrigger,CEnvEntityMaker,CInfoWorldLayer,CLogicRelay,CMarkupVolumeTagged,CEnvProjectedTexture,CPhysicsProp,CSceneEntity,CPointClientUIWorldPanel,CPointTemplate,CPointWorldText,CPropHMDAvatar,CPropVRHand
-local EntityClass = {}
----Save all entity data
-function EntityClass:Save()
-end
----Called automatically if defined
----@param loaded boolean
-function EntityClass:OnReady(loaded)
-end
----Called automatically if defined
----@param spawnkeys CScriptKeyValues
-function EntityClass:OnSpawn(spawnkeys)
-end
----Called automatically if defined
-function EntityClass:Think()
-end
----Called automatically if defined
-function EntityClass:ResumeThink()
-end
----Called automatically if defined
-function EntityClass:PauseThink()
-end
----@type boolean
-EntityClass.Initiated = false
----@type boolean
-EntityClass.IsThinking = false
-
 ---@class EHANDLE
 ---@alias ScriptScope table
 ---@alias COMMON_OPVAR_NAMES "skylight_proximity_array"|"skylight_invert_scalar_array"|"hotel_sub_basement_proximity_array"|"large_room_addin_array"|"small_room_invert_scalar_array"|"hotel_small_room_proximity_array"|"xen_proximity_array"
@@ -109,8 +80,8 @@ thisEntity = nil
 ---@field pos Vector # Global vector where the trace hit.
 ---@field fraction number # Fraction from the start to end where the trace hit.
 ---@field hit boolean # Whether the trace hit something. Always present.
----@field startsolid boolean # Whether the trace started inside the entity. This parameter is set to nil if it is false.
----@field normal Vector # Global normal vector of the surface hit.
+---@field startsolid boolean? # Whether the trace started inside the entity. This parameter is set to nil if it is false.
+---@field normal Vector? # Global normal vector of the surface hit.
 
 ---@class TraceTableCollideable : TraceTableBase
 ---@field ent EntityHandle # Entity to trace against.
@@ -120,14 +91,14 @@ thisEntity = nil
 ---@class TraceTableHull : TraceTableBase
 ---@field min Vector # Minimum extents of the bounding box.
 ---@field max Vector # Maximum extents of the bounding box.
----@field mask integer # Collision type bitmask.
----@field ignore EntityHandle # Entity to ignore when tracing.
----@field enthit EntityHandle # Handle of the entity the trace hit.
+---@field mask integer? # Collision type bitmask.
+---@field ignore EntityHandle? # Entity to ignore when tracing.
+---@field enthit EntityHandle? # Handle of the entity the trace hit.
 
 ---@class TraceTableLine : TraceTableBase
----@field mask integer # Collision type bitmask.
----@field ignore EntityHandle # Entity to ignore when tracing.
----@field enthit EntityHandle # Handle of the entity the trace hit.
+---@field mask integer? # Collision type bitmask.
+---@field ignore EntityHandle? # Entity to ignore when tracing.
+---@field enthit EntityHandle? # Handle of the entity the trace hit.
 
 --#region Game Events
 
@@ -299,7 +270,7 @@ thisEntity = nil
 ---| "\"player_grabbed_ladder\"" #
 ---| "\"commentary_started\"" #
 ---| "\"commentary_stopped\"" #
----| "\"vr_controller_hint_create\"" # can create hints?
+---| "\"vr_controller_hint_create\"" #
 
 ---@alias GAME_EVENTS_CORE
 ---| "\"server_spawn\"" # As soon as a server starts.
@@ -1098,8 +1069,8 @@ function DestroyDamageInfo(info) end
 ---@param action string
 ---@param value string
 ---@param delay number
----@param activator EntityHandle?
----@param caller EntityHandle?
+---@param activator EntityHandle
+---@param caller EntityHandle
 function DoEntFire(target, action, value, delay, activator, caller) end
 ---Internal native function for EntFireByHandle().
 ---@param target EntityHandle

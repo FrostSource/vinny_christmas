@@ -1,8 +1,19 @@
+if thisEntity then if thisEntity:GetPrivateScriptScope().__load then return else thisEntity:GetPrivateScriptScope().__load = true end else return end
 
 local hp = thisEntity:GetHealth()
+local enabled = false
+
+local function Enable()
+	enabled = true
+end
+Expose(Enable)
+local function Disable()
+	enabled = false
+end
+Expose(Disable)
 
 local function SpawnAshes()
-	if hp - thisEntity:GetHealth() < 20 then
+	if not enabled or hp - thisEntity:GetHealth() < 20 then
 		hp = thisEntity:GetHealth()
 		return nil
 	end
