@@ -48,5 +48,7 @@ Layer0
 	SystemAttributes
 	{
 		PhysicsSurfaceProperties "world.snow"
+		WorldMappingWidth "128"
+		WorldMappingHeight "128"
 	}
 }
