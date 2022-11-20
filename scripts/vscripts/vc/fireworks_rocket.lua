@@ -48,7 +48,7 @@ function base:Think()
         self:Kill()
         return
     end
-    self:ApplyAbsVelocityImpulse(self:GetUpVector() * 13)
+    self:ApplyAbsVelocityImpulse(self:GetUpVector() * 12)
     return 0
 end
 
