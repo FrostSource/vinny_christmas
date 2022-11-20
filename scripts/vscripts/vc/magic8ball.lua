@@ -1,6 +1,6 @@
 
----@class HintBall : EntityClass
-local base, self = entity("HintBall")
+---@class HintBall : HintPanel
+local base, self = entity("HintBall", "vc.hint_panel")
 if self.Initiated then return end
 
 local hints = require"vc.hints"
@@ -15,21 +15,10 @@ base.HintAreaStack = {}
 base.HintReminderStack = {}
 ---@type integer
 base.ReminderStackIndex = 1
---LastHintArea = LastHintArea or ''
+
 base.HaltAtEnd = false
----@type EntityHandle
-base.TextPanel = nil
 
 
--- local FORCE_THRESHOLD = 0.25
-
--- All shaking must be in this time frame
--- local SHAKE_TIMEOUT = 0.8
--- local SHAKE_COUNT = 5
-
-
----Seconds that a hint is shown before disappearing.
-local HINT_TIMEOUT = 5.5
 ---Seconds before another hint can be displayed.
 local TIME_BETWEEN_HINTS = 1.5
 ---Seconds in which each shake movement must be made.
@@ -46,34 +35,9 @@ local last_shake_time = 0
 local last_hint_time = 0
 local number_of_shakes = 0
 
-local panel_is_open = false
-
--- local fLastShake = 0
--- local fLastForce = 0
--- local iShakeCount = 0
--- local vLastDirectionVector = Vector(0,0,0)
--- local fLastDirectionSign = 0
--- local vLastPos = nil
-
--- function base:OnSpawn(spawnkeys)
--- 	self.TextPanel = 
+-- function base:OnReady(loaded)
+	
 -- end
-
-function base:OnReady(loaded)
-	-- vLastPos = thisEntity:GetAbsOrigin()
-	-- Init index saving table (should save between loads using attributes?)
-	-- not needed because new entityy script saves it
-	-- for i = 1, #HintAreas do
-	-- 	self.HintAreaIndex[i] = 0
-	-- end
-	if not loaded then
-		self.TextPanel = self:FindInPrefab("hint_panel")--[[@as EntityHandle]]
-	else
-		panel_is_open = false
-		self.TextPanel:EntFire("RemoveCSSClass", "Open")
-		self.TextPanel:EntFire("RemoveCSSClass", "NewHint")
-	end
-end
 
 
 ---Used to make new script compatible with setup in Hammer.
@@ -229,27 +193,9 @@ end)
 RegisterPlayerEventCallback("item_released", function(data)
 	if data.item ~= self then return end
 
-	self:CloseHint()
+	self:HideHint()
 	self:PauseThink()
 end)
-
--- function base:StartThinking()
--- 	self:StopThink('ThinkFunc')
--- 	-- self:SetThink(self.ThinkFunc, 'ThinkFunc', 0.1, self)
--- 	self:ResumeThink()
--- 	vLastPos = self:GetAbsOrigin()
--- 	SendToConsole('sv_gameinstructor_disable 0')
--- end
--- function base:StopThinking()
--- 	-- self:StopThink('ThinkFunc')
--- 	self:PauseThink()
--- 	SendToConsole('sv_gameinstructor_disable 1')
-
--- 	-- Kill all built up dynamic hints
--- 	-- (For some reason killing one hint makes the others end so we do it on drop)
--- 	--print('Killing hints:',#Entities:FindAllByName('magic8ball_dynamic_hint'))
--- 	DoEntFire('magic8ball_dynamic_hint', 'Kill', '', 0, nil, nil)
--- end
 
 function base:Think()
 
@@ -293,40 +239,6 @@ function base:Think()
 		last_hint_time = time
 	end
 
-	-- print(GetPhysVelocity(self):Length())
-	-- print(GetPhysAngularVelocity(self):Length())
-
-	-- local now = Time()
-	-- -- Time between hints
-	-- if (now - fLastShake) < TIME_BETWEEN_SHAKES then
-	-- 	return 0.5
-	-- end
-
-	-- if now - fLastForce > SHAKE_TIMEOUT then
-	-- 	iShakeCount = 0
-	-- 	fLastForce = now
-	-- 	return 0.1
-	-- end
-
-	-- local vPos = self:GetAbsOrigin()
-	-- local diff = vPos - vLastPos
-	-- local forceVector = diff:Length()
-	-- local directionSign = vLastDirectionVector:Dot(diff)
-	-- if directionSign < 0 then directionSign = -1 else directionSign = 1 end
-
-	-- if forceVector > FORCE_THRESHOLD and directionSign ~= fLastDirectionSign then
-	-- 	iShakeCount = iShakeCount + 1
-	-- 	if iShakeCount >= SHAKE_COUNT then
-	-- 		fLastShake = now
-	-- 		iShakeCount = 0
-
-	-- 		self:ShowContextHint()
-	-- 	end
-	-- end
-
-	-- fLastDirectionSign = directionSign
-	-- vLastDirectionVector = diff
-	-- vLastPos = vPos
 	return 0
 end
 
@@ -347,38 +259,7 @@ function base:ShowContextHint()
 	self:ShowHint(text)
 end
 
-function base:CloseHint()
-	if panel_is_open then
-		self.TextPanel:EntFire("RemoveCSSClass", "NewHint")
-		self.TextPanel:EntFire("RemoveCSSClass", "Open")
-		self.TextPanel:EntFire("AddCSSClass", "Close")
-		panel_is_open = false
-	end
-end
 
-function base:ShowHint(text)
-	-- local t = {
-	-- 	'There is something to do in the downstairs bathroom',
-	-- 	'Check the closet',
-	-- 	'I can tell you all the places the key might be\nif you really don\'t want to look',
-	-- 	'The attic key is probably somewhere deeper in the house'
-	-- }
-	-- text = t[RandomInt(1,#t)]
-	if panel_is_open then
-		self.TextPanel:EntFire("RemoveCSSClass", "Open")
-		self.TextPanel:EntFire("RemoveCSSClass", "NewHint")
-		self.TextPanel:EntFire("AddCSSClass", "NewHint")
-	else
-		panel_is_open = true
-		self.TextPanel:EntFire("RemoveCSSClass", "Close")
-		self.TextPanel:EntFire("AddCSSClass", "Open")
-	end
-	self:EmitSound("vinny.hint_popup")
-	self.TextPanel:EntFire("SetMessage", text)
-	-- self:SetContextThink("CloseHint", function()
-	-- 	self:CloseHint()
-	-- end, HINT_TIMEOUT)
-end
 
 Convars:RegisterCommand("vinny_debug_hint", function()
 	-- self:SetOrigin(Player:EyePosition() + Player:EyeAngles():Forward() * 32)
