@@ -15,8 +15,8 @@
     "Tokens"
     {
         // Meat
-        "meat.growl" "<norepeat:10><$Color-Meat>Meaty growl."
-        "meat.growl_somber" "<norepeat:10><$Color-Meat>Sad meaty growl."
+        "meat.growl" "<norepeat:10><$Color-Meat>[Meaty growl]"
+        "meat.growl_somber" "<norepeat:10><$Color-Meat>[Sad meaty growl]"
         "meat.munch" "<sfx><norepeat:10><$Color-Meat>[Meaty munch]"
 
         // Narrator
@@ -74,7 +74,7 @@
         //"phone.quip.ufo_porno" "[UFO porno noises]<sb>[UFO PORNO!]<sb>[UFO PORNOOO!]"
         "phone.quip.ufo_porno" "<delay:7.75>    [UFO PORNO!]    <sb>       [UFO PORNOOO!]       <sb><B>[UFO POoRNOoO!]<B>"
         "phone.quip.fart_meme" "<sfx>[Big butt woman farts]"
-        "phone.quip.mario_haha" "<sfx>[Generic Mario sounds]"
+        "phone.quip.mario_haha" "<sfx>[Mario sounds]"
         "phone.quip.tommy_joker" "<clr:50,50,50>What doesn't kill you make you stranger.<sb>Ahahahahahahahahahahahahaa.<cr>Arhh.<sb>Joker."
         "phone.quip.f_you_luigi" "<clr:67,172,67>By the way,<sb>you have a little piece of spaghetti, on your overalls.<sb><clr:228,0,15>Oh fuck you Luigi!"
         "phone.quip.grape_fruit" "<clr:233,215,86>No better feeling will he ever get than being grape-fruited.<sb>So what you need to do - is you need to of course have a grapefruit:"
@@ -160,7 +160,7 @@
         "vinny.vortigese09" "<clr:107,232,120>Guah lah lung."
         "vinny.scribble" "<sfx>[Objective complete]"
         "vinny.speen" "<len:1.1><$Color-Vinny>Speeeen."
-        "vinny.hohoho_04" "<clr:219,0,0>Ho ho h…"
+        "vinny.hohoho_04" "<clr:219,0,0>Ho ho h… [CRASH]"
         "vinny.hohoho_ominous"  "<sfx><len:4.638><clr:219,0,0>Ho ho hoo, hoo ho ho hoo, ho ho ho."
         "vinny.merry_christmas_santa" "<delay:2.654><len:3.650><clr:219,0,0>Merry Christmas."
         "vinny.milk_pour" ""
