@@ -39,9 +39,9 @@
 	"phone.ring_loop" = 
 	{
 		type = "hlvr_default_3d"
-		volume = 0.7
+		volume = 0.6
 		volume_falloff_min = 5.0
-		volume_falloff_max = 800.0
+		volume_falloff_max = 500.0
 		vsnd_files = 
 		[
 			"sounds/phone/ring_loop.vsnd",
