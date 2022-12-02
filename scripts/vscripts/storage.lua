@@ -137,13 +137,13 @@ if thisEntity then
     return
 end
 
-local debug_allowed = false
+local debug_allowed = true
 ---Show a warning message in the console if debugging is enabled.
 ---@param msg any
 local function Warn(msg)
     -- if debug_allowed and Convars:GetBool( 'developer' ) then
     if debug_allowed then
-        Warning(msg.."\n")
+        print(msg.."\n")
     end
 end
 
@@ -171,6 +171,20 @@ end
 
 
 local separator = "::"
+local name_start = "storage"..separator
+local separator_len = #separator
+local name_start_len = #name_start
+
+---Build a name for saving.
+---@param name string
+---@return string
+local function build_name(name)
+    return name
+    -- if name:sub(1, name_start_len) == name_start then
+    --     return name
+    -- end
+    -- return name_start..name
+end
 
 Storage = {}
 ---Collection of type names associated with a class table.
@@ -236,6 +250,7 @@ function Storage.SaveString(handle, name, value)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
+    name = build_name(name)
     if #value > 62 then
         local index = 0
         while #value > 0 do
@@ -266,6 +281,7 @@ function Storage.SaveNumber(handle, name, value)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
+    name = build_name(name)
     handle:SetContextNum(name, value, 0)
     handle:SetContext(name..separator.."type", "number", 0)
     return true
@@ -284,6 +300,7 @@ function Storage.SaveBoolean(handle, name, bool)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
+    name = build_name(name)
     handle:SetContextNum(name, bool and 1 or 0, 0)
     handle:SetContext(name..separator.."type", "boolean", 0)
     return true
@@ -302,6 +319,7 @@ function Storage.SaveVector(handle, name, vector)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
+    name = build_name(name)
     handle:SetContext(name..separator.."type", "vector", 0)
     Storage.SaveNumber(handle, name .. ".x", vector.x)
     Storage.SaveNumber(handle, name .. ".y", vector.y)
@@ -322,6 +340,7 @@ function Storage.SaveQAngle(handle, name, qangle)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
+    name = build_name(name)
     handle:SetContext(name..separator.."type", "qangle", 0)
     Storage.SaveNumber(handle, name .. ".x", qangle.x)
     Storage.SaveNumber(handle, name .. ".y", qangle.y)
@@ -347,6 +366,7 @@ function Storage.SaveTableCustom(handle, name, tbl, T, save_meta)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
+    name = build_name(name)
     local key_count = 0
     local name_sep = name..separator
     local key_concat = name_sep.."key"..separator
@@ -364,7 +384,7 @@ function Storage.SaveTableCustom(handle, name, tbl, T, save_meta)
             end
         end
     end
-    handle:SetContextNum(name_sep.."key_count", actual_saves, 0)
+    handle:SetContextNum(name, actual_saves, 0)
     handle:SetContext(name_sep.."type", T, 0)
     return true
 end
@@ -402,6 +422,7 @@ function Storage.SaveEntity(handle, name, entity)
         handle:SetContext(name..separator.."type", "entity", 0)
         return false
     end
+    name = build_name(name)
     local ent_name = entity:GetName()
     local uniqueKey = DoUniqueString("saved_entity")
     if ent_name == "" then
@@ -412,7 +433,7 @@ function Storage.SaveEntity(handle, name, entity)
     entity:Attribute_SetIntValue(uniqueKey, 1)
     -- Setting contexts for saving handle
     Storage.SaveString(handle, name..separator.."targetname", ent_name)
-    handle:SetContext(name..separator.."unique", uniqueKey, 0)
+    handle:SetContext(name, uniqueKey, 0)
     handle:SetContext(name..separator.."type", "entity", 0)
     return true
 end
@@ -468,6 +489,7 @@ end
 ---@return string|T # Saved string or `default`.
 function Storage.LoadString(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if t == "string" then
         local value = handle:GetContext(name)
@@ -495,6 +517,7 @@ end
 ---@return number|T # Saved number or `default`.
 function Storage.LoadNumber(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     local value = handle:GetContext(name)
     if not value or t ~= "number" then
@@ -515,6 +538,7 @@ end
 ---@return boolean|T # Saved boolean or `default`.
 function Storage.LoadBoolean(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     local value = handle:GetContext(name)
     if t ~= "boolean" or value == nil then
@@ -534,6 +558,7 @@ end
 ---@return Vector|T # Saved Vector or `default`.
 function Storage.LoadVector(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if t ~= "vector" then
         Warn("Vector " .. name .. " could not be loaded!")
@@ -556,6 +581,7 @@ end
 ---@return QAngle|T # Saved QAngle or `default`.
 function Storage.LoadQAngle(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if t ~= "qangle" then
         Warn("QAngle " .. name .. " could not be loaded!")
@@ -582,9 +608,10 @@ end
 ---@return table|T # Saved table or `default`.
 function Storage.LoadTableCustom(handle, name, T, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local name_sep = name..separator
     local t = handle:GetContext(name_sep.."type")
-    local key_count = handle:GetContext(name_sep.."key_count")
+    local key_count = handle:GetContext(name)
     if t ~= T or not key_count  then
         Warn("Table " .. name .. " could not be loaded!")
         return default
@@ -623,25 +650,30 @@ end
 ---@return EntityHandle|T # Saved entity or `default`.
 function Storage.LoadEntity(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
-    local uniqueKey = handle:GetContext(name..separator.."unique") ---@cast uniqueKey string
+    local uniqueKey = handle:GetContext(name) ---@cast uniqueKey string
     local ent_name = Storage.LoadString(handle, name..separator.."targetname")
     if t ~= "entity" or not ent_name then
         Warn("Entity '" .. name .. "' could not be loaded! ("..type(ent_name)..", "..tostring(ent_name)..")")
+        print("\n1\n")
         return default
     end
     local ents = Entities:FindAllByName(ent_name)
     if not ents then
         Warn("No entities of '" .. name .. "' found with saved name '" .. ent_name .. "', returning default.")
+        print("\n2\n")
         return default
     end
     for _, ent in ipairs(ents) do
         if ent:Attribute_GetIntValue(uniqueKey, 0) == 1 then
+            print("\n3\n")
             return ent
         end
     end
     -- Return default if no entities with saved value.
     Warn("No entities of '" .. name .. "' have saved attribute! Returning default.")
+    print("\n4\n")
     return default
 end
 
@@ -654,6 +686,7 @@ end
 ---@return any # Saved value or `default`.
 function Storage.Load(handle, name, default)
     handle = resolveHandle(handle)
+    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if not t then
         Warn("Value " .. name .. " could not be loaded!")
@@ -678,6 +711,38 @@ function Storage.Load(handle, name, default)
     end
 end
 
+---comment
+---@param handle EntityHandle # Entity to load from.
+---@param direct boolean # Optionally load values directly into `handle` instead of a new table.
+---@return table # Table of loaded values (or `handle` if `direct` is true).
+function Storage.LoadAll(handle, direct)
+    local tbl = direct and handle or {}
+    handle = resolveHandle(handle)
+    ---@type table<string,any>
+    local criteria = {}
+    handle:GatherCriteria(criteria)
+    for key, value in pairs(criteria) do
+        -- print(key, value)
+        -- if key:sub(1, name_start_len) == name_start then
+        --     print(key, value)
+        --     local name = key:sub(name_start_len + 1)
+        --     if not name:find("::", 1, true) then
+        --         print("LoadAll", name, Storage.Load(handle, name))
+        --         tbl[name] = Storage.Load(handle, name)
+        --     end
+        -- end
+        if not key:find(separator, 1, true) then
+            local result = Storage.Load(handle, key)
+            if result then
+                tbl[key] = result
+                print("","LOADED", key, result, type(result))
+                if type(result) == "table" then print(#result) end
+            end
+        end
+    end
+    return tbl
+end
+
 -- Done one by one for code hint purposes
 CBaseEntity.SaveString  = Storage.SaveString
 CBaseEntity.SaveNumber  = Storage.SaveNumber
@@ -696,6 +761,8 @@ CBaseEntity.LoadQAngle  = Storage.LoadQAngle
 CBaseEntity.LoadTable   = Storage.LoadTable
 CBaseEntity.LoadEntity  = Storage.LoadEntity
 CBaseEntity.Load        = Storage.Load
+
+CBaseEntity.LoadAll     = function(self) Storage.LoadAll(self, true) end
 
 
 print("storage.lua initialized...")
