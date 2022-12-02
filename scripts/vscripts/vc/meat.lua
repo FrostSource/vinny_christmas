@@ -99,6 +99,7 @@ function base:TestMouthScore()
 		-- print('meat mouth score done')
 		StartSoundEvent('vinny.meat_thrown_food', player)
 		MeatMouthScoreLastTime = Time()
+		self:FireOutput("OnUser1", self, self, nil, 0)
 	end
 end
 

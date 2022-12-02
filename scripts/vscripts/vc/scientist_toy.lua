@@ -10,6 +10,7 @@ local function Speak()
     -- print("Ring length", len)
     if len >= speak_length then
         toy:EmitSound("vinny.scientist_vox")
+        thisEntity:FireOutput("OnUser1", thisEntity, thisEntity, nil, 0)
     end
 end
 Expose(Speak)
