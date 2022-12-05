@@ -28,17 +28,19 @@ end
 ---@param spawnkeys CScriptKeyValues
 function base:OnSpawn(spawnkeys)
 	self.Sound = spawnkeys:GetValue('sound')
-	print(self.Sound)
+	-- print(self.Sound)
 end
 
 --TODO: Consider saving sound state.
 
 function base:StartSound()
-	print("Playing", self.Sound)
+	-- print("Playing", self.Sound)
 	self.SoundEntity:EmitSound(self.Sound)
 	self:ResumeThink()
 end
-function base:StopSound()
+function base:EndSound()
+	-- print(self.Sound)
+	-- print(type(self.Sound))
 	self.SoundEntity:StopSound(self.Sound)
 	self:PauseThink()
 end
