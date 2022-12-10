@@ -223,7 +223,7 @@ function CEntityInstance:EnableStorage(data)
         -- self:EnableClassStorage(data)
         -- self:EnableNameStorage(data)
         -- self:EnableModelStorage(data)
-        dprint(self:GetName(), self:GetClassname(), self:GetModelName())
+        -- dprint(self:GetName(), self:GetClassname(), self:GetModelName())
         if self:GetClassname() == "prop_ragdoll" then dprint("ENABLE STORAGE ON RAGDOLL") end
         self:SaveBoolean("BackpackItem.EnableStorage", true)
     -- end

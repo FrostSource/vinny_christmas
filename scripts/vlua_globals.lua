@@ -1947,8 +1947,8 @@ function CEntityInstance:DisconnectRedirectedOutput(output, functionName, entity
 function CEntityInstance:entindex() end
 ---Fire an entity output.
 ---@param outputName string
----@param activator EntityHandle
----@param caller EntityHandle
+---@param activator EntityHandle|nil
+---@param caller EntityHandle|nil
 ---@param parameter string|nil # The parameter override to send with the output.
 ---@param delay number
 function CEntityInstance:FireOutput(outputName, activator, caller, parameter, delay) end

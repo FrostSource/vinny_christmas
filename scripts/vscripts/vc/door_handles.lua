@@ -20,7 +20,6 @@ end
 function base:HideHandles()
 	local offset = Vector(0,-500,0)
 	for _,handle in ipairs(self.handles) do
-		print(handle)
 		handle:SetLocalOrigin(offset)
 	end
 end

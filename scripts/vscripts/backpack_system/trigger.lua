@@ -4,8 +4,6 @@
 require "core"
 require "backpack_system.core"
 
-print("TRIGGER TRIGGER TRIGGER")
-
 -- print("DOING BACKPACK TRIGGER")
 ---@class BackpackTrigger : CBaseTrigger,EntityClassBase
 local base, self = entity("BackpackTrigger")
@@ -20,14 +18,13 @@ end
 local bs
 
 function base:BackpackInit(backpack)
-    print("BACKPACK TRIGGER INIT")
 end
 
 ---Called automatically on activate.
 ---Any self values set here are automatically saved.
 ---@param loaded boolean
 function base:OnReady(loaded)
-    print("BackpackTrigger OnReady SHOULD FIRE")
+    -- print("BackpackTrigger OnReady SHOULD FIRE")
     -- Kill self if this trigger already exists (still needed?)
     if #Entities:FindAllByName(self:GetName()) > 1 then
         self:Kill()

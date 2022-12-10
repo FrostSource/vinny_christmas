@@ -263,34 +263,6 @@ function Debug.PrintEntityCriteria(ent)
 end
 CBaseEntity.PrintCriteria = Debug.PrintEntityCriteria
 
-
-print(CBaseEntity)
-print(CAI_BaseNPC)
-print(CBaseAnimating)
-print(CBaseCombatCharacter)
-print(CBaseFlex)
-print(CBaseModelEntity)
-print(CBasePlayer)
-print(CBaseTrigger)
-print(CBodyComponent)
-print(CEntityInstance)
-print(CEnvEntityMaker)
-print(CEnvProjectedTexture)
-print(CEnvTimeOfDay2)
-print(CHL2_Player)
-print(CInfoData)
-print(CInfoWorldLayer)
-print(CLogicRelay)
-print(CMarkupVolumeTagged)
-print(CPhysicsProp)
-print(CPointClientUIWorldPanel)
-print(CPointTemplate)
-print(CPointWorldText)
-print(CPropHMDAvatar)
-print(CPropVRHand)
-print(CSceneEntity)
-print(CScriptKeyValues)
-print(CScriptPrecacheContext)
 local classes = {
     [CBaseEntity] = 'CBaseEntity';
     [CAI_BaseNPC] = 'CAI_BaseNPC';

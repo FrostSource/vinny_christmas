@@ -1,3 +1,6 @@
+--[[
+	This is a class script, not an entity script!
+]]
 ---@class HintPanel : EntityClass
 local base, self = entity("HintPanel")
 if self and self.Initiated then return end
@@ -20,7 +23,6 @@ base.HintTimeout = 5.5
 ---Any self values set here are automatically saved.
 ---@param loaded boolean
 function base:OnReady(loaded)
-	print(self:GetName())
     if not loaded then
         if self:GetClassname() == "point_clientui_world_text_panel" then
             self.TextPanel = self

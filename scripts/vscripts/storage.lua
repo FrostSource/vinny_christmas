@@ -137,7 +137,7 @@ if thisEntity then
     return
 end
 
-local debug_allowed = true
+local debug_allowed = false
 ---Show a warning message in the console if debugging is enabled.
 ---@param msg any
 local function Warn(msg)
@@ -656,24 +656,20 @@ function Storage.LoadEntity(handle, name, default)
     local ent_name = Storage.LoadString(handle, name..separator.."targetname")
     if t ~= "entity" or not ent_name then
         Warn("Entity '" .. name .. "' could not be loaded! ("..type(ent_name)..", "..tostring(ent_name)..")")
-        print("\n1\n")
         return default
     end
     local ents = Entities:FindAllByName(ent_name)
     if not ents then
         Warn("No entities of '" .. name .. "' found with saved name '" .. ent_name .. "', returning default.")
-        print("\n2\n")
         return default
     end
     for _, ent in ipairs(ents) do
         if ent:Attribute_GetIntValue(uniqueKey, 0) == 1 then
-            print("\n3\n")
             return ent
         end
     end
     -- Return default if no entities with saved value.
     Warn("No entities of '" .. name .. "' have saved attribute! Returning default.")
-    print("\n4\n")
     return default
 end
 
@@ -735,7 +731,7 @@ function Storage.LoadAll(handle, direct)
             local result = Storage.Load(handle, key)
             if result then
                 tbl[key] = result
-                print("","LOADED", key, result, type(result))
+                -- print("","LOADED", key, result, type(result))
                 if type(result) == "table" then print(#result) end
             end
         end

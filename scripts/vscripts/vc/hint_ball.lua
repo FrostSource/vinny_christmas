@@ -1,4 +1,6 @@
-
+--[[
+	This is a class script, not an entity script!
+]]
 ---@class HintBall : HintPanel
 local base, self, super, private = entity("HintBall", "vc.hint_panel")
 if self and self.Initiated then return end
@@ -16,6 +18,7 @@ base.HintReminderStack = {}
 base.ReminderStackIndex = 1
 
 base.HaltAtEnd = false
+base.IsHintBall = true
 
 
 ---Seconds before another hint can be displayed.
@@ -42,7 +45,7 @@ base.__number_of_shakes = 0
 ---@param index integer
 function base:AddArea(index)
 	if not self:HintAreaExistsInStack(index) then
-		prints("Hint:", "Adding area", index)
+		-- prints(self:GetName()..":", "Add area", index)
 		self:RemoveArea(index)
 		self.HintAreaStack[#self.HintAreaStack + 1] = index
 	end
@@ -56,7 +59,7 @@ private.AddArea = base.AddArea
 function base:RemoveArea(index)
 	for i=1, #self.HintAreaStack do
 		if self.HintAreaStack[i] == index then
-			prints("Hint:", "Removing area", index)
+			-- prints(self:GetName()..":", "Remove area", index)
 			table.remove(self.HintAreaStack, i)
 			break
 		end
@@ -82,7 +85,7 @@ function base:GetAreaHint()
 	if #self.HintAreaStack == 0 then return '' end
 
 	local area = self.__HintAreas[self.HintAreaStack[#self.HintAreaStack]]
-	local line = self.HintAreaIndex[self.HintAreaStack[#self.HintAreaStack]]
+	local line = self.HintAreaIndex[self.HintAreaStack[#self.HintAreaStack]] or 0
 
 	-- Increment hint line if not halting
 	if not self.HaltAtEnd or line < #area then
@@ -97,7 +100,7 @@ function base:GetAreaHint()
 
 	end
 
-	return area[line]
+	return area[line] .. "\n" .. line .. "/" .. #area
 end
 
 --#endregion
@@ -106,7 +109,7 @@ end
 
 function base:AddReminder(index)
 	if not self:HintReminderExistsInStack(index) then
-		prints("Hint:", "Add reminder", index)
+		-- prints(self:GetName()..":", "Add reminder", index)
 		self.HintReminderStack[#self.HintReminderStack + 1] = index
 	end
 	self:Save()
@@ -118,7 +121,7 @@ function base:RemoveReminder(index)
 	local found = nil
 	for i=1, #self.HintReminderStack do
 		if self.HintReminderStack[i] == index then
-			prints("Hint:", "Removing reminder", index)
+			-- prints(self:GetName()..":", "Removing reminder", index)
 			found = i
 			break
 		end
