@@ -3,6 +3,14 @@ if IsServer() then
     if not pcall(require, "core") then
         Warning("`scripts/vscripts/core.lua` was not found!")
     end
+    require "vc.global"
+
+    if IsInToolsMode() then
+        local debug_script = "debug." .. GetMapName()
+        if not pcall(require, debug_script) then
+            Warning("`"..debug_script.."` script was not found!")
+        end
+    end
 
     ---@type table<function,boolean|table>
     local map_shutdown_callbacks = {}
