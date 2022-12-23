@@ -16,6 +16,9 @@ base.HintAreaStack = {}
 base.HintReminderStack = {}
 ---@type integer
 base.ReminderStackIndex = 1
+---Consider making this not save
+---@type integer
+base.PreviousArea = -1
 
 base.HaltAtEnd = false
 base.IsHintBall = true
@@ -84,22 +87,31 @@ function base:GetAreaHint()
 	-- Return blank if no area hints, so reminder can be shown
 	if #self.HintAreaStack == 0 then return '' end
 
-	local area = self.__HintAreas[self.HintAreaStack[#self.HintAreaStack]]
-	local line = self.HintAreaIndex[self.HintAreaStack[#self.HintAreaStack]] or 0
+	local area_index = self.HintAreaStack[#self.HintAreaStack]
+	local area = self.__HintAreas[area_index]
+	local line = self.HintAreaIndex[area_index] or 1
 
-	-- Increment hint line if not halting
-	if not self.HaltAtEnd or line < #area then
-
-		-- Reset if at end of hints
-		if line >= #area then
-			line = 0
-		end
+	-- Don't increment if player has changed area, Increment hint line if not halting
+	if self.PreviousArea == area_index then
 
 		line = line + 1
-		self.HintAreaIndex[self.HintAreaStack[#self.HintAreaStack]] = line
+		if (not self.HaltAtEnd or line < #area) then
+		
+			-- Reset if at end of hints
+			if line > #area then
+				line = 1
+			end
+		end
 
 	end
 
+	self.HintAreaIndex[area_index] = line
+	self.PreviousArea = area_index
+
+	print("area[line]", area[line])
+	print("area", area)
+	print("line", line)
+	print("#area", #area)
 	return area[line] .. "\n" .. line .. "/" .. #area
 end
 
