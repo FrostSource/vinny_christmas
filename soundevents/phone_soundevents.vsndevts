@@ -47,7 +47,7 @@
 
 		use_facing_vol_attenuation = 0.1
 		facing_scale_min = 0.1
-		occlusion_scale = 0.8
+		occlusion_scale = 0.2
 		// try x and y 1-4
 		//fade_over_time_x1 = 0.000000
 		//fade_over_time_y1 = 1.000000
@@ -68,7 +68,7 @@
 
 	"phone.quip.base" =
 	{
-		type = "hlvr_update_vo_default"
+		type = "hlvr_default_3d"
 		volume = 1
 		spread_min = 0
 		spread_max = 10
