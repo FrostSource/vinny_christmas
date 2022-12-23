@@ -1,35 +1,52 @@
 
-local line = 0
+---Draw debug text with an outline
+---@param text string
+---@param x number
+---@param y number
+---@param line integer
+---@param outline_col Vector
+---@param size integer
+---@param time number
+local function outline_text(text, x, y, line, outline_col, size, time)
+    DebugScreenTextPretty(x, y, line, text, 14,104,89, 255, 60, "", size, true)
+    DebugScreenTextPretty(x-1, y-1, line, text, outline_col.x,outline_col.y,outline_col.z, 255, time, "", size, true)
+    DebugScreenTextPretty(x-1, y+1, line, text, outline_col.x,outline_col.y,outline_col.z, 255, time, "", size, true)
+    DebugScreenTextPretty(x+1, y+1, line, text, outline_col.x,outline_col.y,outline_col.z, 255, time, "", size, true)
+    DebugScreenTextPretty(x+1, y-1, line, text, outline_col.x,outline_col.y,outline_col.z, 255, time, "", size, true)
+end
+
+local screen_line = 0
 local function screen(...)
     local l
-    local size = 20
-    local x = 1
     for i, text in ipairs({...}) do
-
-        DebugScreenTextPretty(16, 16, line + (i-1), text, 14,104,89, 255, 60, "", size, true)
-        -- DebugScreenTextPretty(16-x, 16-x, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-        -- DebugScreenTextPretty(16-x, 16+x, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-        -- DebugScreenTextPretty(16+x, 16+x, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-        -- DebugScreenTextPretty(16+x, 16-x, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-
-        DebugScreenTextPretty(16-x, 16, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-        DebugScreenTextPretty(16, 16-x, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-        DebugScreenTextPretty(16+x, 16, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
-        DebugScreenTextPretty(16, 16+x, line + (i-1), text, 255,255,255, 255, 60, "", size, true)
+        outline_text(text, 16, 16, screen_line + (i-1), Vector(255, 255, 255), 22, 60)
         l = i
     end
-    line = line + l
+    screen_line = screen_line + l
 end
+
 
 RegisterPlayerEventCallback("player_activate", function()
     screen("Vinny Christmas Debug Helper:", "Type 'vinny_' in the vconsole for a list of commands")
-    SendToConsole("r_drawviewmodel 0; closecaption 2")
+    SendToConsole("r_drawviewmodel 0; cl_drawhud 0; closecaption 2")
     SendToConsole("bind v noclip; sv_noclipspeed 1")
     screen("Toggle noclip with 'V'")
     SendToConsole("bind h vinny_hint")
     screen("Display hint with 'H'")
     SendToConsole("bind j vinny_secret")
     screen("Display secret with 'J'")
+    SendToConsole("bind t vinny_disable_intro")
+    screen("Skip intro triggers with 'T'")
+
+    -- this is debug until next compile!
+    -- local ball = Entities:FindByName(nil, "*secrets_ball")--[[@as HintBall]]
+    -- if ball and ball.IsHintBall then
+    --     if not ball.TextPanel then
+    --         print('Secret ball text panel is not defined!')
+    --     elseif ball.TextPanel:GetMoveParent() ~= ball then
+    --         ball.TextPanel:SetParent(ball, nil)
+    --     end
+    -- end
 end)
 
 -- Hint debugging
@@ -99,11 +116,8 @@ end, "", 0)
 Convars:RegisterCommand("vinny_disable_intro", function()
     DoEntFire("copyright_music_morningmagic_trigger", "Kill", "", 0, nil, nil)
     DoEntFire("narrator_trigger_objectives", "Kill", "", 0, nil, nil)
-    -- consider extracting these into separate relay
-    DoEntFire("santa_crash_trigger", "Enable", "", 0, nil, nil)
-    DoEntFire("area_hint_gift_*", "Enable", "", 0, nil, nil)
-    DoEntFire("hint_reminder_cookies", "SetValueTest", "1", 0, nil, nil)
-    DoEntFire("hint_reminder_milk", "SetValueTest", "1", 0, nil, nil)
+
+    DoEntFire("relay_post_objectives", "Trigger", "", 0, nil, nil)
 end, "", 0)
 
 Convars:RegisterCommand("vinny_pachinko_drop_ball", function()
@@ -170,8 +184,10 @@ Convars:RegisterCommand("vinny_bake_cookies", function()
         ent:SetAngles(0, 90, 0)
     end
     DoEntFire("oven_turn_on", "Trigger", "", 0, nil, nil)
-    DoEntFire("oven_timer", "SubtractFromTimer", "210", 0, nil, nil)
-    print("Please wait 10 seconds for oven to finish...")
+    -- DoEntFire("oven_timer", "SubtractFromTimer", "210", 0, nil, nil)
+    DoEntFire("oven_timer", "FireTimer", "", 5, nil, nil)
+    DoEntFire("oven_timer", "ResetTimer", "", 5, nil, nil)
+    print("Please wait 5 seconds for oven to finish...")
 end, "", 0)
 
 Convars:RegisterCommand("vinny_unlock_fridge_door", function()
@@ -215,7 +231,6 @@ Convars:RegisterCommand("vinny_flush_rat", function()
 end, "", 0)
 
 Convars:RegisterCommand("vinny_tp_to_roof", function()
-    DoEntFire("jerma_rat_activate", "Trigger", "", 0, nil, nil)
     Player:SetOrigin(Vector(-64, -64, 480))
 end, "", 0)
 
@@ -314,6 +329,20 @@ Convars:RegisterCommand("vinny_saw_open_color_puzzle", function()
     DoEntFire("color_puzzle_music_timer", "Enable", "", 0, nil, nil)
     DoEntFire("color_puzzle_wall_cover", "Open", "", 0, nil, nil)
     DoEntFire("snd_saw_vox_goodatmakinggames", "StartSound", "", 5, nil, nil)
+end, "", 0)
+
+Convars:RegisterCommand("vinny_feed_meat", function()
+    local trigger = Entities:FindByName(nil, "meat_mouth_trigger")
+    if not trigger then
+        print("Could not find Meat mouth trigger!")
+        return
+    end
+    local gherkin = Entities:FindByModel(nil, "models/pickle/pickle_b.vmdl")
+    if not gherkin then
+        print("Could not find a gherkin to feed Meat! Make sure at least one exists...")
+        return
+    end
+    trigger:FireOutput("OnTrigger", gherkin, gherkin, nil, 0)
 end, "", 0)
 
 
