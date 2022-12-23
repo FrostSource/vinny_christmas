@@ -1,0 +1,125 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Pottery.Small"
+							allowstatic = true
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "ao_proxy_capsule"
+						game_keys = 
+						{
+							bonename = ""
+							radius = 1.5
+							point0 = [ 0.0, 0.0, 0.0 ]
+							point1 = [ 0.0, 0.0, 0.0 ]
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ 0.046522, -2.3537, -0.98445 ]
+							angles_left = [ -26.037, 131.017, 13.8776 ]
+							origin_right = [ 0.046522, 2.3537, -0.98445 ]
+							angles_right = [ -26.037, -131.017, -13.877603 ]
+							max_distance = 5.0
+							finger_thumb = 0.930786
+							finger_pinky = 0.391443
+							finger_ring = 0.269841
+							finger_middle = 0.25464
+							finger_index = 0.18701
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, 0.0, 2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, 2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = true
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "handpose_data"
+						game_keys = 
+						{
+							handpose_bone = ""
+							handpose_model = "models/props/max/handposes/handpose_grabpole.vmdl"
+							allow_procedural_handpose = false
+							global_pose_template = false
+						}
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "rendermeshshape0.vmat"
+								to = "models/vinny_house/materials/hint_ball.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeSphere"
+						parent_bone = ""
+						surface_prop = "prop.billiard_ball"
+						collision_prop = "default"
+						radius = 1.5057
+						center = [ 0.0, 0.0, 0.0 ]
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = ""
+	}
+}
