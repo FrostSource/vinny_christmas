@@ -1,5 +1,5 @@
 -- Hint reminders:
--- 1 = Explore
+-- 1 = Explore (unused)
 -- 2 = Cookies
 -- 3 = Milk
 -- 4 = Attic tree
@@ -7,7 +7,11 @@
 -- 6 = Attic key
 -- 7 = Santa crash
 -- 8 = Gift placement
+
 -- 9 = Downstairs bathroom
+-- 10 = Sticky kitchen door
+-- 11 = explore upstairs
+-- 12 = outside tree
 local HintReminders = {
 	-- 'There are no hints for this area',
 	'There are still places you haven\'t explored',
@@ -20,6 +24,10 @@ local HintReminders = {
 	'Gifts should be put next to the Christmas tree',
 
 	'There is something to do in the downstairs bathroom',
+	'Examine the sticky kitchen door',
+	'Explore upstairs, there are things to see',
+	'There\'s a tree outside that would make a good Christmas tree',
+
 }
 
 -- Hint areas:
@@ -56,7 +64,9 @@ local HintReminders = {
 local HintAreas = {
 	{
 		'I give hints about the area when shook! Shake again!',
-		'Each shake will give a more detailed hint.',
+		'Each shake will give a more obvious hint!',
+		'Remember to move to the area you need help in before shaking!',
+		'If you don\'t know where to go the hint ball might point you',
 		'Put me in your wrist pocket\nI help make the game VineProof™'
 	},
 
@@ -89,7 +99,7 @@ local HintAreas = {
 	{
 		'A useful tool could unclog the toilet',
 		'Vinny keeps a plunger in one of the bathrooms',
-		'It might take a few plunges'
+		'Keep plunging until you get something onto the plunger',
 	},
 
 	{
@@ -101,18 +111,21 @@ local HintAreas = {
 
 	{
 		'The tree needs an axe to be chopped down',
-		'Where would Vinny keep an axe?',
+		'Where would Vinny store his axe nearby?',
 		'Vinny keeps an axe in his shed',
-		'Maybe someone buried the handle nearby',
+		'The shed handle is missing\nMaybe it has been misplaced nearby',
+		'The dirt pit looks suspiciously disturbed...',
 		'A shovel could dig the dirt pit by the tree',
-		'The handle from the pit might open the shed door',
+		'The handle from the pit should open the shed door',
+		'If you can\'t scoop it out or reach it\nyou might need to find some special gloves',
 		'The tree just needs to be hit in the right spots'
 	},
 
 	{
+		'The door handle is covered in a sticky meaty substance',
 		'Meat will need to clean the door handle',
 		'Meat should be brought down from his room',
-		'Bring Meat back here after feeding him'
+		'Lead Meat back here after feeding him'
 	},
 
 	{
@@ -128,6 +141,9 @@ local HintAreas = {
 		'There are baking instructions near the oven',
 		'3 ingredients are needed to bake cookies',
 		'Find flour, sugar and butter',
+		'Flour is in the big cupboard by the entrance',
+		'Sugar is in the second drawer to the left of the oven',
+		'Butter is in the bottom fridge',
 		'They all need to be put in the oven',
 		'The oven needs to be turned on'
 	},
@@ -155,8 +171,10 @@ local HintAreas = {
 	},
 
 	{
-		'Bringing a gherkin to meat\'s door might help',
-		'Meat\'s gherkins are kept in the fridge'
+		'Meat seems sad... What could cheer him up?',
+		'What is Meat\'s favorite food?',
+		'Bringing a gherkin to Meat\'s door might cheer him up',
+		'Meat\'s gherkins are kept in the kitchen fridge'
 	},
 
 	{
@@ -187,7 +205,7 @@ local HintAreas = {
 	{
 		'Something is holding these doors shut tight',
 		'You\'ll need to examine it from the other side',
-		'There might be a way through the kitchen'
+		'There might be a way in through the kitchen'
 	},
 
 	{
@@ -201,6 +219,7 @@ local HintAreas = {
 
 	{
 		'It\'s so dark here, maybe there\'s a light you can use',
+		'You can take that lamp with you',
 		'Looks like a way out next to the locker',
 		'The barrels need to be pushed out of the way'
 	},

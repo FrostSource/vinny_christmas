@@ -42,8 +42,16 @@ local HintReminders = {
     "Throw a gerhkin in Meat's mouth from a distance",
     "There is a present on the roof",
 }
+local HintAreas = {
+	{
+		'I give hints about interactions and secrets when shook!\nShake again!',
+		'Each shake will give a random hint',
+		'Some hints won\'t be available until you explore and advance the game\nso check back occasionally',
+		'You can put me in your wrist pocket so I don\'t get lost'
+	},
+}
 
 return {
     reminders = HintReminders,
-    areas = {}
+    areas = HintAreas
 }
