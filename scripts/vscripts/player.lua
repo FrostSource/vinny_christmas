@@ -637,6 +637,11 @@ function CBasePlayer:GetWeapon()
     end
 end
 
+function CBasePlayer:UpdateGrabbityGlovesForGordon()
+    self.LeftHand:GetGrabbityGlove():SetLocalOrigin(Vector(0, 0.3, 0))
+    self.RightHand:GetGrabbityGlove():SetLocalOrigin(Vector(0, -0.3, 0))
+end
+
 ---@type table<function,table|boolean>[]
 local registered_event_callbacks = {
     novr_player = {},
