@@ -3,14 +3,13 @@
 	narrator.base = 
 	{
 		type = "hlvr_commentary"
-		volume = 1.0
+		volume = 1.3
 	}
 
 	narrator.asking_for_help = 
 	{
 		base = "narrator.base"
 		vsnd_duration = 3.332
-		volume = 1.3
 		line_text = "Vinny wasn't ashamed about asking for some help."
 		vsnd_files = 
 		[
@@ -23,7 +22,6 @@
 		base = "narrator.base"
 		//11.9952
 		vsnd_duration = 12.4952
-		volume = 1.3
 		line_text = "There was a lot of junk up in the attic. But if Vinny wanted to have a look, he would have to find the key... It would turn up eventually. Probably somewhere dark and dusty."
 		vsnd_files = 
 		[
@@ -35,7 +33,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 11.168
-		volume = 1.3
 		line_text = "The stairs to the basement were dark and foreboding. But Vinny was brave! Surely nothing nefarious lurked below..."
 		vsnd_files = 
 		[
@@ -48,7 +45,6 @@
 		base = "narrator.base"
 		//44.475
 		//vsnd_duration = 39.475
-		volume = 1.3
 		line_text = "And so.. with the Christmas decorations in place: Joel, Meat, Jerma and all his Vinesauce friends could enjoy a beautiful Christmas together, thanks to Vinny. He could continue to spread joy to those around him. And he knew exactly the right thing to say at this very moment. To everyone who loves him."
 		vsnd_files = 
 		[
@@ -61,7 +57,6 @@
 		base = "narrator.base"
 		//10.097
 		vsnd_duration = 10.000
-		volume = 1.3
 		line_text = "Vinny never cleaned the Christmas tree spot from last year, or the year before, but he will this year! He will..."
 		vsnd_files = 
 		[
@@ -73,7 +68,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 3.645
-		volume = 1.3
 		line_text = "He didn't even need to try, that's how good he was."
 		vsnd_files = 
 		[
@@ -86,7 +80,6 @@
 		base = "narrator.base"
 		//11.586
 		vsnd_duration = 12.586
-		volume = 1.3
 		line_text = "Vinny's fridge was securely locked to keep any would-be gherkin theives at bay.. The key must be somewhere in the kitchen. If only he had cleaned up."
 		vsnd_files = 
 		[
@@ -98,7 +91,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 7.720
-		volume = 1.3
 		line_text = "Vinny kept his front door securely locked with a code. A special code."
 		vsnd_files = 
 		[
@@ -110,7 +102,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 6.179
-		volume = 1.3
 		line_text = "For Vinny it was about the fun of the game, not the prize at the end."
 		vsnd_files = 
 		[
@@ -123,7 +114,6 @@
 		base = "narrator.base"
 		//8.713
 		vsnd_duration = 8.813
-		volume = 1.3
 		line_text = "As he tried in vain to pour the milk, Vinny quickly remembered that a glass is very different to a mug."
 		vsnd_files = 
 		[
@@ -135,7 +125,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 5.213
-		volume = 1.3
 		line_text = "Vinny was good at pachinko, and he had videos to prove it!"
 		vsnd_files = 
 		[
@@ -147,7 +136,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 7.250
-		volume = 1.3
 		line_text = "Vinny's friend had a somber tone about his voice. Perhaps a tasty treat would cheer him up."
 		vsnd_files = 
 		[
@@ -160,7 +148,6 @@
 		base = "narrator.base"
 		//10.750
 		vsnd_duration = 11.150
-		volume = 1.3
 		line_text = "It appeared as though Meat had been sticking his fleshy tendrils on the basement door again. Vinny made a note to bring his friend down to clean the handle."
 		vsnd_files = 
 		[
@@ -172,7 +159,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 2.261
-		volume = 1.3
 		line_text = "Good thing no one is watching..."
 		vsnd_files = 
 		[
@@ -184,7 +170,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 2.731
-		volume = 1.3
 		line_text = "Vinny had nothing to prove."
 		vsnd_files = 
 		[
@@ -197,7 +182,6 @@
 		base = "narrator.base"
 		//33.033
 		vsnd_duration = 34.033
-		volume = 1.3
 		line_text = "There was lots to do to prepare for Christmas tomorrow morning! A nice tree for gifts to sit under. There's still one left in the garden. The five wrapped Christmas gifts which Vinny thoughtfully hid throughout the house. And finally a plate of cookies and a glass of milk set out by the Christmas tree as an offering for Santa. Who, hopefully, won't burgle the house this year."
 		vsnd_files = 
 		[
@@ -210,7 +194,6 @@
 		base = "narrator.base"
 		//7.616
 		vsnd_duration = 7.316
-		volume = 1.3
 		line_text = "The night air was crisp. The crickets were out in full force chirping a \"Hello\" to Vinny."
 		vsnd_files = 
 		[
@@ -223,7 +206,6 @@
 		base = "narrator.base"
 		//5.343
 		vsnd_duration = 5.400
-		volume = 1.3
 		line_text = "Vinny didn't even like pachinko... It is a silly game."
 		vsnd_files = 
 		[
@@ -236,7 +218,6 @@
 		base = "narrator.base"
 		//7.172
 		vsnd_duration = 7.572
-		volume = 1.3
 		line_text = "A pachinko machine, in Vinny's very own basement! Who could have put this here?"
 		vsnd_files = 
 		[
@@ -249,7 +230,6 @@
 		base = "narrator.base"
 		//6.728
 		vsnd_duration = 6.828
-		volume = 1.3
 		line_text = "Vinny's pachinko claim to fame lived on! And he could collect his prize!"
 		vsnd_files = 
 		[
@@ -261,7 +241,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 2.235
-		volume = 1.3
 		line_text = "Pull the lever Vinny."
 		vsnd_files = 
 		[
@@ -273,7 +252,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 2.156
-		volume = 1.3
 		line_text = "Pull the lever Vinny."
 		vsnd_files = 
 		[
@@ -285,7 +263,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 1.817
-		volume = 1.3
 		line_text = "Pull the lever Vinny."
 		vsnd_files = 
 		[
@@ -297,7 +274,6 @@
 	{
 		base = "narrator.base"
 		vsnd_duration = 2.156
-		volume = 1.3
 		line_text = "Pull the lever Vinny."
 		vsnd_files = 
 		[
@@ -310,7 +286,6 @@
 		base = "narrator.base"
 		//11.090
 		vsnd_duration = 12.100
-		volume = 1.3
 		line_text = "Vinny has two tellies. One that works picture-wise and one that works with sound. He got the idea from his Uncle, who, isn't an Uncle."
 		vsnd_files = 
 		[
@@ -323,7 +298,6 @@
 		base = "narrator.base"
 		//15.270
 		vsnd_duration = 15.670
-		volume = 1.3
 		line_text = "Vinny hadn't really thought through what he would do after cutting down a tree of this size. And while he is definitely muscular enough to carry it. He settled on a simpler idea. His easy set-up tree in the attic."
 		vsnd_files = 
 		[
@@ -336,7 +310,6 @@
 		base = "narrator.base"
 		//10.045
 		vsnd_duration = 10.445
-		volume = 1.3
 		line_text = "Although Vinny had already set up a nice Christmas tree. He decided to chop down his tree anyway. For God knows what reason!"
 		vsnd_files = 
 		[
@@ -349,7 +322,6 @@
 		base = "narrator.base"
 		//8.687
 		vsnd_duration = 9.587
-		volume = 1.3
 		line_text = "There it was.. The perfect tree! All Vinny needed was an axe and his brute manly force."
 		vsnd_files = 
 		[
@@ -362,7 +334,6 @@
 		base = "narrator.base"
 		//7.067
 		vsnd_duration = 7.267
-		volume = 1.3
 		line_text = "Oh dear.. Vinny has slept through Christmas Eve without setting up for Christmas morning. And it's already midnight!"
 		vsnd_files = 
 		[
@@ -375,7 +346,6 @@
 		base = "narrator.base"
 		//7.981
 		vsnd_duration = 7.981
-		volume = 1.3
 		line_text = "'Twas the night before Christmas. All was calm. Vinny slept soundly."
 		vsnd_files = 
 		[
@@ -388,7 +358,6 @@
 		base = "narrator.base"
 		//7.485
 		vsnd_duration = 7.785
-		volume = 1.3
 		line_text = "A quick glance, at last night's stream, showed Vinny had the wrong title. Again..."
 		vsnd_files = 
 		[
