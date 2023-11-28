@@ -320,6 +320,14 @@ end, "", 0)
 
 Convars:RegisterCommand("vinny_change_time_to_morning", function()
     DoEntFire("@snow_relay_init", "Trigger", "", 0, nil, nil)
+    if not IsVREnabled() then
+        local snow = Entities:FindByName(nil, "@snow_local")
+        if snow then
+            snow:SetParent(Player, "")
+            snow:SetLocalOrigin(Vector(0, 0, 48))
+            snow:SetLocalAngles(0,0,0)
+        end
+    end
 end, "", 0)
 
 Convars:RegisterCommand("vinny_saw_open_color_puzzle", function()

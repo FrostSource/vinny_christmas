@@ -5,7 +5,7 @@ if IsServer() then
     end
     require "vc.global"
 
-    if IsInToolsMode() then
+    if IsInToolsMode() or Convars:GetInt("developer") > 0 then
         local debug_script = "debug." .. GetMapName()
         if not pcall(require, debug_script) then
             Warning("`"..debug_script.."` script was not found!")
