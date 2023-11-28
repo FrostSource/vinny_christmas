@@ -103,7 +103,7 @@
 			}
 			m_hTexture = resource:"materials/particle/lights/spotlight_single.vtex"
 			m_nColorBlendType = "PARTICLE_COLOR_BLEND_ADD"
-			m_flSelfIllumAmount = 0.58
+			m_flSelfIllumAmount = 2.0
 		},
 	]
 	m_controlPointConfigurations = 
