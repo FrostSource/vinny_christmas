@@ -179,11 +179,11 @@ local name_start_len = #name_start
 ---@param name string
 ---@return string
 local function build_name(name)
-    return name
-    -- if name:sub(1, name_start_len) == name_start then
-    --     return name
-    -- end
-    -- return name_start..name
+    -- return name
+    if name:sub(1, name_start_len) == name_start then
+        return name
+    end
+    return name_start..name
 end
 
 Storage = {}
@@ -729,7 +729,7 @@ function Storage.LoadAll(handle, direct)
         -- end
         if not key:find(separator, 1, true) then
             local result = Storage.Load(handle, key)
-            if result then
+            if result ~= nil then
                 tbl[key] = result
                 -- print("","LOADED", key, result, type(result))
                 if type(result) == "table" then print(#result) end
