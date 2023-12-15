@@ -61,3 +61,12 @@ function string:truncate(len, replacement)
     end
     return tostring(self)
 end
+
+function string:EntFire(action, value, delay, activator, caller)
+    if type(value) == "boolean" then
+        value = value and "1" or "0"
+    elseif value ~= nil then
+        value = tostring(value)
+    end
+    DoEntFire(self, action, value or "", delay or 0, activator, caller)
+end
