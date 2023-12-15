@@ -861,6 +861,23 @@
 		volume = 0.8
 		vsnd_files = "sounds/misc/hint_popup.vsnd"
 	}
+
+	"vinny.vort_toy_vox" =
+	{
+		type = "hlvr_default_3d"
+		volume = 0.8
+		vsnd_files =
+		[
+			"sounds/vo/vortigaunt/06_00005.vsnd",
+			"sounds/vo/vortigaunt/06_00006.vsnd",
+			"sounds/vo/vortigaunt/06_00007.vsnd",
+			"sounds/vo/vortigaunt/06_00008.vsnd",
+			"sounds/vo/vortigaunt/06_00212.vsnd",
+			"sounds/vo/vortigaunt/06_00210.vsnd",
+			"sounds/vo/vortigaunt/06_00206.vsnd",
+			"sounds/misc/Vortigese09.vsnd",
+		]
+	}
 	
 	
 	
