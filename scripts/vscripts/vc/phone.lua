@@ -6,7 +6,7 @@ local base, self = entity("Phone")
 if self.Initiated then return end
 
 
-function self:OnReady(loaded)
+function base:OnReady(loaded)
 end
 
 ---Amount of time before the quip plays after phone is answered
