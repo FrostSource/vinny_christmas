@@ -51,10 +51,8 @@ end
 ---Plays a random quip call.
 function base:RandomCall()
 	local quip = self:PickRandomQuip()
-	if quip == nil then
-		return
-	end
-	if quip == '' then
+	if quip == nil or quip == '' then
+		self:SaveString("NextQuip", '')
 		return
 	end
 	self:DoCall(quip)
