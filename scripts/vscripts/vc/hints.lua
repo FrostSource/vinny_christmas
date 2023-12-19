@@ -99,7 +99,8 @@ local HintAreas = {
 	{
 		'A useful tool could unclog the toilet',
 		'Vinny keeps a plunger in one of the bathrooms',
-		'Keep plunging until you get something onto the plunger',
+		'The upstairs bathroom has a plunger',
+		'Plunge the downstairs toilet until you get something onto the plunger',
 	},
 
 	{
