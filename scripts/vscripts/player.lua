@@ -276,7 +276,7 @@ Expose(CBasePlayer.DropActivator, "DropActivator", CBasePlayer)
 ---@param hand? CPropVRHand|0|1
 function CBasePlayer:GrabByHandle(handle, hand)
     if IsEntity(handle, true) then
-        if type(hand) ~= "number" then
+        if IsVREnabled() and type(hand) ~= "number" then
             if hand ~= nil and IsEntity(hand) and hand:IsInstance(CPropVRHand) then
                 hand = hand:GetHandID()
             else

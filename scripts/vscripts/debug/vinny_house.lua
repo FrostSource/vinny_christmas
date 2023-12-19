@@ -145,16 +145,25 @@ end, "", 0)
 
 Convars:RegisterCommand("vinny_gifts_put_under_tree", function()
     local gifts = Entities:FindAllByName("christmas_gift")
-    gifts[1]:SetOrigin(Vector(68, -147.105, 8))
-    -- gifts[1]:EntFire("FireUser4")
-    gifts[2]:SetOrigin(Vector(48, -147.105, 8))
-    -- gifts[2]:EntFire("FireUser4")
-    gifts[3]:SetOrigin(Vector(28, -147.105, 8))
-    -- gifts[3]:EntFire("FireUser4")
-    gifts[4]:SetOrigin(Vector(8, -147.105, 8))
-    -- gifts[4]:EntFire("FireUser4")
-    gifts[5]:SetOrigin(Vector(48, -147.105, 20))
-    -- gifts[5]:EntFire("FireUser4")
+    for index, value in ipairs(gifts) do
+        print(index, value:GetModelName())
+    end
+    -- Medium gray 03
+    gifts[1]:SetAngles(-75.00658416748, -96.602470397949, 0.62969315052032)
+    gifts[1]:SetOrigin(Vector(40.076206207275, -138.30166625977, 6.1656360626221))
+    -- Medium gray 03
+    gifts[2]:SetAngles(0.033091511577368, 17.428499221802, 0.048689749091864)
+    gifts[2]:SetOrigin(Vector(22.48021697998, -157.07766723633, 3.6735529899597))
+    -- Small 02
+    gifts[3]:SetAngles(-0.019339678809047, -54.065254211426, -54.18921661377)
+    gifts[3]:SetOrigin(Vector(27.294418334961, -141.62278747559, 2.8534486293793))
+    -- Medium green 04
+    gifts[4]:SetAngles(0.01491470169276, -83.284309387207, -0.03235836327076)
+    gifts[4]:SetOrigin(Vector(22.784019470215, -151.7059173584, 0.35398745536804))
+    -- Big 01
+    gifts[5]:SetAngles(0.0028036476578563, 94.875350952148, 0.002115743001923)
+    gifts[5]:SetOrigin(Vector(47.73722076416, -151.62020874023, -0.00013828277587891))
+
 end, "", 0)
 
 Convars:RegisterCommand("vinny_unclog_toilet", function()
@@ -351,6 +360,38 @@ Convars:RegisterCommand("vinny_feed_meat", function()
         return
     end
     trigger:FireOutput("OnTrigger", gherkin, gherkin, nil, 0)
+end, "", 0)
+
+Convars:RegisterCommand("vinny_ring_phone", function()
+    local timer = Entities:FindByName(nil, "phone_timer")
+    if not timer then
+        print("Could not find phone timer!")
+        return
+    end
+    timer:EntFire("SubtractFromTimer", "400")
+end, "", 0)
+
+Convars:RegisterCommand("vinny_answer_phone", function()
+    local phone = Entities:FindByName(nil, "phone_reciever")
+    if not phone then
+        print("Could not find phone receiver!")
+        return
+    end
+    phone:EntFire("SubtractFromTimer", "400")
+    phone:Grab()
+    phone:Drop()
+    phone:SetParent(Player, "")
+    phone:SetLocalOrigin(Vector(0, -8, 68))
+    phone:SetLocalAngles(0, 0, 90)
+end, "", 0)
+
+Convars:RegisterCommand("vinny_drop_phone", function()
+    local phone = Entities:FindByName(nil, "phone_reciever")
+    if not phone then
+        print("Could not find phone receiver!")
+        return
+    end
+    phone:SetParent(nil, "")
 end, "", 0)
 
 
