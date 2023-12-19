@@ -23,6 +23,7 @@ local HintReminders = {
     [21] = "There is a present on the roof",
     [22] = "There is a Half-Life creature to hold in a computer room",
     [23] = "There is an unopened toy in the shed",
+    [24] = "Grab the radio in Vinny's bedroom",
 }
 local HintAreas = {
 	{
