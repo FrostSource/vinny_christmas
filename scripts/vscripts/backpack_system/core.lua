@@ -890,12 +890,12 @@ function BackpackSystem:ItemReleasedForBackpack(data)
     ---@type EntityHandle
     local prop = data.item
 
-    -- THIS IS DEBUG STUFF
-    -- dprint("itemreleased in backpack system")
-    if type(data.item) == "string" then dprint('string was in itemReleasedForBackpack') end
-    -- dprint(BackpackSystem:CanStoreProp(prop))
-    if not self:CanStoreProp(prop) then self:PrintCanStoreProp(prop) end
-    -- DELETE ABOVE DEBUG
+    -- -- THIS IS DEBUG STUFF
+    -- -- dprint("itemreleased in backpack system")
+    -- if type(data.item) == "string" then dprint('string was in itemReleasedForBackpack') end
+    -- -- dprint(BackpackSystem:CanStoreProp(prop))
+    -- if not self:CanStoreProp(prop) then self:PrintCanStoreProp(prop) end
+    -- -- DELETE ABOVE DEBUG
 
     if self:CanStoreProp(prop) then
         dprint("BackpackSystem", "item released for backpack", prop:GetModelName())

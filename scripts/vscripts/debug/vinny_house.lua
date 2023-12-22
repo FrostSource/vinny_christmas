@@ -419,5 +419,9 @@ Convars:RegisterCommand("vinny_stop_alarm", function()
     DoEntFire("2497_alarmclock_timer", "Kill", "", 0, nil, nil)
 end, "", 0)
 
+Convars:RegisterCommand("vinny_unlock_front_door", function()
+    DoEntFire("front_door_open_locks", "Trigger", "", 0, nil, nil)
+end, "", 0)
+
 
 print("debug/vinny_christmas initialized...")

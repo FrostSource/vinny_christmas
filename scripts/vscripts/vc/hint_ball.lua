@@ -25,7 +25,7 @@ base.IsHintBall = true
 
 
 ---Seconds before another hint can be displayed.
-local TIME_BETWEEN_HINTS = 1.5
+local TIME_BETWEEN_HINTS = 0.75
 ---Seconds in which each shake movement must be made.
 local TIME_BETWEEN_SHAKES = 0.2
 ---Number of shakes required to show a hint.
@@ -210,17 +210,23 @@ RegisterPlayerEventCallback("item_pickup", function(data)
 	if not data.item.IsHintBall then return end
 
 	data.item:ResumeThink()
+	-- data.item:Delay(function()
+	-- 	data.item:HideHint()
+	-- end, 0.1)
 end)
 ---comment
 ---@param data PLAYER_EVENT_ITEM_RELEASED
 RegisterPlayerEventCallback("item_released", function(data)
-	-- if data.item ~= self then return end
-	if not data.item.IsHintBall then return end
+    -- if data.item ~= self then return end
+    if not data.item.IsHintBall then return end
 
-	print("Ball dropped")
+    print("Ball dropped")
 
 	data.item:HideHint()
-	data.item:PauseThink()
+    data.item:PauseThink()
+	-- data.item:Delay(function()
+	-- 	data.item:HideHint()
+	-- end, 0.1)
 end)
 
 function base:Think()

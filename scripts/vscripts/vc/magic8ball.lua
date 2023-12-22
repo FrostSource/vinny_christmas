@@ -15,7 +15,7 @@ function self:HintCallback(area_index, line)
         print("Show key glow")
         local key = Entities:FindByName(nil, "@fridge_key")
         if key then
-            DebugDrawSphere(key:GetOrigin(), Vector(255,0,0), 1, 8, true, 100)
+            -- DebugDrawSphere(key:GetOrigin(), Vector(255,0,0), 1, 8, true, 100)
             key:EntFire("StartGlowing")
             key:AddOutput("OnPlayerPickup", "!self", "StopGlowing", nil, nil, nil, nil, true)
         end

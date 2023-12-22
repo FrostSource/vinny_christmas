@@ -211,7 +211,7 @@
 		base = "phone.quip.base"
 		//11.299
         vsnd_duration = 7.299
-		volume = 0.75
+		volume = 1.0
 		vsnd_files = "sounds/phone/quips/potatoes_peas.vsnd"
 	}
 	

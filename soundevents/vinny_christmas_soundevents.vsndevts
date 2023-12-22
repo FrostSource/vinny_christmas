@@ -884,7 +884,7 @@
 		type = "hlvr_default_3d"
 		volume = 1
 		volume_falloff_min = 16.0
-		volume_falloff_max = 250.0
+		volume_falloff_max = 700.0
 		volume_fade_out = 0
 		volume_fade_in = 1
 		spread_min = 30
