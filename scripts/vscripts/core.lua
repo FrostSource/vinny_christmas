@@ -86,7 +86,7 @@
 
 
 
-Msg("Initializing Extravaganza core system...")
+print("Initializing Extravaganza core system...")
 
 ---------------------
 -- Global functions
@@ -826,8 +826,8 @@ ifrequire 'player'
 
 -- Common third-party libraries
 
-ifrequire 'wrist_pocket.core'
+-- require 'wrist_pocket.core'
 
 --#endregion
 
-Msg("...done")
+print("...done")

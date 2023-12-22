@@ -394,5 +394,30 @@ Convars:RegisterCommand("vinny_drop_phone", function()
     phone:SetParent(nil, "")
 end, "", 0)
 
+Convars:RegisterCommand("vinny_speen_guy", function()
+    -- local speen = Entities:FindByName(nil, "@speen_template")
+    -- if not speen then
+    --     print("Could not find speen template!")
+    --     return
+    -- end
+    -- DoEntFire("@vr_debug_speen_tp", "Teleport", "", 0, nil, nil)
+    -- speen:EntFire("ForceSpawn")
+    -- local speen = Entities:FindByName(nil, "speen_particle")
+    -- if speen then
+        DoEntFire("@vr_debug_speen_tp", "Teleport", "", 0, nil, nil)
+        DoEntFire("speen_relay", "Trigger", "", 0, nil, nil)
+        -- local pt = ParticleManager:CreateParticle("particles/speen_guy.vpcf", 0, Player)
+        -- ParticleManager:SetParticleControl(pt, 0, speen:GetAbsOrigin())
+        -- ParticleManager:SetParticleControlOrientation(pt, 0, speen:GetForwardVector(), speen:GetRightVector(), speen:GetUpVector())
+    -- end
+end, "", 0)
+
+Convars:RegisterCommand("vinny_stop_alarm", function()
+    DoEntFire("2497_alarmclock", "Kill", "", 0, nil, nil)
+    DoEntFire("2497_alarmclock_snd", "StopSound", "", 0, nil, nil)
+    DoEntFire("2497_alarmclock_snd", "Kill", "", 0.1, nil, nil)
+    DoEntFire("2497_alarmclock_timer", "Kill", "", 0, nil, nil)
+end, "", 0)
+
 
 print("debug/vinny_christmas initialized...")
