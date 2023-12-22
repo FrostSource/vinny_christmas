@@ -54,7 +54,7 @@ ifrequire("subtitles.data", function(subtitles_data)
         written_files[#written_files+1] = f
         print("Writing subtitle file: "..f)
         write_all_bytes(f, subtitles_data.languages[lang])
-        ListenToGameEvent("player_activate", function()
+        RegisterPlayerEventCallback("player_activate", function()
             print("Setting cc_lang", lang.."_"..subtitles_data.mod)
             SendToConsole("cc_lang "..lang.."_"..subtitles_data.mod)
         end, nil)
