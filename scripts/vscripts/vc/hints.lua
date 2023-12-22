@@ -131,11 +131,12 @@ local HintAreas = {
 
 	{
 		'The fridge key is somewhere in the kitchen',
-		'I can tell you all the places the key might be\nif you really don\'t want to look',
+		'I can tell you all the places the key might be\nif you really don\'t want to search',
 		'Under the sink',
 		'Third drawer down next to the sink',
 		'Third drawer down next to the fridge',
-		'Bottom drawer of the big cupboard'
+		'Bottom drawer of the big cupboard',
+		'How about I just highlight it for you?' -- Has output
 	},
 
 	{

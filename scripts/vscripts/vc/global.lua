@@ -25,3 +25,21 @@ function DoSpeen(_, io)
     StartSoundEventFromPosition("RapidFire.SingleShotOld", io.caller:GetOrigin())
 end
 
+function SpawnFridgeKey(_, io)
+    local spawns = Entities:FindAllByName("fridge_key_spawn")
+    local spawn = RandomFromArray(spawns)
+
+    SpawnEntityFromTableSynchronous("prop_physics", {
+        targetname = "@fridge_key",
+        origin = spawn:GetOrigin(),
+        angles = spawn:GetAngles(),
+        CanDepositInItemHolder = "1",
+        rendercolor = "211 161 76 255",
+        interactAs = "important_item,fridge_key",
+        glowrange = "0",
+        glowrangemin = "0",
+        glowcolor = "211 161 76 255",
+        spawnflags = 16777473,
+        model = "models/props/interior_deco/tabletop_key02.vmdl",
+    })
+end

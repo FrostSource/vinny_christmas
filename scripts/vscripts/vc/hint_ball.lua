@@ -108,8 +108,13 @@ function base:GetAreaHint()
 	self.HintAreaIndex[area_index] = line
 	self.PreviousArea = area_index
 
+	if self.HintCallback then
+		self:HintCallback(area_index, line)
+	end
+
 	print("area[line]", area[line])
 	print("area", area)
+	print("area_index", area_index)
 	print("line", line)
 	print("#area", #area)
 	return area[line] .. "\n" .. line .. "/" .. #area
