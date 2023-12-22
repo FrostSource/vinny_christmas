@@ -2,8 +2,8 @@
 	This is a class script, not an entity script!
 ]]
 ---@class HintBall : HintPanel
-local base, self, super, private = entity("HintBall", "vc.hint_panel")
-if self and self.Initiated then return end
+local base, _, super, private = entity("HintBall", "vc.hint_panel")
+-- if self and self.Initiated then return end
 
 base.__HintReminders = {}
 base.__HintAreas = {}
@@ -201,17 +201,21 @@ end
 ---comment
 ---@param data PLAYER_EVENT_ITEM_PICKUP
 RegisterPlayerEventCallback("item_pickup", function(data)
-	if data.item ~= self then return end
+	-- if data.item ~= self then return end
+	if not data.item.IsHintBall then return end
 
-	self:ResumeThink()
+	data.item:ResumeThink()
 end)
 ---comment
 ---@param data PLAYER_EVENT_ITEM_RELEASED
 RegisterPlayerEventCallback("item_released", function(data)
-	if data.item ~= self then return end
+	-- if data.item ~= self then return end
+	if not data.item.IsHintBall then return end
 
-	self:HideHint()
-	self:PauseThink()
+	print("Ball dropped")
+
+	data.item:HideHint()
+	data.item:PauseThink()
 end)
 
 function base:Think()

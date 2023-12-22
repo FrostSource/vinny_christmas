@@ -37,7 +37,7 @@
     Debugging print lines are left in but commented out for those that want them.
     They can be taken out without any problem.
 ]]
-require "core"
+-- require "core"
 
 ---List of models registered as having custom holo models. Unregistered models will use
 ---the default model Valve assigned which is the health pen holo.
@@ -45,6 +45,17 @@ require "core"
 local RegisteredModels = {
     -- The health pen has a custom holo model so it can be centered.
     "models/weapons/vr_alyxhealth/vr_health_pen.vmdl",
+
+    -- "models/vinny_house/hint_ball.vmdl",
+    -- "models/vinny_house/secrets_ball.vmdl",
+    -- "models/grimoire/grimoire.vmdl",
+    -- "models/props/interior_deco/tabletop_pipe.vmdl",
+    -- "models/pickle/pickle_b.vmdl",
+    -- "models/pickle/pickle_rick.vmdl",
+    -- "models/picolas_cage/picolas_cage.vmdl",
+    -- "models/props/interior_deco/interior_phone_001a_handset.vmdl",
+    -- "models/props/interior_deco/tabletop_key02.vmdl",
+    -- "models/vinny_house/attic_key_with_tag.vmdl",
 }
 
 ---List of models that should be ignored by the script when placed
@@ -193,7 +204,7 @@ local last_opposite
 ---@param data PLAYER_EVENT_ITEM_RELEASED
 local function ItemReleased(data)
     last_released = data.item--[[@as CPhysicsProp]]
-    last_opposite = data.hand_opposite
+    last_opposite = data.otherhand
     -- prints("Player drop", data.item_name, data.item, data.item:GetModelName(), "from "..(data.hand:GetHandID() == 0 and "left" or "right").." hand")
 end
 RegisterPlayerEventCallback("item_released", ItemReleased)
@@ -276,7 +287,7 @@ local function createWristParticle(icon, model_entity, color)
     elseif color == "wrist_blue" then name = "particles/wrist_pocket/wrist_holo_blue.vpcf"
     end
     local pt = ParticleManager:CreateParticle(name, 1, icon)
-    ParticleManager:SetParticleControlEnt(pt, 1, model_entity, 0, "", Vector(), false)
+    ParticleManager:SetParticleControlEnt(pt, 1, model_entity, 0, nil, Vector(), false)
     local s = icon:GetAbsScale()
     ParticleManager:SetParticleControl(pt, 2, Vector(s,s,s))
     return pt
@@ -291,6 +302,8 @@ local function PlayerStoredItemInItemHolder(data)
     if vlua.find(IgnoredModels, data.item:GetModelName()) then
         return
     end
+
+    -- return
 
     -- This code needs to be delayed slightly because for some reason the holo model
     -- doesn't exist by the time this event is fired.
@@ -321,7 +334,7 @@ local function PlayerStoredItemInItemHolder(data)
             if vlua.find(RegisteredModels, last_released:GetModelName()) then
                 local replace_model = "models/custom_wrist_pocket" .. last_released:GetModelName():sub(7, -6) .. "_icon.vmdl"
                 icon:SetModel(replace_model)
-                -- print("Replacing wrist icon with", replace_model)
+                print("Replacing wrist icon with", replace_model)
 
             elseif USE_PARTICLE_FOR_UNREGISTERED then
                 -- NOTE: For some reason the particle will not appear on stored props
@@ -341,14 +354,14 @@ local function PlayerStoredItemInItemHolder(data)
                 StoredIconData[wrist_id].particle = createWristParticle(icon, pt_model, last_released:WristColor())
                 icon:SaveEntity("wrist_particle_model",pt_model)
                 icon:SetRenderAlpha(0)
-                -- print("Using particle")
+                print("Using particle")
 
             elseif USE_BASE_MODEL_FOR_UNREGISTERED then
-                -- print("Using base model because unregistered", last_released:GetModelName())
+                print("Using base model because unregistered", last_released:GetModelName())
                 icon:SetModel(last_released:GetModelName())
 
             else
-                -- print("Model is not registered", last_released:GetModelName())
+                print("Model is not registered", last_released:GetModelName())
                 return
             end
             SetWristIconTransforms(wrist_id, icon, last_released)
@@ -495,7 +508,7 @@ g.WristColor = function(x)
     getfenv(2).thisEntity:WristColor(x)
 end
 
-
+print("Custom wrist pocket holograms initiated...")
 
 
 return WristPrecache

@@ -888,6 +888,7 @@ local function listenEventItemPickup(data)
     data.hand = hand
     data.otherhand = otherhand
     for callback, context in pairs(registered_event_callbacks[data.game_event_name]) do
+        print(callback, context)
         if context ~= true then
             callback(context, data)
         else

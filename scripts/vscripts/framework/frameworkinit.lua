@@ -1,16 +1,18 @@
 
 if IsServer() then
-    if not pcall(require, "core") then
-        Warning("`scripts/vscripts/core.lua` was not found!")
-    end
+    -- if not pcall(require, "core") then
+    --     print("`scripts/vscripts/core.lua` was not found!")
+    -- end
+    require "core"
     require "vc.global"
 
-    if IsInToolsMode() or Convars:GetInt("developer") > 0 then
+    -- Commented to allow commands to be used by players at all times
+    -- if IsInToolsMode() or Convars:GetInt("developer") > 0 then
         local debug_script = "debug." .. GetMapName()
         if not pcall(require, debug_script) then
             Warning("`"..debug_script.."` script was not found!")
         end
-    end
+    -- end
 
     ---@type table<function,boolean|table>
     local map_shutdown_callbacks = {}

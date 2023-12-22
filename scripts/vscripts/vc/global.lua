@@ -9,3 +9,19 @@ function HasMilk(_, io)
         end
     -- end
 end
+
+function DoSpeen(_, io)
+    print("Doing speen")
+    DoEntFire("@speen_particle", "Start", "", 0, nil, nil)
+    local proxy =SpawnEntityFromTableSynchronous("prop_dynamic", {
+        -- model = "models/vinny_house/gman_speen.vmdl",
+        origin = io.caller:GetOrigin(),
+        rendermode = "kRenderNone",
+        ScriptedMovement = "1",
+    })
+    proxy:SetVelocity(Vector(-51.25, 0, 50) * 30)
+    proxy:EntFire("Kill", "", 5)
+    proxy:EmitSound("vinny.speen")
+    StartSoundEventFromPosition("RapidFire.SingleShotOld", io.caller:GetOrigin())
+end
+
