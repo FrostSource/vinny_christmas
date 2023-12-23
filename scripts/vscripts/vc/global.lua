@@ -43,3 +43,7 @@ function SpawnFridgeKey(_, io)
         model = "models/props/interior_deco/tabletop_key02.vmdl",
     })
 end
+
+RegisterPlayerEventCallback("vr_player_ready", function()
+    Player:UpdateHandAttachmentsForGordon()
+end)

@@ -637,9 +637,24 @@ function CBasePlayer:GetWeapon()
     end
 end
 
-function CBasePlayer:UpdateGrabbityGlovesForGordon()
-    self.LeftHand:GetGrabbityGlove():SetLocalOrigin(Vector(0, 0.3, 0))
-    self.RightHand:GetGrabbityGlove():SetLocalOrigin(Vector(0, -0.3, 0))
+function CBasePlayer:UpdateHandAttachmentsForGordon()
+    local leftGlove = self.LeftHand:GetGrabbityGlove()
+    if leftGlove then
+        leftGlove:SetLocalOrigin(Vector(0, 0.3, 0))
+    end
+    local rightGlove = self.RightHand:GetGrabbityGlove()
+    if rightGlove then
+        rightGlove:SetLocalOrigin(Vector(0, -0.3, 0))
+    end
+
+    local leftHolder = self.LeftHand:GetFirstChildWithClassname("hlvr_hand_item_holder")
+    if leftHolder then
+        leftHolder:SetLocalOrigin(leftHolder:GetLocalOrigin() + Vector(-0.5, 0, 0))
+    end
+    local rightHolder = self.RightHand:GetFirstChildWithClassname("hlvr_hand_item_holder")
+    if rightHolder then
+        rightHolder:SetLocalOrigin(rightHolder:GetLocalOrigin() + Vector(-0.5, 0, 0))
+    end
 end
 
 ---@type table<function,table|boolean>[]
