@@ -529,6 +529,7 @@
 					{
 						_class = "Attachment"
 						name = "player_hat_hmd_pos"
+						disabled = true
 						parent_bone = ""
 						relative_origin = [ 0.0, 0.0, 2.5 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
