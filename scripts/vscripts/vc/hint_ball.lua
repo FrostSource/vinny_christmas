@@ -223,6 +223,7 @@ RegisterPlayerEventCallback("item_released", function(data)
     print("Ball dropped")
 
 	data.item:HideHint()
+	data.item:ForceHide(true)
     data.item:PauseThink()
 	-- data.item:Delay(function()
 	-- 	data.item:HideHint()
@@ -288,6 +289,7 @@ function base:ShowContextHint()
 		print(text)
 	end
 
+	self:ForceHide(false)
 	self:ShowHint(text)
 end
 

@@ -76,6 +76,14 @@ function base:EnableTimeout()
     self.HintTimeout = 5.5
 end
 
+function base:ForceHide(hidden)
+	if hidden then
+		self.TextPanel:EntFire("AddCSSClass", "ForceHide")
+	else
+		self.TextPanel:EntFire("RemoveCSSClass", "ForceHide")
+	end
+end
+
 ---
 ---Parent the entity to the I/O caller passed in.
 ---
