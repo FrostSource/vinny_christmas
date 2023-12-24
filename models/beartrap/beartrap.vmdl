@@ -488,7 +488,6 @@
 					},
 					{
 						_class = "PhysicsHullFile"
-						disabled = true
 						parent_bone = ""
 						surface_prop = "prop.metal_heavy_misc"
 						collision_prop = "default"

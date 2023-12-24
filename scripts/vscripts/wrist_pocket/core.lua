@@ -46,8 +46,8 @@ local RegisteredModels = {
     -- The health pen has a custom holo model so it can be centered.
     "models/weapons/vr_alyxhealth/vr_health_pen.vmdl",
 
-    -- "models/vinny_house/hint_ball.vmdl",
-    -- "models/vinny_house/secrets_ball.vmdl",
+    "models/vinny_house/hint_ball.vmdl",
+    "models/vinny_house/secrets_ball.vmdl",
     -- "models/grimoire/grimoire.vmdl",
     -- "models/props/interior_deco/tabletop_pipe.vmdl",
     -- "models/pickle/pickle_b.vmdl",
@@ -55,7 +55,7 @@ local RegisteredModels = {
     -- "models/picolas_cage/picolas_cage.vmdl",
     -- "models/props/interior_deco/interior_phone_001a_handset.vmdl",
     -- "models/props/interior_deco/tabletop_key02.vmdl",
-    -- "models/vinny_house/attic_key_with_tag.vmdl",
+    "models/vinny_house/attic_key_with_tag.vmdl",
 }
 
 ---List of models that should be ignored by the script when placed
@@ -379,6 +379,7 @@ local function WristPrecache(context)
     PrecacheResource("particle_folder", "particles/wrist_pocket", context)
 end
 
+---@param data PLAYER_EVENT_PLAYER_ACTIVATE
 RegisterPlayerEventCallback("player_activate", function(data)
     ---@cast data PLAYER_EVENT_PLAYER_ACTIVATE
     if UPDATE_ICONS_WITH_THINK then

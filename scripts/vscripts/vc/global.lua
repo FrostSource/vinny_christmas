@@ -75,7 +75,7 @@ function ReturnHintBall(_, io)
     local hint_ball = Entities:FindByModel(nil, "models/vinny_house/hint_ball.vmdl")
     if hint_ball then
         print("Returning lost hint ball")
-        hint_ball:SetOrigin(Vector(-139.189, 129.855, 169.696))
+        hint_ball:SetOrigin(Vector(-139.189, 129.855, 171.696))---139.189, 129.855, 169.696
         hint_ball:SetAngles(0, 0, 0)
     end
 end
@@ -84,7 +84,7 @@ function ReturnSecretBall(_, io)
     local secret_ball = Entities:FindByModel(nil, "models/vinny_house/secrets_ball.vmdl")
     if secret_ball then
         print("Returning lost secret ball")
-        secret_ball:SetOrigin(Vector(-104.419, 198, 41.4904))
+        secret_ball:SetOrigin(Vector(-104.419, 198, 43.4904))---104.419, 198, 41.4904
         secret_ball:SetAngles(0, 285, 0)
     end
 end

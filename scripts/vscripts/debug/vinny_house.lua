@@ -26,7 +26,7 @@ local function screen(...)
 end
 
 
-RegisterPlayerEventCallback("player_activate", function()
+RegisterPlayerEventCallback("novr_player", function()
     screen("Vinny Christmas Debug Helper:", "Type 'vinny_' in the vconsole for a list of commands")
     SendToConsole("r_drawviewmodel 0; cl_drawhud 0; closecaption 2")
     SendToConsole("bind v noclip; sv_noclipspeed 1")
@@ -47,6 +47,13 @@ RegisterPlayerEventCallback("player_activate", function()
     --         ball.TextPanel:SetParent(ball, nil)
     --     end
     -- end
+end)
+
+RegisterPlayerEventCallback("vr_player_ready", function (params)
+    if IsInToolsMode() then
+        DoEntFire("@fade_in_quick", "Fade", "", 0.3, nil, nil)
+        SendToConsole("vinny_stop_alarm")
+    end
 end)
 
 -- Hint debugging
@@ -421,6 +428,14 @@ end, "", 0)
 
 Convars:RegisterCommand("vinny_unlock_front_door", function()
     DoEntFire("front_door_open_locks", "Trigger", "", 0, nil, nil)
+end, "", 0)
+
+Convars:RegisterCommand("vinny_unlock_attic", function()
+    DoEntFire("attic_hatch_relay", "Trigger", "", 0, nil, nil)
+end, "", 0)
+
+Convars:RegisterCommand("vinny_tp_to_crush_puzzle", function()
+    DoEntFire("nonvr_crush_tp", "teleport", "", 0, nil, nil)
 end, "", 0)
 
 
