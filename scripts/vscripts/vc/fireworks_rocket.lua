@@ -39,7 +39,7 @@ end
 function base:Think()
     if (Time() - self.release_time) >= self.launch_time then
         ParticleManager:SetParticleControl(
-            ParticleManager:CreateParticle(RandomFromArray(PARTICLES), 0, Player),
+            ParticleManager:CreateParticle(ArrayRandom(PARTICLES), 0, Player),
             0,
             self:GetOrigin()
         )

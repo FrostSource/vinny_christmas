@@ -1,6 +1,6 @@
 
 ---comment
----@param io TypeIOInvoke
+---@param io IOParams
 function HasMilk(_, io)
     -- Commented to allow for errors
     -- if io and io.activator then
@@ -27,7 +27,7 @@ end
 
 function SpawnFridgeKey(_, io)
     local spawns = Entities:FindAllByName("fridge_key_spawn")
-    local spawn = RandomFromArray(spawns)
+    local spawn = ArrayRandom(spawns)
 
     SpawnEntityFromTableSynchronous("prop_physics", {
         targetname = "@fridge_key",
@@ -47,3 +47,23 @@ end
 RegisterPlayerEventCallback("vr_player_ready", function()
     Player:UpdateHandAttachmentsForGordon()
 end)
+
+function CBasePlayer:UpdateHandAttachmentsForGordon()
+    local leftGlove = self.LeftHand:GetGrabbityGlove()
+    if leftGlove then
+        leftGlove:SetLocalOrigin(Vector(0, 0.3, 0))
+    end
+    local rightGlove = self.RightHand:GetGrabbityGlove()
+    if rightGlove then
+        rightGlove:SetLocalOrigin(Vector(0, -0.3, 0))
+    end
+
+    local leftHolder = self.LeftHand:GetFirstChildWithClassname("hlvr_hand_item_holder")
+    if leftHolder then
+        leftHolder:SetLocalOrigin(leftHolder:GetLocalOrigin() + Vector(-0.5, 0, 0))
+    end
+    local rightHolder = self.RightHand:GetFirstChildWithClassname("hlvr_hand_item_holder")
+    if rightHolder then
+        rightHolder:SetLocalOrigin(rightHolder:GetLocalOrigin() + Vector(-0.5, 0, 0))
+    end
+end

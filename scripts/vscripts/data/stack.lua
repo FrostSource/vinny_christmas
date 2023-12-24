@@ -53,6 +53,7 @@
 ]]
 
 ---@class Stack
+---@field items any[]
 local StackClass =
 {
     ---@type any[]

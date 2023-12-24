@@ -2,7 +2,7 @@
 local limit = 50
 
 ---comment
----@param io TypeIOInvoke
+---@param io IOParams
 local function CheckAxe(io)
     -- local blade = io.activator:ScriptLookupAttachment("blade")
     -- io.activator:GetAttachmentOrigin(blade)

@@ -5,7 +5,7 @@ require "core"
 require "backpack_system.core"
 
 -- print("DOING BACKPACK TRIGGER")
----@class BackpackTrigger : CBaseTrigger,EntityClassBase
+---@class BackpackTrigger : CBaseTrigger, EntityClass
 local base, self = entity("BackpackTrigger")
 if self and self.Initiated then return end
 
@@ -98,7 +98,7 @@ end
 ---If called using `RunScriptCode` the targetname of the entity must be supplied in single quotes, e.g.
 ---SetVirtualBackpackTarget('@virtual_backpack_target')
 ---DO NOT USE DOUBLE QUOTES IN YOUR OUTPUT/OVERRIDE, THIS MAY CORRUPT YOUR VMAP
----@param target string|TypeIOInvoke
+---@param target string|IOParams
 function base:SetVirtualBackpackTarget(target)
     if type(target) == "table" and target.caller then
         BackpackSystem:SetVirtualBackpackTarget(target.caller:GetName())

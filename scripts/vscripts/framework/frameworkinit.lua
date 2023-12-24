@@ -19,7 +19,7 @@ if IsServer() then
     ---Registers a function to be called just before the server is shut down.
     ---This will not execute if the game closes from a hard crash.
     ---@param func function # Function to call.
-    ---@param context table # Any table data to send as first argument.
+    ---@param context? table # Any table data to send as first argument.
     function _G.RegisterMapShutdownCallback(func, context)
         map_shutdown_callbacks[func] = context or true
     end
@@ -35,7 +35,8 @@ if IsServer() then
     end
     ListenToGameEvent("server_shutdown", ServerShutdown, nil)
 
-    if not pcall(require, "subtitles.init") then
-        Warning("`scripts/vscripts/subtitles/init.lua` was not found!")
-    end
+    -- if not pcall(require, "subtitles.init") then
+    --     Warning("`scripts/vscripts/subtitles/init.lua` was not found!")
+    -- end
+    require "subtitles.init"
 end

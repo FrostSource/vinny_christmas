@@ -1,5 +1,5 @@
 --[[
-    v2.0.1
+    v3.0.0
     https://github.com/FrostSource/hla_extravaganza
 
     This file contains utility functions to help reduce repetitive code and add general miscellaneous functionality.
@@ -12,6 +12,7 @@
 ]]
 
 Util = {}
+Util.version = "v3.0.0"
 
 ---
 ---Convert vr_tip_attachment from a game event [1,2] into a hand id [0,1] taking into account left handedness.
@@ -60,6 +61,7 @@ end
 ---@param tbl table # The table to search.
 ---@param value any # The value to search for.
 ---@return unknown|nil # The key in `tbl` or nil if no `value` was found.
+---@deprecated # Functionally the same as `vlua.find`.
 function Util.FindKeyFromValue(tbl, value)
     for key, val in pairs(tbl) do
         if val == value then
@@ -112,34 +114,6 @@ function Util.TableSize(tbl)
 end
 
 ---
----Remove a value from a table, returning it if it exists.
----
----@param tbl table
----@param value any
----@return any
-function Util.RemoveFromTable(tbl, value)
-    local i = vlua.find(tbl, value)
-    if i then
-        return table.remove(tbl, i)
-    end
-    return nil
-end
-
----
----Appends `array2` onto `array1` as a new array.
----Safe extend function alternative to `vlua.extend`.
----
----@param array1 any[]
----@param array2 any[]
-function Util.AppendArray(array1, array2)
-    array1 = vlua.clone(array1)
-    for i = 1, #array2 do
-        table.insert(array1, array2[i])
-    end
-    return array1
-end
-
----
 ---Delay some code.
 ---
 ---@param func function
@@ -148,3 +122,65 @@ function Util.Delay(func, delay)
     GetListenServerHost():SetContextThink(DoUniqueString("delay"), func, delay or 0)
 end
 
+---
+---Get a new `QAngle` from a `Vector`.
+---This simply transfers the raw values from one to the other.
+---
+---@param vec Vector
+---@return QAngle
+function Util.QAngleFromVector(vec)
+    return QAngle(vec.x, vec.y, vec.z)
+end
+
+---Create a constraint between two entity handles.
+---@param entity1 EntityHandle # First entity to attach.
+---@param entity2 EntityHandle|nil # Second entity to attach. Set nil to attach to world.
+---@param class? string # Class of constraint, default is `phys_constraint`.
+---@param properties? table # Key/value property table.
+---@return EntityHandle
+function Util.CreateConstraint(entity1, entity2, class, properties)
+    -- Cache original names
+    local name1 = entity1:GetName()
+    local name2 = entity2 and entity2:GetName() or ""
+
+    -- Assign unique names so constraint can find them on spawn
+    local uname1 = DoUniqueString("")
+    entity1:SetEntityName(uname1)
+    local uname2 = entity2 and DoUniqueString("") or ""
+    if entity2 then entity2:SetEntityName(uname2) end
+
+    properties = vlua.tableadd({attach1 = uname1, attach2 = uname2}, properties or {})
+    local constraint = SpawnEntityFromTableSynchronous(class or "phys_constraint", properties)
+
+    -- Restore original names now that constraint knows their handles
+    entity1:SetEntityName(name1)
+    if entity2 then entity2:SetEntityName(name2) end
+    return constraint
+end
+
+---Choose and return a random argument.
+---@generic T
+---@param ... T
+---@return T
+function Util.Choose(...)
+    local args = {...}
+    local numArgs = #args
+    if numArgs == 0 then
+        return nil
+    elseif numArgs == 1 then
+        return args[1]
+    else
+        return args[RandomInt(1, numArgs)]
+    end
+end
+
+---Turns a string of up to three numbers into a vector.
+---@param str string # Should have a format of "x y z"
+---@return Vector
+function Util.VectorFromString(str)
+    if type(str) ~= "string" then
+        return Vector()
+    end
+    local x, y, z = str:match("(%d+)[^%d]+(%d*)[^%d]+(%d*)")
+    return Vector(tonumber(x), tonumber(y), tonumber(z))
+end

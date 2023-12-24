@@ -29,6 +29,8 @@ function base:OnReady(loaded)
         else
     		self.TextPanel = self:FindInPrefab("hint_panel")--[[@as EntityHandle]]
         end
+		print("Saving", self.TextPanel, self.TextPanel:GetClassname())
+		self:Save()
 	else
 		self.PanelIsOpen = false
 		self.TextPanel:EntFire("RemoveCSSClass", "Open")
@@ -87,7 +89,7 @@ end
 ---
 ---Parent the entity to the I/O caller passed in.
 ---
----@param io TypeIOInvoke
+---@param io IOParams
 function base:AttachToCaller(io)
     self:SetOrigin(io.caller:GetCenter() + Vector(0, 0, 5))
     self:SetParent(io.caller, "")

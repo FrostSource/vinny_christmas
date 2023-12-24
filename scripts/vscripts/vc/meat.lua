@@ -168,7 +168,7 @@ function base:GoToPointOfInterest()
 	if lastPointOfInterest ~= nil then
 		Util.RemoveFromTable(points, lastPointOfInterest)
 	end
-	local point = RandomFromArray(points)
+	local point = ArrayRandom(points)
 
 	if IsValidEntity(point) then
 		self:CreatePathToEntity(point)

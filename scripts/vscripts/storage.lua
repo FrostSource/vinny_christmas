@@ -1,5 +1,5 @@
 --[[
-    v2.3.1
+    v3.0.1
     https://github.com/FrostSource/hla_extravaganza
 
     Helps with saving/loading values for persistency between game sessions.
@@ -56,6 +56,13 @@
     name   = Storage:Load("name", name)
     ```
 
+    Entity versions of the functions exist to make saving to a specific entity easier:
+
+    ```lua
+    thisEntity:SaveNumber("hp", thisEntity:GetHealth())
+    thisEntity:SetHealth(thisEntity:LoadNumber("hp"))
+    ```
+
     ======================================= Complex Tables ========================================
 
     Since Lua allows tables to have keys and values to be virtually any value, `Storage.SaveTable`
@@ -78,15 +85,6 @@
     Functions for both key and value are currently not supported and will fail to save but will not
     block the rest of the table from being saved. This means you can save whole class tables and
     restore them with only the relevant saved data.
-
-    ====================================== Entity Functions =======================================
-
-    Entity versions of the functions exist to make saving to a specific entity easier:
-
-    ```lua
-    thisEntity:SaveNumber("hp", thisEntity:GetHealth())
-    thisEntity:SetHealth(thisEntity:LoadNumber("hp"))
-    ```
 
     =================================== Delegate Save Functions ===================================
 
@@ -171,22 +169,9 @@ end
 
 
 local separator = "::"
-local name_start = "storage"..separator
-local separator_len = #separator
-local name_start_len = #name_start
-
----Build a name for saving.
----@param name string
----@return string
-local function build_name(name)
-    -- return name
-    if name:sub(1, name_start_len) == name_start then
-        return name
-    end
-    return name_start..name
-end
 
 Storage = {}
+Storage.version = "v3.0.1"
 ---Collection of type names associated with a class table.
 ---The table should have both __save() and __load() functions.
 ---@type table<string,table>
@@ -250,7 +235,6 @@ function Storage.SaveString(handle, name, value)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
-    name = build_name(name)
     if #value > 62 then
         local index = 0
         while #value > 0 do
@@ -281,7 +265,6 @@ function Storage.SaveNumber(handle, name, value)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
-    name = build_name(name)
     handle:SetContextNum(name, value, 0)
     handle:SetContext(name..separator.."type", "number", 0)
     return true
@@ -300,7 +283,6 @@ function Storage.SaveBoolean(handle, name, bool)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
-    name = build_name(name)
     handle:SetContextNum(name, bool and 1 or 0, 0)
     handle:SetContext(name..separator.."type", "boolean", 0)
     return true
@@ -319,11 +301,11 @@ function Storage.SaveVector(handle, name, vector)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
-    name = build_name(name)
+    handle:SetContext(name, "", 0)
     handle:SetContext(name..separator.."type", "vector", 0)
-    Storage.SaveNumber(handle, name .. ".x", vector.x)
-    Storage.SaveNumber(handle, name .. ".y", vector.y)
-    Storage.SaveNumber(handle, name .. ".z", vector.z)
+    Storage.SaveNumber(handle, name..separator.."x", vector.x)
+    Storage.SaveNumber(handle, name..separator.."y", vector.y)
+    Storage.SaveNumber(handle, name..separator.."z", vector.z)
     return true
 end
 
@@ -340,11 +322,11 @@ function Storage.SaveQAngle(handle, name, qangle)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
-    name = build_name(name)
+    handle:SetContext(name, "", 0)
     handle:SetContext(name..separator.."type", "qangle", 0)
-    Storage.SaveNumber(handle, name .. ".x", qangle.x)
-    Storage.SaveNumber(handle, name .. ".y", qangle.y)
-    Storage.SaveNumber(handle, name .. ".z", qangle.z)
+    Storage.SaveNumber(handle, name..separator.."x", qangle.x)
+    Storage.SaveNumber(handle, name..separator.."y", qangle.y)
+    Storage.SaveNumber(handle, name..separator.."z", qangle.z)
     return true
 end
 
@@ -366,7 +348,6 @@ function Storage.SaveTableCustom(handle, name, tbl, T, save_meta)
         Warn("Invalid save handle ("..tostring(handle)..")!")
         return false
     end
-    name = build_name(name)
     local key_count = 0
     local name_sep = name..separator
     local key_concat = name_sep.."key"..separator
@@ -422,7 +403,6 @@ function Storage.SaveEntity(handle, name, entity)
         handle:SetContext(name..separator.."type", "entity", 0)
         return false
     end
-    name = build_name(name)
     local ent_name = entity:GetName()
     local uniqueKey = DoUniqueString("saved_entity")
     if ent_name == "" then
@@ -438,8 +418,8 @@ function Storage.SaveEntity(handle, name, entity)
     return true
 end
 
-local _vector = Vector()
-local _qangle = QAngle()
+local _vector = getmetatable(Vector())
+local _qangle = getmetatable(QAngle())
 
 ---
 ---Save a value.
@@ -461,14 +441,13 @@ function Storage.Save(handle, name, value)
     elseif t=="table" then
         if type(value.__self) == "userdata" then
             return Storage.SaveEntity(handle, name, value)
-        elseif Storage.class_to_type[value.__index] then
+        elseif Storage.class_to_type[getmetatable(value)] then
             return value.__save(handle, name, value)
         else
             return Storage.SaveTable(handle, name, value)
         end
-    -- better way to get userdata class?
-    elseif value.__index==_vector.__index then return Storage.SaveVector(handle, name, value)
-    elseif value.__index==_qangle.__index then return Storage.SaveQAngle(handle, name, value)
+    elseif getmetatable(value)==_vector then return Storage.SaveVector(handle, name, value)
+    elseif getmetatable(value)==_qangle then return Storage.SaveQAngle(handle, name, value)
     else
         Warn("Value ["..tostring(value)..","..type(value).."] is not supported. Please open at issue on the github.")
         return false
@@ -489,7 +468,6 @@ end
 ---@return string|T # Saved string or `default`.
 function Storage.LoadString(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if t == "string" then
         local value = handle:GetContext(name)
@@ -517,7 +495,6 @@ end
 ---@return number|T # Saved number or `default`.
 function Storage.LoadNumber(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     local value = handle:GetContext(name)
     if not value or t ~= "number" then
@@ -538,7 +515,6 @@ end
 ---@return boolean|T # Saved boolean or `default`.
 function Storage.LoadBoolean(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     local value = handle:GetContext(name)
     if t ~= "boolean" or value == nil then
@@ -558,15 +534,14 @@ end
 ---@return Vector|T # Saved Vector or `default`.
 function Storage.LoadVector(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if t ~= "vector" then
         Warn("Vector " .. name .. " could not be loaded!")
         return default
     end
-    local x = handle:GetContext(name .. ".x") or 0
-    local y = handle:GetContext(name .. ".y") or 0
-    local z = handle:GetContext(name .. ".z") or 0
+    local x = handle:GetContext(name..separator.."x") or 0
+    local y = handle:GetContext(name..separator.."y") or 0
+    local z = handle:GetContext(name..separator.."z") or 0
     ---@diagnostic disable-next-line: param-type-mismatch
     return Vector(x, y, z)
 end
@@ -581,15 +556,14 @@ end
 ---@return QAngle|T # Saved QAngle or `default`.
 function Storage.LoadQAngle(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if t ~= "qangle" then
         Warn("QAngle " .. name .. " could not be loaded!")
         return default
     end
-    local x = handle:GetContext(name .. ".x") or 0
-    local y = handle:GetContext(name .. ".y") or 0
-    local z = handle:GetContext(name .. ".z") or 0
+    local x = handle:GetContext(name..separator.."x") or 0
+    local y = handle:GetContext(name..separator.."y") or 0
+    local z = handle:GetContext(name..separator.."z") or 0
     ---@diagnostic disable-next-line: param-type-mismatch
     return QAngle(x, y, z)
 end
@@ -608,7 +582,6 @@ end
 ---@return table|T # Saved table or `default`.
 function Storage.LoadTableCustom(handle, name, T, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local name_sep = name..separator
     local t = handle:GetContext(name_sep.."type")
     local key_count = handle:GetContext(name)
@@ -650,7 +623,6 @@ end
 ---@return EntityHandle|T # Saved entity or `default`.
 function Storage.LoadEntity(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     local uniqueKey = handle:GetContext(name) ---@cast uniqueKey string
     local ent_name = Storage.LoadString(handle, name..separator.."targetname")
@@ -682,7 +654,6 @@ end
 ---@return any # Saved value or `default`.
 function Storage.Load(handle, name, default)
     handle = resolveHandle(handle)
-    name = build_name(name)
     local t = handle:GetContext(name..separator.."type")
     if not t then
         Warn("Value " .. name .. " could not be loaded!")
@@ -707,9 +678,9 @@ function Storage.Load(handle, name, default)
     end
 end
 
----comment
+---Load all values saved to an entity.
 ---@param handle EntityHandle # Entity to load from.
----@param direct boolean # Optionally load values directly into `handle` instead of a new table.
+---@param direct? boolean # Optionally load values directly into `handle` instead of a new table.
 ---@return table # Table of loaded values (or `handle` if `direct` is true).
 function Storage.LoadAll(handle, direct)
     local tbl = direct and handle or {}
@@ -718,21 +689,10 @@ function Storage.LoadAll(handle, direct)
     local criteria = {}
     handle:GatherCriteria(criteria)
     for key, value in pairs(criteria) do
-        -- print(key, value)
-        -- if key:sub(1, name_start_len) == name_start then
-        --     print(key, value)
-        --     local name = key:sub(name_start_len + 1)
-        --     if not name:find("::", 1, true) then
-        --         print("LoadAll", name, Storage.Load(handle, name))
-        --         tbl[name] = Storage.Load(handle, name)
-        --     end
-        -- end
         if not key:find(separator, 1, true) then
             local result = Storage.Load(handle, key)
-            if result ~= nil then
+            if result then
                 tbl[key] = result
-                -- print("","LOADED", key, result, type(result))
-                if type(result) == "table" then print(#result) end
             end
         end
     end
@@ -761,6 +721,6 @@ CBaseEntity.Load        = Storage.Load
 CBaseEntity.LoadAll     = function(self) Storage.LoadAll(self, true) end
 
 
-print("storage.lua initialized...")
+print("storage.lua ".. Storage.version .." initialized...")
 
 return Storage

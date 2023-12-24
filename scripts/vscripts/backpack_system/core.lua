@@ -23,6 +23,7 @@ BACKPACK_EVENT =
 }
 
 ---@class BackpackSystem
+---@field InitCallback fun(backpack: BackpackSystem)
 BackpackSystem = {
 
     -- Storage properties in order of importance.
@@ -166,7 +167,7 @@ end
 -- Storage
 
 ---Add this entity's class to the list of storable classes.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableClassStorage(data)
     -- if data.caller then
         BackpackSystem:SetClassStorage(self:GetClassname(), true)
@@ -174,7 +175,7 @@ function CEntityInstance:EnableClassStorage(data)
     -- end
 end
 ---Remove this entity's class from the list of storable classes.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableClassStorage(data)
     -- if data.caller then
         BackpackSystem:SetClassStorage(self:GetClassname(), nil)
@@ -183,7 +184,7 @@ function CEntityInstance:DisableClassStorage(data)
 end
 
 ---Add this entity's name to the list of storable names.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableNameStorage(data)
     -- if data.caller then
         BackpackSystem:SetNameStorage(self:GetName(), true)
@@ -191,7 +192,7 @@ function CEntityInstance:EnableNameStorage(data)
     -- end
 end
 ---Remove this entity's name from the list of storable names.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableNameStorage(data)
     -- if data.caller then
         BackpackSystem:SetNameStorage(self:GetName(), nil)
@@ -200,7 +201,7 @@ function CEntityInstance:DisableNameStorage(data)
 end
 
 ---Add this entity's model to the list of storable models.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableModelStorage(data)
     -- if data.caller then
         BackpackSystem:SetModelStorage(self:GetModelName(), true)
@@ -208,7 +209,7 @@ function CEntityInstance:EnableModelStorage(data)
     -- end
 end
 ---Remove this entity's model from the list of storable models.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableModelStorage(data)
     -- if data.caller then
         BackpackSystem:SetModelStorage(self:GetModelName(), nil)
@@ -217,7 +218,7 @@ function CEntityInstance:DisableModelStorage(data)
 end
 
 ---Enable storage for this specific entity.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableStorage(data)
     -- if data.caller then
         -- self:EnableClassStorage(data)
@@ -230,7 +231,7 @@ function CEntityInstance:EnableStorage(data)
 end
 CEntityInstance.EnableBackpackStorage = CEntityInstance.EnableStorage
 ---Remove this entity's properties from the storable tables as a catch-all.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableStorage(data)
     -- if data.caller then
         -- self:DisableClassStorage(data)
@@ -244,12 +245,12 @@ CEntityInstance.DisableBackpackStorage = CEntityInstance.DisableStorage
 -- Retrieval
 
 ---Add this entity's class to the list of retrieval classes.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableClassRetrieval(data)
     BackpackSystem:SetClassRetrieval(self:GetClassname(), true)
 end
 ---Remove this entity's class from the list of retrieval classes.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableClassRetrieval(data)
     -- if data.caller then
     --     BackpackSystem.RetrievalClassInventory:Remove(data.caller:GetClassname())
@@ -258,29 +259,29 @@ function CEntityInstance:DisableClassRetrieval(data)
 end
 
 ---Add this entity's name to the list of retrieval names.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableNameRetrieval(data)
     BackpackSystem:SetNameRetrieval(self:GetName(), true)
 end
 ---Remove this entity's name from the list of retrieval names.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableNameRetrieval(data)
     BackpackSystem:SetNameRetrieval(self:GetName(), nil)
 end
 
 ---Add this entity's model to the list of retrieval models.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableModelRetrieval(data)
     BackpackSystem:SetModelRetrieval(self:GetModelName(), true)
 end
 ---Remove this entity's model from the list of retrieval models.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableModelRetrieval(data)
     BackpackSystem:SetModelRetrieval(self:GetModelName(), nil)
 end
 
 ---Enable retrieval for this entity and make it a priority.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:EnableRetrieval(data)
     self:SaveBoolean("BackpackItem.EnableRetrieval", true)
     -- Moving to the top means the most recently enabled will be pulled out first
@@ -288,7 +289,7 @@ function CEntityInstance:EnableRetrieval(data)
 end
 CEntityInstance.EnableBackpackRetrieval = CEntityInstance.EnableRetrieval
 ---Remove this entity's properties from the retrieval tables as a catch-all.
----@param data TypeIOInvoke
+---@param data IOParams
 function CEntityInstance:DisableRetrieval(data)
     self:SaveBoolean("BackpackItem.EnableRetrieval", false)
 end
