@@ -49,6 +49,9 @@ RegisterPlayerEventCallback("vr_player_ready", function()
 end)
 
 function CBasePlayer:UpdateHandAttachmentsForGordon()
+    if not IsVREnabled() then
+        return
+    end
     local leftGlove = self.LeftHand:GetGrabbityGlove()
     if leftGlove then
         leftGlove:SetLocalOrigin(Vector(0, 0.3, 0))
@@ -60,10 +63,39 @@ function CBasePlayer:UpdateHandAttachmentsForGordon()
 
     local leftHolder = self.LeftHand:GetFirstChildWithClassname("hlvr_hand_item_holder")
     if leftHolder then
-        leftHolder:SetLocalOrigin(leftHolder:GetLocalOrigin() + Vector(-0.5, 0, 0))
+        leftHolder:SetLocalOrigin(leftHolder:GetLocalOrigin() + Vector(-0.6, 0, 0))
     end
     local rightHolder = self.RightHand:GetFirstChildWithClassname("hlvr_hand_item_holder")
     if rightHolder then
-        rightHolder:SetLocalOrigin(rightHolder:GetLocalOrigin() + Vector(-0.5, 0, 0))
+        rightHolder:SetLocalOrigin(rightHolder:GetLocalOrigin() + Vector(-0.6, 0, 0))
+    end
+end
+
+function ReturnHintBall(_, io)
+    local hint_ball = Entities:FindByModel(nil, "models/vinny_house/hint_ball.vmdl")
+    if hint_ball then
+        print("Returning lost hint ball")
+        hint_ball:SetOrigin(Vector(-139.189, 129.855, 169.696))
+        hint_ball:SetAngles(0, 0, 0)
+    end
+end
+
+function ReturnSecretBall(_, io)
+    local secret_ball = Entities:FindByModel(nil, "models/vinny_house/secrets_ball.vmdl")
+    if secret_ball then
+        print("Returning lost secret ball")
+        secret_ball:SetOrigin(Vector(-104.419, 198, 41.4904))
+        secret_ball:SetAngles(0, 285, 0)
+    end
+end
+
+function ReturnHintBalls(_, io)
+    local hint_ball = Entities:FindByModel(nil, "models/vinny_house/hint_ball.vmdl")
+    if hint_ball and VectorDistance(hint_ball:GetOrigin(), Player:GetOrigin()) > 512 then
+        ReturnHintBall(_, io)
+    end
+    local secret_ball = Entities:FindByModel(nil, "models/vinny_house/secrets_ball.vmdl")
+    if secret_ball and VectorDistance(secret_ball:GetOrigin(), Player:GetOrigin()) > 512 then
+        ReturnSecretBall(_, io)
     end
 end

@@ -14,19 +14,19 @@
 -- 12 = outside tree
 local HintReminders = {
 	-- 'There are no hints for this area',
-	'There are still places you haven\'t explored',
-	'Santa needs cookies by the fireplace',
-	'Santa needs milk to wash down the cookies',
-	'There is one Christmas tree box left in the attic',
-	'Put the Christmas tree box in the spot near the fireplace',
-	'There is still a prize waiting in the basement',
-	'Find out what that noise on the roof was',
-	'Gifts should be put next to the Christmas tree',
+	[1] = 'There are still places you haven\'t explored',
+	[2] = 'Santa needs cookies by the fireplace',
+	[3] = 'Santa needs milk to wash down the cookies',
+	[4] = 'There is one Christmas tree box left in the attic',
+	[5] = 'Put the Christmas tree box in the spot near the fireplace',
+	[6] = 'There is still a prize waiting in the basement',
+	[7] = 'Find out what that noise on the roof was',
+	[8] = 'Gifts should be put next to the Christmas tree',
 
-	'There is something to do in the downstairs bathroom',
-	'Examine the sticky kitchen door',
-	'Explore upstairs, there are things to see',
-	'There\'s a tree outside that would make a good Christmas tree',
+	[9] = 'There is something to do in the downstairs bathroom',
+	[10] = 'Examine the sticky kitchen door',
+	[11] = 'Explore upstairs, there is something to find',
+	[12] = 'There\'s a tree outside that would make a good Christmas tree',
 
 }
 
@@ -183,7 +183,10 @@ local HintAreas = {
 		'One of these boxes up here has to be important right?',
 		'Come on you love mazes!',
 		'Just a bit of corner turning',
-		'From ladder:\nR3,L2,R2,F,L2'
+		'From the attic ladder, turn:\nRight, right, right\nthen...',
+		'Left, left\nthen...',
+		'Right, right\nthen...',
+		'Forwards, left, left',
 	},
 
 	{

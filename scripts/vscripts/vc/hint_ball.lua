@@ -2,6 +2,7 @@
 	This is a class script, not an entity script!
 ]]
 ---@class HintBall : HintPanel
+---@field HintCallback fun(self: HintBall, area_index: integer, line: integer)|nil
 local base, _, super, private = entity("HintBall", "vc.hint_panel")
 -- if self and self.Initiated then return end
 
@@ -94,9 +95,9 @@ function base:GetAreaHint()
 	-- Don't increment if player has changed area, Increment hint line if not halting
 	if self.PreviousArea == area_index then
 
-		line = line + 1
 		if (not self.HaltAtEnd or line < #area) then
-		
+			line = line + 1
+
 			-- Reset if at end of hints
 			if line > #area then
 				line = 1
@@ -207,26 +208,28 @@ end
 ---@param data PLAYER_EVENT_ITEM_PICKUP
 RegisterPlayerEventCallback("item_pickup", function(data)
 	-- if data.item ~= self then return end
-	if not data.item.IsHintBall then return end
+	local item = data.item--[[@as HintBall]]
+	if not item.IsHintBall then return end
 
-	data.item:ResumeThink()
-	-- data.item:Delay(function()
-	-- 	data.item:HideHint()
+	item:ResumeThink()
+	-- item:Delay(function()
+	-- 	item:HideHint()
 	-- end, 0.1)
 end)
 ---comment
 ---@param data PLAYER_EVENT_ITEM_RELEASED
 RegisterPlayerEventCallback("item_released", function(data)
     -- if data.item ~= self then return end
-    if not data.item.IsHintBall then return end
+	local item = data.item--[[@as HintBall]]
+    if not item.IsHintBall then return end
 
     print("Ball dropped")
 
-	data.item:HideHint()
-	data.item:ForceHide(true)
-    data.item:PauseThink()
-	-- data.item:Delay(function()
-	-- 	data.item:HideHint()
+	item:HideHint()
+	item:ForceHide(true)
+    item:PauseThink()
+	-- item:Delay(function()
+	-- 	item:HideHint()
 	-- end, 0.1)
 end)
 

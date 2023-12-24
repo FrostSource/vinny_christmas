@@ -570,10 +570,12 @@
 	[
 		{
 			_class = "C_OP_ExternalWindForce"
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_CurlNoiseForce"
 			m_vecNoiseScale = [ 10.0, 10.0, 0.0 ]
+			m_bDisableOperator = true
 		},
 	]
 	m_Renderers = 

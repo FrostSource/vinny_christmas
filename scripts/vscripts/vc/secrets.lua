@@ -24,6 +24,8 @@ local HintReminders = {
     [22] = "There is a Half-Life creature to hold in a computer room",
     [23] = "There is an unopened toy in the shed",
     [24] = "Grab the radio in Vinny's bedroom",
+    [25] = "There is an interesting pickle in the fridge",
+    [26] = "There is an interesting pickle in the fridge",
 }
 local HintAreas = {
 	{

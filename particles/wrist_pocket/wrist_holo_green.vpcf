@@ -275,4 +275,5 @@
 			]
 		},
 	]
+	m_bInfiniteBounds = true
 }
