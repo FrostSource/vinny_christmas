@@ -54,7 +54,6 @@ ifrequire("subtitles.data", function(subtitles_data)
     local cc_format2 = subtitles_path2 .. "closecaption_%s_"..subtitles_data.mod..".dat"
     local fname = cc_format:format(lang)
     local fname2 = cc_format2:format(lang)
-    print(fname)
 
     -- local should_delete_file = true
 

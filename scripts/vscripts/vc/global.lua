@@ -11,7 +11,7 @@ function HasMilk(_, io)
 end
 
 function DoSpeen(_, io)
-    print("Doing speen")
+    devprint("Doing speen")
     DoEntFire("@speen_particle", "Start", "", 0, nil, nil)
     local proxy =SpawnEntityFromTableSynchronous("prop_dynamic", {
         -- model = "models/vinny_house/gman_speen.vmdl",

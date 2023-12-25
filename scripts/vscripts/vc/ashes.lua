@@ -18,7 +18,7 @@ Expose(Disable)
 ---Breaks the urn with effects
 local function Break()
 	broken = true
-	print("Urn: Creating ashes", 9999 - thisEntity:GetHealth())
+	devprint("Urn: Creating ashes", 9999 - thisEntity:GetHealth())
 
 	local startVector = thisEntity:GetCenter()
 
@@ -55,7 +55,7 @@ local function Break()
 			ashes:EntFire("Kill", nil, fade_start + 1.1)
 		end
 	else
-		print("Urn: Trace failed")
+		devprint("Urn: Trace failed")
 	end
 
 	local pt_pos = startVector
@@ -74,11 +74,11 @@ Expose(Break)
 ---Tests if enough damage has occured to break
 local function TestDamage()
 	if not enabled or broken then
-		print("Urn: Not enabled or broken")
+		devprint("Urn: Not enabled or broken")
 		thisEntity:SetHealth(9999)
 		return
 	elseif (9999 - thisEntity:GetHealth()) < 50 then
-		print("Urn: Not enough damage", 9999 - thisEntity:GetHealth())
+		devprint("Urn: Not enough damage", 9999 - thisEntity:GetHealth())
 		thisEntity:SetHealth(9999)
 		return
 	end

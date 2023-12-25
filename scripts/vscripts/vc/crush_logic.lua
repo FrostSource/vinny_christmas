@@ -8,7 +8,7 @@ local function AddProp(data)
 	if EntityTable[data.activator] == true or data.activator:HasAttribute('static') then
 		local damage = CreateDamageInfo(thisEntity, thisEntity, Vector(), Vector(), 9999, 1)
 		if data.activator:IsPlayer() then
-			print("Crush logic killing player")
+			devprint("Crush logic killing player")
 			DoEntFire('!self', 'FireUser1', '', 0, thisEntity, thisEntity)
 		end
 		data.activator:TakeDamage(damage)
