@@ -113,11 +113,11 @@ function base:GetAreaHint()
 		self:HintCallback(area_index, line)
 	end
 
-	print("area[line]", area[line])
-	print("area", area)
-	print("area_index", area_index)
-	print("line", line)
-	print("#area", #area)
+	devprint("area[line]", area[line])
+	devprint("area", area)
+	devprint("area_index", area_index)
+	devprint("line", line)
+	devprint("#area", #area)
 	return area[line] .. "\n" .. line .. "/" .. #area
 end
 
@@ -223,7 +223,7 @@ RegisterPlayerEventCallback("item_released", function(data)
 	local item = data.item--[[@as HintBall]]
     if not item.IsHintBall then return end
 
-    print("Ball dropped")
+    devprint("Ball dropped")
 
 	item:HideHint()
 	item:ForceHide(true)
@@ -243,7 +243,7 @@ function base:Think()
 
 	if self.__number_of_shakes > 0 and time - self.__last_shake_time >= TIME_BETWEEN_SHAKES then
 		self.__number_of_shakes = 0
-		print("reset shakes")
+		devprint("reset shakes")
 	end
 
 	local ang = GetPhysAngularVelocity(self)
@@ -280,16 +280,16 @@ end
 
 ---Show a hint for the current game context.
 function base:ShowContextHint()
-	print("Showing context hint")
+	devprint("Showing context hint")
 	local text = self:GetAreaHint()
-	prints("Area Hint:",text)
+	devprints("Area Hint:",text)
 	if text == '' then
 		text = self:GetReminderHint()
-		prints("Reminder Hint:",text)
+		devprints("Reminder Hint:",text)
 	end
 	if text == '' then
 		text = 'No hints for this area, try somewhere else'
-		print(text)
+		devprint(text)
 	end
 
 	self:ForceHide(false)

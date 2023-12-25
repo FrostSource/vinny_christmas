@@ -7,10 +7,8 @@ local function CheckAxe(io)
     -- local blade = io.activator:ScriptLookupAttachment("blade")
     -- io.activator:GetAttachmentOrigin(blade)
     -- Is there a way to get if a point is inside entity OBB?
-    if IsInToolsMode() then
-        print("Linear:", GetPhysVelocity(io.activator):Length())
-        print("Angular:", GetPhysAngularVelocity(io.activator):Length())
-    end
+    devprint("Linear:", GetPhysVelocity(io.activator):Length())
+    devprint("Angular:", GetPhysAngularVelocity(io.activator):Length())
     if GetPhysVelocity(io.activator):Length() > limit
     or GetPhysAngularVelocity(io.activator):Length() > limit
     then

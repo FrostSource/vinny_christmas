@@ -10,7 +10,7 @@ if self.Initiated then return end
 ---Backpack was initiated from trigger.lua
 ---@param backpack BackpackSystem
 function base:BackpackInit(backpack)
-    print("PLAYER BACKPACK INIT")
+    -- print("PLAYER BACKPACK INIT")
     backpack.UniqueName = "PlayerBackpack"
     backpack:SetBackpackTrigger(self)
     -- This has to be set every time because functions can't be saved.

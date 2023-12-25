@@ -17,7 +17,6 @@ require "math.common"
 
 Debug = {}
 Debug.version = "v1.7.0"
-print("DEBUG")
 
 ---
 ---Prints all entities in the map, along with any supplied property patterns.

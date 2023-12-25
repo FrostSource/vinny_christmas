@@ -334,7 +334,7 @@ local function PlayerStoredItemInItemHolder(data)
             if vlua.find(RegisteredModels, last_released:GetModelName()) then
                 local replace_model = "models/custom_wrist_pocket" .. last_released:GetModelName():sub(7, -6) .. "_icon.vmdl"
                 icon:SetModel(replace_model)
-                print("Replacing wrist icon with", replace_model)
+                devprint("Replacing wrist icon with", replace_model)
 
             elseif USE_PARTICLE_FOR_UNREGISTERED then
                 -- NOTE: For some reason the particle will not appear on stored props
@@ -354,14 +354,14 @@ local function PlayerStoredItemInItemHolder(data)
                 StoredIconData[wrist_id].particle = createWristParticle(icon, pt_model, last_released:WristColor())
                 icon:SaveEntity("wrist_particle_model",pt_model)
                 icon:SetRenderAlpha(0)
-                print("Using particle")
+                devprint("Using particle")
 
             elseif USE_BASE_MODEL_FOR_UNREGISTERED then
-                print("Using base model because unregistered", last_released:GetModelName())
+                devprint("Using base model because unregistered", last_released:GetModelName())
                 icon:SetModel(last_released:GetModelName())
 
             else
-                print("Model is not registered", last_released:GetModelName())
+                devprint("Model is not registered", last_released:GetModelName())
                 return
             end
             SetWristIconTransforms(wrist_id, icon, last_released)

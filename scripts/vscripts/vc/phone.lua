@@ -34,14 +34,14 @@ function base:PickRandomQuip()
 		quip_ents[i], quip_ents[j] = quip_ents[j], quip_ents[i]
 	end
 
-	print("quips to choose from", #quip_ents)
+	devprint("quips to choose from", #quip_ents)
 
 	-- Pick first quip that hasn't been played
 	for _,quip in pairs(quip_ents) do
-		print("Trying to choose quip "..quip:GetName())
+		devprint("Trying to choose quip "..quip:GetName())
 		-- print("What is? ", self:LoadBoolean(quip:GetName(), true))
 		if self:LoadBoolean(quip:GetName(), true) then
-			print("Chose quip "..quip:GetName())
+			devprint("Chose quip "..quip:GetName())
 			return quip:GetName()
 		end
 	end
@@ -82,7 +82,7 @@ function base:PlayQuip()
 	DoEntFire("phone_end_call", "Trigger", "", length + QuipDelay, self, self)
 	QuipIsPlaying = true
 	self:SaveBoolean(quip_name, false)
-	print("Disabling "..quip_name, self:LoadBoolean(quip_name, true))
+	devprint("Disabling "..quip_name, self:LoadBoolean(quip_name, true))
 end
 
 function base:EndCall(data)

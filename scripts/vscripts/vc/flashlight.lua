@@ -1,6 +1,5 @@
 ---@class Flashlight : EntityClass
 local base, self = entity("Flashlight")
-print("FHASLIGHTL")
 if self and self.Initiated then return end
 
 ---@type EntityHandle?
@@ -28,7 +27,6 @@ end
 Input:TrackButton(16)
 Input:RegisterCallback("press", -1, 16, 1, function(data)
     ---@cast data INPUT_PRESS_CALLBACK
-    print(data.hand, data.hand.ItemHeld, self, data.hand.ItemHeld:GetClassname(), self:GetClassname())
     if data.hand.ItemHeld == self then
         self:EmitSound(BUTTON_SOUND)
         self:Toggle()

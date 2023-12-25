@@ -29,7 +29,6 @@ function base:OnReady(loaded)
         else
     		self.TextPanel = self:FindInPrefab("hint_panel")--[[@as EntityHandle]]
         end
-		print("Saving", self.TextPanel, self.TextPanel:GetClassname())
 		self:Save()
 	else
 		self.PanelIsOpen = false

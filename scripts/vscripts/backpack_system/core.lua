@@ -11,7 +11,7 @@ require'core'
 local debug_printing_allowed = true
 
 local function dprint(...)
-    if debug_printing_allowed or IsInToolsMode() then
+    if (debug_printing_allowed and Convars:GetInt("developer") > 0) or IsInToolsMode() then
         print(...)
     end
 end
