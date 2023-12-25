@@ -438,5 +438,28 @@ Convars:RegisterCommand("vinny_tp_to_crush_puzzle", function()
     DoEntFire("nonvr_crush_tp", "teleport", "", 0, nil, nil)
 end, "", 0)
 
+Convars:RegisterCommand("vinny_stream_party", function()
+    local meat = Entities:FindByName(nil, "meat")
+    meat:SetOrigin(Vector(44, 140, 151))
+    meat:SetAngles(0, 180, 0)
+    meat:EntFire("EnableLookAt")
+    meat:EntFire("ForceLookAtTarget", "!player")
+
+    local packaging = Entities:FindByName(nil, "26544_161_template")
+    packaging:EntFire("forcespawn")
+    packaging:SetOrigin(Player:GetOrigin() + Vector(0, 0, 32))
+
+    packaging = Entities:FindByName(nil, "32334_template")
+    packaging:EntFire("forcespawn")
+    packaging:SetOrigin(Player:GetOrigin() + Vector(0, 0, 32))
+
+    local pipe = Entities:FindByName(nil, "pipe_for_meat")
+    pipe:SetOrigin(Player:GetOrigin() + Vector(0, 0, 16))
+    for i, value in ipairs(Entities:FindAllByName("edible_gherkin")) do
+        if i > 2 then break end
+        value:SetOrigin(Player:GetOrigin() + Vector(0, 0, 16))
+    end
+end, "", 0)
+
 
 print("debug/vinny_christmas initialized...")

@@ -17,6 +17,7 @@ require "math.common"
 
 Debug = {}
 Debug.version = "v1.7.0"
+print("DEBUG")
 
 ---
 ---Prints all entities in the map, along with any supplied property patterns.
@@ -449,6 +450,7 @@ function Debug.ShowEntity(ent, duration)
     if type(ent) == "string" then
         local ents = Entities:FindAllByName(ent)
         for _,e in ipairs(ents) do
+            print('shower')
             Debug.ShowEntity(e)
         end
         return
