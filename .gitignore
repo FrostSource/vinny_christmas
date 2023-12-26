@@ -1,8 +1,10 @@
 _bakeresourcecache/
 *bakeresourcecache.vpk
+__test*
 models/flashlight/materials/
 models/flashlight/fbx/
 models/christmas_tree/materials/
 models/christmas_tree/fbx/
 materials/vinny_house/food_trays_*
 models/higgs/
+models/skybox/mountains

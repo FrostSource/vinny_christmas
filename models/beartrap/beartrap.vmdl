@@ -11,6 +11,7 @@
 				[
 					{
 						_class = "ModelModifier_ScaleAndMirror"
+						disabled = true
 						scale = 0.425
 						mirror_x = false
 						mirror_y = false
@@ -20,9 +21,10 @@
 					},
 					{
 						_class = "ModelModifier_Translate"
-						translation = [ 0.0, 0.0, -4.0 ]
+						translation = [ 10.0, 0.0, 0.0 ]
 					},
 				]
+				disabled = true
 			},
 			{
 				_class = "GameDataList"
@@ -34,7 +36,7 @@
 						game_keys = 
 						{
 							base = "Metal.Medium"
-							allowstatic = true
+							allowstatic = false
 							bakelighting = true
 							damage_table = ""
 							"dmg.bullets" = -1.0
@@ -55,11 +57,11 @@
 							conform_fingers = false
 							allow_flip = false
 							parent_bone = ""
-							origin_left = [ 4.05554, 6.3614, -1.48448 ]
-							angles_left = [ -50.8026, -138.007, 101.842 ]
-							origin_right = [ 4.05554, -6.3614, -1.48448 ]
-							angles_right = [ -50.802601, 138.007004, -101.842003 ]
-							max_distance = 3.0
+							origin_left = [ 7.03429, 0.858096, 0.448931 ]
+							angles_left = [ -50.802605, 160.962006, 101.841995 ]
+							origin_right = [ 7.03429, -0.858096, 0.448931 ]
+							angles_right = [ -50.8026, -160.962, -101.842 ]
+							max_distance = 60.0
 							finger_thumb = 0.622
 							finger_pinky = 0.732
 							finger_ring = 0.843
@@ -82,6 +84,43 @@
 					},
 					{
 						_class = "GenericGameData"
+						disabled = true
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ 4.05554, 6.3614, 0.437929 ]
+							angles_left = [ -50.802601, -138.007004, 101.842003 ]
+							origin_right = [ 4.05554, -6.3614, 0.437929 ]
+							angles_right = [ -50.8026, 138.007, -101.842 ]
+							max_distance = 6.0
+							finger_thumb = 0.622
+							finger_pinky = 0.732
+							finger_ring = 0.843
+							finger_middle = 0.767
+							finger_index = 0.813
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, 0.0, 2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, -0.0, 2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						disabled = true
 						game_class = "hand_pose_pair"
 						game_keys = 
 						{
@@ -90,11 +129,11 @@
 							conform_fingers = false
 							allow_flip = false
 							parent_bone = ""
-							origin_left = [ -0.540558, 0.492889, 6.48285 ]
-							angles_left = [ 29.6756, 0.000002, 83.4696 ]
-							origin_right = [ -0.540558, -0.492889, 6.48285 ]
-							angles_right = [ 29.675602, -0.000004, -83.469597 ]
-							max_distance = 3.0
+							origin_left = [ -0.540558, 0.492889, 8.06067 ]
+							angles_left = [ 29.675594, 0.000006, 83.469597 ]
+							origin_right = [ -0.540558, -0.492889, 8.06067 ]
+							angles_right = [ 29.6756, -0.000004, -83.4696 ]
+							max_distance = 6.0
 							finger_thumb = 1.0
 							finger_pinky = 0.877
 							finger_ring = 0.825
@@ -113,6 +152,25 @@
 							rotation_max = 0.0
 							pivot_min = 0.0
 							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "0"
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "handpose_data"
+						game_keys = 
+						{
+							handpose_bone = ""
+							handpose_model = "models/props/max/handposes/handpose_grabpole.vmdl"
+							allow_procedural_handpose = false
+							global_pose_template = false
 						}
 					},
 				]
@@ -189,6 +247,7 @@
 				[
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -199,6 +258,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -209,6 +269,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy_copy"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -219,6 +280,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy_copy_copy"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -229,6 +291,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy_copy_copy_copy"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -239,6 +302,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy_copy_copy1"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -249,6 +313,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy_copy1"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -259,6 +324,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy1"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -269,6 +335,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy1_copy"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -278,6 +345,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -287,6 +355,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -296,6 +365,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -305,6 +375,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -314,6 +385,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -323,6 +395,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -332,6 +405,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -341,6 +415,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -350,6 +425,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -359,6 +435,7 @@
 					},
 					{
 						_class = "PhysicsShapeBox"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -369,6 +446,7 @@
 					{
 						_class = "PhysicsShapeBox"
 						name = "_copy2"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -378,6 +456,7 @@
 					},
 					{
 						_class = "PhysicsShapeCapsule"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -388,6 +467,7 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						name = "_copy3"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
@@ -398,12 +478,46 @@
 					{
 						_class = "PhysicsShapeCapsule"
 						name = "_copy3_copy"
+						disabled = true
 						parent_bone = ""
 						surface_prop = "default"
 						collision_prop = "default"
 						radius = 1.5
 						point0 = [ -1.650515, -0.110236, 17.91465 ]
 						point1 = [ -1.683031, -8.218262, 15.319571 ]
+					},
+					{
+						_class = "PhysicsHullFile"
+						parent_bone = ""
+						surface_prop = "prop.metal_heavy_misc"
+						collision_prop = "default"
+						recenter_on_parent_bone = false
+						offset_origin = [ 0.0, 0.0, 0.0 ]
+						offset_angles = [ 0.0, 0.0, 0.0 ]
+						filename = "models/beartrap/fbx/beartrap.fbx"
+						import_scale = 0.425
+						faceMergeAngle = 10.0
+						maxHullVertices = 32
+						import_mode = "SingleHull"
+						optimization_algorithm = "IFR"
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = 
+							[
+								"ID753_001",
+								"ID811_001",
+							]
+						}
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "default"
+						collision_prop = "default"
+						origin = [ 5.100143, 0.439169, 0.2918 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.072704, 6.35374, 4.273214 ]
 					},
 				]
 			},
@@ -414,8 +528,9 @@
 					{
 						_class = "Attachment"
 						name = "player_hat_hmd_pos"
+						disabled = true
 						parent_bone = ""
-						relative_origin = [ 0.0, 0.0, 0.0 ]
+						relative_origin = [ 0.0, 0.0, 2.5 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
 						ignore_rotation = false
@@ -429,7 +544,7 @@
 					{
 						_class = "RenderMeshFile"
 						filename = "models/beartrap/fbx/beartrap.fbx"
-						import_scale = 1.0
+						import_scale = 0.425
 						import_filter = 
 						{
 							exclude_by_default = false

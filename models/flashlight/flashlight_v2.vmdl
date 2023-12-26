@@ -96,7 +96,7 @@
 							angles_left = [ 25.850801, 0.0, 0.0 ]
 							origin_right = [ -2.26796, -1.10586, -0.117877 ]
 							angles_right = [ 25.8508, 0.0, 0.0 ]
-							max_distance = 4.0
+							max_distance = 8.0
 							finger_thumb = 0.49
 							finger_pinky = 0.465
 							finger_ring = 0.452

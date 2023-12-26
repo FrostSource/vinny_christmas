@@ -1,0 +1,279 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc28:version{fb63b6ca-f435-4aa0-a2c7-c66ddc651dca} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_Translate"
+						translation = [ 7.0, -26.5, -6.5 ]
+					},
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						scale = 1.0
+						mirror_x = true
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "DefaultMaterialGroup"
+						remaps = 
+						[
+							{
+								from = "models/creatures/vortigaunt/materials/uncombined_vort_body.vmat"
+								to = "models/creatures/vortigaunt/materials/uncombined_vort_body.vmat"
+							},
+						]
+						use_global_default = false
+						global_default_material = ""
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "RenderMeshFile"
+						filename = "models/vort_toy/vort_toy.fbx"
+						import_scale = 1.0
+						import_filter = 
+						{
+							exclude_by_default = false
+							exception_list = [  ]
+						}
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						name = "back"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "cylinder_idle"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -0.67544, -1.67529, 9.91176 ]
+							angles_left = [ -37.842602, -179.389999, -8.353019 ]
+							origin_right = [ -0.67544, 1.67529, 9.91176 ]
+							angles_right = [ -37.8426, 179.39, 8.35302 ]
+							max_distance = 5.0
+							finger_thumb = 0.294
+							finger_pinky = 0.34
+							finger_ring = 0.28
+							finger_middle = 0.277
+							finger_index = 0.231
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						name = "front"
+						game_class = "hand_pose_pair"
+						game_keys = 
+						{
+							sequence = "grab"
+							pose_special_type = "0"
+							conform_fingers = false
+							allow_flip = false
+							parent_bone = ""
+							origin_left = [ -1.34986, 1.29398, 8.82965 ]
+							angles_left = [ -1.85673, -24.806101, -17.065201 ]
+							origin_right = [ -1.34986, -1.29398, 8.82965 ]
+							angles_right = [ -1.85673, 24.8061, 17.0652 ]
+							max_distance = 5.0
+							finger_thumb = 0.501
+							finger_pinky = 1.0
+							finger_ring = 1.0
+							finger_middle = 1.0
+							finger_index = 0.694
+							has_extent = false
+							show_extent_helper = false
+							extent_origin_left = [ 0.0, -0.0, -2.0 ]
+							extent_origin_min_left = [ 0.0, 0.0, -1.0 ]
+							extent_origin_right = [ 0.0, 0.0, -2.0 ]
+							extent_origin_min_right = [ 0.0, 0.0, 1.0 ]
+							has_rotation = false
+							rotation_axis0 = [ 0.0, 0.0, 10.0 ]
+							rotation_axis1 = [ 0.0, 0.0, -10.0 ]
+							rotation_min = 0.0
+							rotation_max = 0.0
+							pivot_min = 0.0
+							pivot_max = 0.0
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "ao_proxy_capsule"
+						game_keys = 
+						{
+							bonename = ""
+							radius = 5.0
+							point0 = [ -7.09692, 25.8611, 10.5011 ]
+							point1 = [ -7.09692, 25.8611, 15.2709 ]
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "handpose_data"
+						game_keys = 
+						{
+							handpose_bone = ""
+							handpose_model = "models/props/max/handposes/handpose_grabpole.vmdl"
+							allow_procedural_handpose = false
+							global_pose_template = false
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "vr_carry_type"
+						game_keys = 
+						{
+							carry_type = "0"
+						}
+					},
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							base = "Plastic.Small"
+							allowstatic = false
+							bakelighting = true
+							damage_table = ""
+							"dmg.bullets" = -1.0
+							"dmg.club" = -1.0
+							"dmg.explosive" = -1.0
+							"dmg.fire" = -1.0
+							health = -1.0
+							spawn_motion_disabled = false
+						}
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "PhysicsShapeBox"
+						name = "stand"
+						parent_bone = ""
+						surface_prop = "prop.plastic_vhs"
+						collision_prop = "default"
+						origin = [ -6.056802, 26.801619, 7.334441 ]
+						angles = [ -0.0, 31.801762, 0.0 ]
+						dimensions = [ 3.141618, 8.22854, 2.092628 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "body"
+						parent_bone = ""
+						surface_prop = "prop.plastic_vhs"
+						collision_prop = "default"
+						radius = 3.0
+						point0 = [ -6.604996, 26.380007, 9.664232 ]
+						point1 = [ -6.604993, 26.379992, 17.255564 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "right_arm"
+						parent_bone = ""
+						surface_prop = "prop.plastic_vhs"
+						collision_prop = "default"
+						radius = 1.0
+						point0 = [ -14.733551, 28.981522, 18.175497 ]
+						point1 = [ -8.215584, 28.272194, 18.094162 ]
+					},
+					{
+						_class = "PhysicsShapeCapsule"
+						name = "left_arm"
+						parent_bone = ""
+						surface_prop = "prop.plastic_vhs"
+						collision_prop = "default"
+						radius = 0.8
+						point0 = [ -11.886992, 23.014843, 16.815641 ]
+						point1 = [ -7.152394, 22.65724, 16.319714 ]
+					},
+					{
+						_class = "PhysicsShapeSphere"
+						name = "head"
+						parent_bone = ""
+						surface_prop = "prop.plastic_vhs"
+						collision_prop = "default"
+						radius = 1.5
+						center = [ -9.917324, 25.935825, 18.845842 ]
+					},
+				]
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "right_hand_light"
+						parent_bone = ""
+						relative_origin = [ -15.349266, 29.277206, 18.565323 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "left_hand_light"
+						parent_bone = ""
+						relative_origin = [ -12.523353, 23.09692, 16.49185 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+					{
+						_class = "Attachment"
+						name = "mouth"
+						parent_bone = ""
+						relative_origin = [ -10.934875, 26.172598, 17.725113 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
+		]
+		model_archetype = "physics_prop_model"
+		primary_associated_entity = "prop_physics"
+		anim_graph_name = ""
+	}
+}

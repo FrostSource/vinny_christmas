@@ -1,0 +1,122 @@
+
+.RootPanel {
+    /* background-color: #00AA00AA; */
+}
+
+.WorldUITextPanel {
+	width: 100%;
+	height: fit-children;
+    flow-children: down;
+    vertical-align: bottom;
+    margin-bottom:96px;
+    pre-transform-scale2d: 0;
+}
+.WorldUITextPanel.Open{
+    animation-name: elastic-open;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+.WorldUITextPanel.NewHint{
+    animation-name: elastic-newhint;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+.WorldUITextPanel.Close{
+    animation-name: elastic-close;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.MainPanel {
+    margin: 8px;
+    flow-children: down;
+    horizontal-align: center;
+    background-color: rgba(0, 0, 0, 0.315);
+    border-radius: 25px;
+    border: 6px solid rgba(61, 61, 61, 0.877);
+}
+
+/* There is no language server that seems to understand Valve's version of keyframes */
+@keyframes 'elastic-open' {
+    0% { pre-transform-scale2d: 0; }
+    20.90% { pre-transform-scale2d: 1.28; }
+    39.08% { pre-transform-scale2d: 0.78; }
+    54.88% { pre-transform-scale2d: 1.16; }
+    68.62% { pre-transform-scale2d: 0.89; }
+    80.57% { pre-transform-scale2d: 1.07; }
+    90.96% { pre-transform-scale2d: 0.97; }
+    100.00% { pre-transform-scale2d: 1.00; }
+}
+@keyframes 'elastic-close' {
+    0% { pre-transform-scale2d: 1; }
+    30% { pre-transform-scale2d: 1.4; }
+    100.00% { pre-transform-scale2d: 0; }
+}
+@keyframes 'elastic-newhint' {
+    0% { pre-transform-scale2d: 1.0; }
+    20.90% { pre-transform-scale2d: 1.28; }
+    39.08% { pre-transform-scale2d: 0.78; }
+    54.88% { pre-transform-scale2d: 1.16; }
+    68.62% { pre-transform-scale2d: 0.89; }
+    80.57% { pre-transform-scale2d: 1.07; }
+    90.96% { pre-transform-scale2d: 0.97; }
+    100.00% { pre-transform-scale2d: 1.00; }
+}
+
+.Header{
+    text-align:center;
+    horizontal-align: center;
+    margin: 10px;
+    margin-bottom: 0px;
+    flow-children: right;
+    font-weight: bold;
+}
+#Vinny {
+    /* color: green; */
+    color: rgb(14, 104, 55);
+}
+
+.HeaderText {
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 8px 3.0 #333333b0;
+    /* background-color: green; */
+}
+.HeaderLine {
+    background-color: rgb(43, 43, 43);
+    width:75%;
+    height:10px;
+    horizontal-align: center;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.TextLabel {
+    color: rgb(229, 229, 229);
+    font-size: 30px;
+    text-align: center;
+    /* background-color: #00000099; */
+    /* border-radius: 25%; */
+
+    text-shadow: 2px 2px 8px 3.0 #333333b0;
+    font-weight: bold;
+    font-family: "Arial";
+    text-transform: uppercase;
+    flow-children: right;
+    horizontal-align: center;
+    /* border: 3px solid white; */
+    border-radius: 8px;
+    /* background-color: rgba(0, 0, 0, 0.178); */
+    padding: 15px;
+    margin: 10px;
+    /* vertical-align: middle; */
+
+}
+
+.ForceHide {
+    opacity: 0;
+}
+

@@ -391,6 +391,21 @@
 					},
 				]
 			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Attachment"
+						name = "blade"
+						parent_bone = ""
+						relative_origin = [ -12.804997, 0.0, -5.357773 ]
+						relative_angles = [ 0.0, 0.0, 0.0 ]
+						weight = 1.0
+						ignore_rotation = false
+					},
+				]
+			},
 		]
 		model_archetype = "physics_prop_model"
 		primary_associated_entity = "prop_physics"

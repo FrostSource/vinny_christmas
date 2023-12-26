@@ -1,0 +1,4 @@
+response Vinny_Response
+{
+	speak "vo.01_12763" noscene
+}

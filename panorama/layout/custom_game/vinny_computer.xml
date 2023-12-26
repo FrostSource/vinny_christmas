@@ -1,0 +1,11 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/base_styles.vcss_c" />
+        <include src="s2r://panorama/styles/language_shared.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/vinny_computer.vcss_c" />
+	</styles>
+
+	<Panel class="MainPanel">
+        <HTML id="TwitchStream" url="https://www.twitch.tv/vinesauce" />
+	</Panel>
+</root>
